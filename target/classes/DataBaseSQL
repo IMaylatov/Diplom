@@ -1,0 +1,16 @@
+CREATE TABLE Person(
+    id Serial PRIMARY KEY not null
+);
+
+CREATE TABLE Song(
+    id Serial PRIMARY KEY not null
+);
+
+CREATE TABLE Rate(
+    PersonID INTEGER NOT NULL ,
+    SongID INTEGER NOT NULL ,
+    Value SMALLINT CHECK (Value >= 0 AND Value <= 5),
+    PRIMARY KEY (PersonID, SongID),
+    FOREIGN KEY (PersonID) REFERENCES Person(id),
+    FOREIGN KEY (SongID) REFERENCES Song(id)
+);
