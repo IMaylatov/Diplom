@@ -1,35 +1,28 @@
 package com.IMaylatov.Recommend.Main;
 
-import com.IMaylatov.Recommend.DAO.DbContext;
-import com.IMaylatov.Recommend.DAO.Entity.Person.PersonDAO;
-import com.IMaylatov.Recommend.DAO.Entity.Rate.RateDAO;
-import com.IMaylatov.Recommend.DAO.Entity.Song.SongDAO;
+import com.IMaylatov.Recommend.DbContext;
 import com.IMaylatov.Recommend.Entity.Person;
 import com.IMaylatov.Recommend.Entity.Rate;
 import com.IMaylatov.Recommend.Entity.Song;
+import com.IMaylatov.Recommend.Service.Entity.Person.PersonService;
+import com.IMaylatov.Recommend.Service.Entity.Rate.RateService;
+import com.IMaylatov.Recommend.Service.Entity.Song.SongService;
+
 
 /**
  * Created by Liggoriya on 21.03.2015.
  */
 public class Main {
     public static void main(String[] args) {
-//        PersonDAO personDAO = (PersonDAO) DbContext.getInstance().getBean("PersonDAO");
-//        Person person = personDAO.getPersonWithoutLazy(1);
-//        Person person1 = personDAO.find(1l);
-//
-//        SongDAO songDAO = (SongDAO) DbContext.getInstance().getBean("SongDAO");
-//        Song song = songDAO.getPersonWithoutLazy(1);
-//        Song song1 = songDAO.find(1l);
-//
-//        RateDAO rateDAO = (RateDAO) DbContext.getInstance().getBean("RateDAO");
-//        Rate rate = rateDAO.find(new Rate.RatePK(person1, song1));
+        PersonService personService = DbContext.INSTANCE.getService("PersonService");
+        Person person = personService.find(1L);
 
+        SongService songService = DbContext.INSTANCE.getService("SongService");
+        Song song = songService.find(1L);
 
-        PersonDAO personDAO = DbContext.INSTANCE.getDAO("PersonDAO");
-        Person person = personDAO.getPersonWithoutLazy(1);
+        RateService rateService = DbContext.INSTANCE.getService("RateService");
+        Rate rate = rateService.find(new Rate.RatePK(person, song));
 
-        SongDAO songDAO = DbContext.INSTANCE.getDAO("SongDAO");
-        Song song = songDAO.getPersonWithoutLazy(1);
         System.out.print("hi");
     }
 }

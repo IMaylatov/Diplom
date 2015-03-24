@@ -11,5 +11,4 @@ import com.IMaylatov.Recommend.Entity.Person;
  * Интерфейс для работы с сущностью Person
  */
 public interface PersonDAO extends GenericDAO<Person, Long> {
-    public Person getPersonWithoutLazy(long id);
 }

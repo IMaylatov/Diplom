@@ -1,6 +1,7 @@
-package com.IMaylatov.Recommend.DAO;
+package com.IMaylatov.Recommend;
 
 import com.IMaylatov.Recommend.DAO.Generic.GenericDAO;
+import com.IMaylatov.Recommend.Service.Generic.GenericService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -19,6 +20,11 @@ public enum  DbContext {
 
     @SuppressWarnings("unchecked")
     public <T extends GenericDAO> T getDAO(String name){
+        return (T) instance.getBean(name);
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T extends GenericService> T getService(String name){
         return (T) instance.getBean(name);
     }
 }

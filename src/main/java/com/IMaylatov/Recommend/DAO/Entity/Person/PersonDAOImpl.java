@@ -14,13 +14,5 @@ import org.springframework.transaction.annotation.Transactional;
  * Класс для работы с сущность Person
  */
 @Repository("PersonDAO")
-@Transactional(propagation = Propagation.REQUIRED)
 public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements PersonDAO {
-    @Override
-    @Transactional
-    public Person getPersonWithoutLazy(long id) {
-        Person person = this.find(id);
-        person.getRateList().size();
-        return person;
-    }
 }

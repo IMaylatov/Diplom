@@ -19,7 +19,7 @@ import java.util.List;
  * @param <T>
  */
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
-public class GenericDAOImpl<T, K extends Serializable> implements GenericDAO<T, K> {
+public abstract class GenericDAOImpl<T, K extends Serializable> implements GenericDAO<T, K> {
     //region field
     /**
      * Фабрика сессий из контейнера Spring
@@ -66,12 +66,14 @@ public class GenericDAOImpl<T, K extends Serializable> implements GenericDAO<T, 
 
     @Override
     @SuppressWarnings("unchecked")
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public T find(K id) {
         return (T) currentSession().get(typeEntity, id);
     }
 
     @Override
     @SuppressWarnings("unchecked")
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<T> list() {
         return currentSession().createCriteria(typeEntity).list();
     }

@@ -14,11 +14,4 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository("SongDAO")
 public class SongDAOImpl extends GenericDAOImpl<Song, Long> implements SongDAO {
-    @Transactional
-    @Override
-    public Song getPersonWithoutLazy(long id) {
-        Song song = this.find(id);
-        song.getRateList().size();
-        return song;
-    }
 }

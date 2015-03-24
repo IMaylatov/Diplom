@@ -11,5 +11,4 @@ import com.IMaylatov.Recommend.Entity.Song;
  * Интерфейс для работы с сущностью Song
  */
 public interface SongDAO extends GenericDAO<Song, Long> {
-    public Song getPersonWithoutLazy(long id);
 }
