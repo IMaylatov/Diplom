@@ -1,12 +1,8 @@
 package com.IMaylatov.Recommend.Main;
 
+import com.IMaylatov.Recommend.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.DbContext;
-import com.IMaylatov.Recommend.Entity.Person;
-import com.IMaylatov.Recommend.Entity.Rate;
-import com.IMaylatov.Recommend.Entity.Song;
-import com.IMaylatov.Recommend.Service.Entity.Person.PersonService;
-import com.IMaylatov.Recommend.Service.Entity.Rate.RateService;
-import com.IMaylatov.Recommend.Service.Entity.Song.SongService;
+import com.IMaylatov.Recommend.Model.Person;
 
 
 /**
@@ -14,15 +10,12 @@ import com.IMaylatov.Recommend.Service.Entity.Song.SongService;
  */
 public class Main {
     public static void main(String[] args) {
-        PersonService personService = DbContext.INSTANCE.getService("PersonService");
-        Person person = personService.find(1L);
+        PersonDAO personDAO = DbContext.INSTANCE.getDAO("PersonDAO");
+        Person person = personDAO.find(1L);
 
-        SongService songService = DbContext.INSTANCE.getService("SongService");
-        Song song = songService.find(1L);
+        Person person1 = new Person();
+        personDAO.save(person1);
 
-        RateService rateService = DbContext.INSTANCE.getService("RateService");
-        Rate rate = rateService.find(new Rate.RatePK(person, song));
-
-        System.out.print("hi");
+        System.out.println();
     }
 }
