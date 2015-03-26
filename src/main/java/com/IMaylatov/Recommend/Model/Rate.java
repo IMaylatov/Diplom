@@ -19,20 +19,32 @@ public class Rate{
     private RatePK id;
 
     @Column(name="Value")
-    private byte value;
+    private int value;
     //endregion
 
     //region Constructor
-    public Rate() {
+    private Rate() {
+    }
+
+    public Rate(RatePK id, int value) {
+        this.id = id;
+        this.value = value;
     }
     //endregion
 
     //region getter setter
-    public byte getValue() {
+    public int getValue() {
         return value;
     }
-    public void setValue(byte value) {
+    public void setValue(int value) {
         this.value = value;
+    }
+
+    public RatePK getId() {
+        return id;
+    }
+    public void setId(RatePK id) {
+        this.id = id;
     }
 
     public Person getPerson() {
@@ -64,19 +76,16 @@ public class Rate{
     @Embeddable
     public static class RatePK implements Serializable {
         //region field
-        @ManyToOne(fetch = FetchType.EAGER)
+        @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
         @JoinColumn(name = "PersonId")
         private Person person;
 
-        @ManyToOne(fetch = FetchType.EAGER)
+        @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
         @JoinColumn(name = "SongId")
         private Song song;
         //endregion
 
         //region Constructor
-        public RatePK(){
-        }
-
         public RatePK(Person person, Song song) {
             this.person = person;
             this.song = song;

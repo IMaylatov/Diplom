@@ -21,7 +21,7 @@ public class Person {
     @Column(name="id")
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "PersonId")
     private List<Rate> rateList;
     //endregion

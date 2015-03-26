@@ -17,12 +17,12 @@ import java.util.List;
 public class Song {
     //region field
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @GenericGenerator(name = "song_id_seq", strategy = "song_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="song_id_seq")
+    @SequenceGenerator(name = "song_id_seq", sequenceName = "song_id_seq", allocationSize = 1)
     @Column(name="id")
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "SongId")
     private List<Rate> rateList;
     //endregion
