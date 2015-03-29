@@ -1,10 +1,5 @@
 package com.IMaylatov.Recommend.Model;
 
-
-/**
- * Created by Liggoriya on 21.03.2015.
- */
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,7 +16,7 @@ public class Person {
     @Column(name="id")
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "PersonId")
     private List<Rate> rateList;
     //endregion

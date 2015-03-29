@@ -1,8 +1,6 @@
 package DAO;
 
-import com.IMaylatov.Recommend.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.DAO.Model.Rate.RateDAO;
-import com.IMaylatov.Recommend.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Model.Person;
 import com.IMaylatov.Recommend.Model.Rate;
 import com.IMaylatov.Recommend.Model.Song;
@@ -39,6 +37,8 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Test
     public void saveTest(){
+        // Оценка не может быть добавлена, если песни или пользователя не существует
+
         // Сохранить оценку с существующими пользователями и песней
         Person person = new Person();
         session.save(person);
@@ -55,15 +55,14 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         Assert.assertEquals("Оценка сохранилась верно", 4, rate.getValue());
 
         // Сохранить оценку с существующим пользователем, но не существующей песней
-//        song = new Song();
-//        person = new Person();
-//        personDAO.save(person);
-//        person = personDAO.find(person.getId());
-//        rate = new Rate(new Rate.RatePK(person, song), 4);
-//        rateDAO.save(rate);
-//        rate = rateDAO.find(new Rate.RatePK(person, song));
-//        Assert.assertNotNull("Оценка добавлена", rate);
-//        Assert.assertEquals("Оценка сохранена верно", 4, rate.getValue());
+        song = new Song();
+        person = new Person();
+        session.save(person);
+        rate = new Rate(new Rate.RatePK(person, song), 4);
+        rateDAO.save(rate);
+
+        rate = (Rate) session.get(Rate.class, new Rate.RatePK(person, song));
+        Assert.assertNull("Оценка не может быть добавлена", rate);
     }
 
     @Test

@@ -1,13 +1,7 @@
 package com.IMaylatov.Recommend.Model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.List;
-
-/**
- * Created by Liggoriya on 21.03.2015.
- */
 
 /**
  * Сущность "Трек"
@@ -22,7 +16,7 @@ public class Song {
     @Column(name="id")
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "SongId")
     private List<Rate> rateList;
     //endregion

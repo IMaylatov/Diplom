@@ -1,9 +1,5 @@
 package com.IMaylatov.Recommend.Model;
 
-/**
- * Created by Liggoriya on 21.03.2015.
- */
-
 import javax.persistence.*;
 import java.io.Serializable;
 import javax.persistence.Embeddable;
@@ -76,11 +72,11 @@ public class Rate{
     @Embeddable
     public static class RatePK implements Serializable {
         //region field
-        @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+        @ManyToOne(fetch = FetchType.EAGER)
         @JoinColumn(name = "PersonId")
         private Person person;
 
-        @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+        @ManyToOne(fetch = FetchType.EAGER)
         @JoinColumn(name = "SongId")
         private Song song;
         //endregion
