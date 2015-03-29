@@ -6,12 +6,18 @@ import com.IMaylatov.Recommend.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Model.Person;
 import com.IMaylatov.Recommend.Model.Rate;
 import com.IMaylatov.Recommend.Model.Song;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.transaction.TransactionConfiguration;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Тест для проверки RateDAO
@@ -22,37 +28,42 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private RateDAO rateDAO;
     @Autowired
-    private PersonDAO personDAO;
-    @Autowired
-    private SongDAO songDAO;
+    private SessionFactory sessionFactory;
+
+    private Session session;
+
+    @Before
+    public void init(){
+        session = sessionFactory.getCurrentSession();
+    }
 
     @Test
     public void saveTest(){
         // Сохранить оценку с существующими пользователями и песней
         Person person = new Person();
-        personDAO.save(person);
+        session.save(person);
         Song song = new Song();
-        songDAO.save(song);
+        session.save(song);
 
-        person = personDAO.find(person.getId());
-        song = songDAO.find(song.getId());
+        person = (Person) session.get(Person.class, person.getId());
+        song = (Song) session.get(Song.class, song.getId());
 
         Rate rate = new Rate(new Rate.RatePK(person, song), 4);
         rateDAO.save(rate);
-        rate = rateDAO.find(new Rate.RatePK(person, song));
+        rate = (Rate) session.get(Rate.class, rate.getId());
         Assert.assertNotNull("Оценка добавлена", rate);
         Assert.assertEquals("Оценка сохранилась верно", 4, rate.getValue());
 
-        // Сохранить оценку с существующим пользователем, но не существующей оценкой
-        song = new Song();
-        person = new Person();
-        personDAO.save(person);
-        person = personDAO.find(person.getId());
-        rate = new Rate(new Rate.RatePK(person, song), 4);
-        rateDAO.save(rate);
-        rate = rateDAO.find(new Rate.RatePK(person, song));
-        Assert.assertNotNull("Оценка добавлена", rate);
-        Assert.assertEquals("Оценка сохранена верно", 4, rate.getValue());
+        // Сохранить оценку с существующим пользователем, но не существующей песней
+//        song = new Song();
+//        person = new Person();
+//        personDAO.save(person);
+//        person = personDAO.find(person.getId());
+//        rate = new Rate(new Rate.RatePK(person, song), 4);
+//        rateDAO.save(rate);
+//        rate = rateDAO.find(new Rate.RatePK(person, song));
+//        Assert.assertNotNull("Оценка добавлена", rate);
+//        Assert.assertEquals("Оценка сохранена верно", 4, rate.getValue());
     }
 
     @Test
@@ -60,7 +71,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         Person person = new Person();
         Song song = new Song();
         Rate rate = new Rate(new Rate.RatePK(person, song), 4);
-        rateDAO.save(rate);
+        session.save(rate);
         rate = rateDAO.find(rate.getId());
         Assert.assertNotNull("Оценка найдена", rate);
         Assert.assertEquals("Оценка найдена верно", 4, rate.getValue());
@@ -69,16 +80,14 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     public void updateTest(){
         Person person = new Person();
-        personDAO.save(person);
+        session.save(person);
         Song song = new Song();
-        songDAO.save(song);
+        session.save(song);
         Rate rate = new Rate(new Rate.RatePK(person, song), 4);
-        rateDAO.save(rate);
+        session.save(rate);
         rate.setValue(5);
         rateDAO.update(rate);
-
-        rate = rateDAO.find(rate.getId());
-
+        rate = (Rate) session.get(Rate.class, rate.getId());
         Assert.assertNotNull("Оценка обновлена", rate);
         Assert.assertEquals("Значение оценки обновлено правильно", 5, rate.getValue());
     }
@@ -86,15 +95,29 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     public void deleteTest(){
         Person person = new Person();
-        personDAO.save(person);
+        session.save(person);
         Song song = new Song();
-        songDAO.save(song);
+        session.save(song);
         Rate rate = new Rate(new Rate.RatePK(person, song), 4);
-        rateDAO.save(rate);
+        session.save(rate);
         rateDAO.delete(rate);
-        rate = rateDAO.find(rate.getId());
-
+        rate = (Rate) session.get(Rate.class, rate.getId());
         Assert.assertNull("Оценка удалена", rate);
     }
 
+    @Test
+    public void listTest(){
+        List<Rate> rateList = new ArrayList<Rate>();
+        for (int i = 0; i < 7; i++) {
+            Person person = new Person();
+            session.save(person);
+            Song song = new Song();
+            session.save(song);
+
+            Rate rate = new Rate(new Rate.RatePK(person, song), i % 5 + 1);
+            rateList.add(rate);
+            session.save(rate);
+        }
+        Assert.assertTrue("Оценки найдены", rateDAO.list().containsAll(rateList));
+    }
 }

@@ -2,6 +2,9 @@ package DAO;
 
 import com.IMaylatov.Recommend.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.Model.Person;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -9,6 +12,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.junit.Assert;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,30 +27,49 @@ import java.util.List;
 public class PersonDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private PersonDAO personDAO;
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    private Session session;
+
+    @Before
+    public void init(){
+        session = sessionFactory.getCurrentSession();
+    }
 
     @Test
     public void saveTest() {
-        int countPersonBeforeAdd = personDAO.list().size();
         Person person = new Person();
         personDAO.save(person);
-        List<Person> personList = personDAO.list();
-        Assert.assertEquals("Персона добавлена", countPersonBeforeAdd + 1, personList.size());
-        Assert.assertTrue("Созданная персона есть в БД", personList.contains(person));
+        Person findPerson = (Person) session.get(Person.class, person.getId());
+        Assert.assertNotNull("Персона добавлена", findPerson);
+        Assert.assertTrue("Созданная персона есть в БД", person.equals(findPerson));
     }
 
     @Test
     public void findTest(){
         Person person = new Person();
-        personDAO.save(person);
+        session.save(person);
         Assert.assertEquals("Персона найдена", person.getId(), personDAO.find(person.getId()).getId());
     }
 
     @Test
     public void deleteTest(){
         Person person = new Person();
-        personDAO.save(person);
-        int countPersonBeforeDelete = personDAO.list().size();
+        session.save(person);
         personDAO.delete(person);
-        Assert.assertEquals("Персона удалена", countPersonBeforeDelete - 1, personDAO.list().size());
+        person = (Person) session.get(Person.class, person.getId());
+        Assert.assertNull("Персона удалена", person);
+    }
+
+    @Test
+    public void listTest(){
+        List<Person> personList = new ArrayList<Person>();
+        for (int i = 0; i < 7; i++) {
+            Person person = new Person();
+            personList.add(person);
+            session.save(person);
+        }
+        Assert.assertTrue("Персоны найдены", personDAO.list().containsAll(personList));
     }
 }

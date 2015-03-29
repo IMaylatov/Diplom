@@ -4186,3 +4186,1173 @@ Caused by: java.lang.NoSuchMethodError: org.hibernate.cfg.Configuration.addAnnot
 2015-03-26 17:26:20 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@7722c3c3: startup date [Thu Mar 26 17:26:15 BRT 2015]; root of context hierarchy
 2015-03-26 17:26:20 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
 2015-03-26 17:26:20 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 11:45:28 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 11:45:28 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@670002, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f0f1111, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49c386c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56528192]
+2015-03-29 11:45:28 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 11:45:30 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@291ae: startup date [Sun Mar 29 11:45:30 BRT 2015]; root of context hierarchy
+2015-03-29 11:45:31 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 11:45:32 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 11:45:32 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 11:45:32 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 11:45:32 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 11:45:32 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 11:45:32 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 11:45:32 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 11:45:32 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 11:45:32 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 11:45:32 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 11:45:32 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 11:45:32 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 11:45:32 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 11:45:32 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 11:45:32 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 11:45:32 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 11:45:33 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 11:45:33 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 11:45:33 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 11:45:33 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 11:45:33 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 11:45:33 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 11:45:33 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 11:45:33 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 11:45:33 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 11:45:33 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 11:45:33 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 11:45:33 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 11:45:33 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 11:45:33 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 11:45:33 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 11:45:33 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 11:45:33 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 11:45:33 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 11:45:33 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 11:45:33 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 11:45:33 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 11:45:33 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 11:45:33 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 11:45:33 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 11:45:33 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 11:45:33 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 11:45:33 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@1286528d
+2015-03-29 11:45:34 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 11:45:34 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2098d37d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 11:45:34 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 11:45:35 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3be4fcc0, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 11:48:26 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 11:48:26 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d4342c2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2bbf180e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@163e4e87, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56de5251]
+2015-03-29 11:48:26 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 11:48:28 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@6a192cfe: startup date [Sun Mar 29 11:48:28 BRT 2015]; root of context hierarchy
+2015-03-29 11:48:30 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 11:48:30 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 11:48:30 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 11:48:30 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 11:48:30 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 11:48:30 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 11:48:30 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 11:48:30 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 11:48:31 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 11:48:31 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 11:48:31 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 11:48:31 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 11:48:31 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 11:48:31 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 11:48:31 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 11:48:31 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 11:48:31 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 11:48:31 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 11:48:31 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 11:48:31 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 11:48:31 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 11:48:31 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 11:48:31 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 11:48:31 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 11:48:31 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 11:48:31 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 11:48:31 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 11:48:31 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 11:48:31 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 11:48:31 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 11:48:31 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 11:48:31 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 11:48:31 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 11:48:31 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 11:48:31 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 11:48:31 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 11:48:31 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 11:48:31 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 11:48:31 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 11:48:31 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 11:48:31 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 11:48:31 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 11:48:31 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 11:48:31 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@76adb233
+2015-03-29 11:48:32 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 11:48:32 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@48b22fd4] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 11:48:32 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 11:48:33 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3be4fcc0, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 11:55:09 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 11:55:09 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@670002, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f0f1111, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49c386c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56528192]
+2015-03-29 11:55:09 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 11:55:11 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@291ae: startup date [Sun Mar 29 11:55:11 BRT 2015]; root of context hierarchy
+2015-03-29 11:55:12 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 11:55:12 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 11:55:12 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 11:55:12 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 11:55:12 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 11:55:12 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 11:55:13 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 11:55:13 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 11:55:13 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 11:55:13 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 11:55:13 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 11:55:13 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 11:55:13 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 11:55:13 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 11:55:13 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 11:55:13 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 11:55:13 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 11:55:13 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 11:55:13 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 11:55:13 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 11:55:13 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 11:55:13 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 11:55:13 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 11:55:13 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 11:55:13 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 11:55:13 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 11:55:13 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 11:55:13 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 11:55:13 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 11:55:13 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 11:55:13 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 11:55:13 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 11:55:13 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 11:55:13 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 11:55:13 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 11:55:13 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 11:55:13 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 11:55:13 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 11:55:13 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 11:55:13 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 11:55:13 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 11:55:13 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 11:55:14 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 11:55:14 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 11:55:14 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 11:55:14 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 11:55:14 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 11:55:14 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 11:55:14 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 11:55:14 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 11:55:14 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 11:55:14 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 11:55:14 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 11:55:14 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 11:55:14 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@1286528d
+2015-03-29 11:55:14 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 11:55:15 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2098d37d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 11:55:15 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 11:55:15 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3be4fcc0, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 11:58:24 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 11:58:24 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f112965, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a04f701, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e91d63f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d4342c2]
+2015-03-29 11:58:25 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 11:58:26 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@2f7298b: startup date [Sun Mar 29 11:58:26 BRT 2015]; root of context hierarchy
+2015-03-29 11:58:27 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 11:58:27 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 11:58:27 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 11:58:27 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 11:58:27 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 11:58:27 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 11:58:28 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 11:58:28 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 11:58:28 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 11:58:28 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 11:58:28 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 11:58:28 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 11:58:28 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 11:58:28 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 11:58:28 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 11:58:28 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 11:58:28 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 11:58:28 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 11:58:28 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 11:58:29 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 11:58:29 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 11:58:29 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 11:58:29 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 11:58:29 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 11:58:29 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 11:58:29 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 11:58:29 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 11:58:29 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 11:58:29 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 11:58:29 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 11:58:29 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 11:58:29 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 11:58:29 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 11:58:29 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 11:58:29 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 11:58:29 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 11:58:29 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 11:58:29 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 11:58:29 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 11:58:29 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 11:58:29 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 11:58:29 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 11:58:29 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 11:58:29 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@3e6fd0b9
+2015-03-29 11:58:30 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 11:58:30 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@7b7b3edb] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 11:58:30 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 11:58:30 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3be4fcc0, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 11:58:31 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3be4fcc0, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 11:58:31 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@38320e34, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 11:58:31 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@38320e34, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 11:58:31 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@440eaa07, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 11:58:31 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@440eaa07, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 11:58:31 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@2f7298b: startup date [Sun Mar 29 11:58:26 BRT 2015]; root of context hierarchy
+2015-03-29 11:58:31 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 11:58:31 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:03:14 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:03:14 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f112965, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a04f701, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e91d63f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d4342c2]
+2015-03-29 12:03:15 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:03:16 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@2f7298b: startup date [Sun Mar 29 12:03:16 BRT 2015]; root of context hierarchy
+2015-03-29 12:03:17 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:03:18 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:03:18 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:03:18 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:03:18 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:03:18 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:03:18 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:03:18 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:03:19 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:03:19 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:03:19 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:03:19 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:03:19 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:03:19 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:03:19 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:03:19 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:03:19 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:03:19 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:03:19 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:03:19 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:03:19 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:03:19 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:03:19 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:03:19 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:03:19 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:03:19 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:03:19 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:03:19 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:03:19 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:03:19 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:03:19 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:03:19 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:03:19 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:03:19 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:03:19 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:03:19 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:03:19 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:03:19 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:03:19 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:03:19 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:03:19 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:03:19 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:03:19 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:03:19 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@3e6fd0b9
+2015-03-29 12:03:20 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:03:20 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@7b7b3edb] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:03:21 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:03:21 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3be4fcc0, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 12:03:21 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3be4fcc0, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:03:21 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@38320e34, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 12:03:21 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@38320e34, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:03:21 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@440eaa07, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@661c46bc]; rollback [true]
+2015-03-29 12:03:21 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3f1ddac2 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@440eaa07, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e1e2e5e testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:03:21 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@2f7298b: startup date [Sun Mar 29 12:03:16 BRT 2015]; root of context hierarchy
+2015-03-29 12:03:21 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:03:21 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:08:23 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:08:23 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f112965, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a04f701, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e91d63f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d4342c2]
+2015-03-29 12:08:24 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:08:25 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@188715b5: startup date [Sun Mar 29 12:08:25 BRT 2015]; root of context hierarchy
+2015-03-29 12:08:26 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:08:27 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:08:27 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:08:27 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:08:27 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:08:27 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:08:28 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:08:28 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:08:28 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:08:28 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:08:28 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:08:28 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:08:28 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:08:28 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:08:28 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:08:28 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:08:28 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:08:28 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:08:28 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:08:28 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:08:28 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:08:28 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:08:28 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:08:29 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:08:29 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:08:29 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:08:29 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:08:29 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:08:29 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:08:29 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:08:29 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:08:29 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:08:29 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:08:29 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:08:29 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:08:29 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:08:29 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:08:29 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:08:29 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:08:29 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:08:29 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:08:29 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:08:29 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:08:29 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@155d1021
+2015-03-29 12:08:29 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:08:30 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@25a73de1] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:08:30 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:08:31 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@66153688, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:08:31 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@66153688, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:08:31 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@15f8701f, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:08:31 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@15f8701f, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:08:31 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@eb507b9, testMethod = listTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:08:31 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@eb507b9, testMethod = listTest@PersonDAOTest, testException = java.lang.AssertionError: Персоны найдены, mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:08:31 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@4afd21c6, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:08:31 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@23940f86 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@4afd21c6, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:08:31 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@188715b5: startup date [Sun Mar 29 12:08:25 BRT 2015]; root of context hierarchy
+2015-03-29 12:08:31 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:08:31 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:08:47 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:08:47 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@670002, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f0f1111, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49c386c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56528192]
+2015-03-29 12:08:48 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:08:49 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@61df66b6: startup date [Sun Mar 29 12:08:49 BRT 2015]; root of context hierarchy
+2015-03-29 12:08:50 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:08:51 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:08:51 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:08:51 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:08:51 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:08:51 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:08:51 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:08:51 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:08:51 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:08:51 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:08:51 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:08:51 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:08:51 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:08:51 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:08:51 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:08:51 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:08:51 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:08:51 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:08:51 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:08:52 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:08:52 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:08:52 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:08:52 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:08:52 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:08:52 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:08:52 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:08:52 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:08:52 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:08:52 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:08:52 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:08:52 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:08:52 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:08:52 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:08:52 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:08:52 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:08:52 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:08:52 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:08:52 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:08:52 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:08:52 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:08:52 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:08:52 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:08:52 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:08:52 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@5f212d84
+2015-03-29 12:08:52 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:08:53 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@14fc5d40] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:08:53 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:08:53 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@e1e2e5e, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:08:54 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@e1e2e5e, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:08:54 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@390877d2, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:08:54 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@390877d2, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:08:54 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@7fc7c4a, testMethod = listTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:14:48 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:14:48 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f112965, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a04f701, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e91d63f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d4342c2]
+2015-03-29 12:14:49 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:14:50 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@188715b5: startup date [Sun Mar 29 12:14:50 BRT 2015]; root of context hierarchy
+2015-03-29 12:14:51 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:14:52 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:14:52 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:14:52 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:14:52 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:14:52 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:14:52 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:14:52 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:14:53 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:14:53 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:14:53 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:14:53 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:14:53 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:14:53 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:14:53 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:14:53 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:14:53 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:14:53 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:14:53 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:14:53 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:14:53 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:14:53 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:14:53 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:14:53 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:14:53 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:14:53 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:14:53 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:14:53 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:14:53 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:14:53 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:14:53 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:14:53 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:14:53 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:14:53 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:14:53 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:14:53 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:14:53 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:14:53 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:14:53 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:14:53 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:14:53 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:14:53 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:14:53 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:14:53 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@7fcff1b9
+2015-03-29 12:14:54 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:14:54 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@108531c2] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:14:54 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:14:55 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@e1e2e5e, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:14:55 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@e1e2e5e, testMethod = saveTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:14:55 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@390877d2, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:14:55 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@390877d2, testMethod = findTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:14:55 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@7fc7c4a, testMethod = listTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:14:55 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@7fc7c4a, testMethod = listTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:14:56 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3bd3d05e, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:14:56 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = PersonDAOTest, testInstance = DAO.PersonDAOTest@3bd3d05e, testMethod = deleteTest@PersonDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = PersonDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:14:56 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@188715b5: startup date [Sun Mar 29 12:14:50 BRT 2015]; root of context hierarchy
+2015-03-29 12:14:56 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:14:56 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:19:29 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:19:29 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@670002, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f0f1111, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49c386c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56528192]
+2015-03-29 12:19:30 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:19:31 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@61df66b6: startup date [Sun Mar 29 12:19:31 BRT 2015]; root of context hierarchy
+2015-03-29 12:19:32 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:19:33 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:19:33 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:19:33 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:19:33 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:19:33 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:19:33 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:19:33 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:19:33 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:19:33 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:19:33 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:19:33 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:19:33 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:19:33 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:19:33 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:19:33 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:19:34 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:19:34 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:19:34 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:19:34 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:19:34 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:19:34 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:19:34 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:19:34 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:19:34 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:19:34 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:19:34 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:19:34 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:19:34 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:19:34 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:19:34 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:19:34 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:19:34 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:19:34 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:19:34 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:19:34 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:19:34 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:19:34 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:19:34 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:19:34 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:19:34 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:19:34 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:19:34 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:19:34 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@602c4656
+2015-03-29 12:19:35 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:19:35 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4074023c] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:19:35 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:19:36 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@e1e2e5e, testMethod = saveTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:19:36 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@e1e2e5e, testMethod = saveTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:19:36 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@390877d2, testMethod = findTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:19:36 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@390877d2, testMethod = findTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:19:36 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@7fc7c4a, testMethod = listTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:19:36 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@7fc7c4a, testMethod = listTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:19:37 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@3bd3d05e, testMethod = deleteTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:19:37 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = SongDAOTest, testInstance = DAO.SongDAOTest@3bd3d05e, testMethod = deleteTest@SongDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = SongDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:19:37 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@61df66b6: startup date [Sun Mar 29 12:19:31 BRT 2015]; root of context hierarchy
+2015-03-29 12:19:37 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:19:37 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:20:06 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:20:06 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@23ceabc1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5d5eef3d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f4468b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6cc4c815]
+2015-03-29 12:20:07 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:20:08 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@271053e1: startup date [Sun Mar 29 12:20:08 BRT 2015]; root of context hierarchy
+2015-03-29 12:20:09 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:20:09 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:20:09 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:20:09 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:20:09 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:20:10 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:20:10 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:20:10 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:20:10 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:20:10 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:20:10 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:20:10 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:20:10 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:20:10 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:20:10 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:20:10 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:20:10 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:20:10 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:20:10 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:20:10 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:20:10 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:20:10 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:20:10 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:20:10 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:20:10 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:20:10 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:20:10 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:20:10 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:20:10 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:20:10 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:20:10 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:20:10 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:20:10 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:20:10 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:20:10 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:20:10 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:20:10 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:20:10 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:20:10 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:20:10 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:20:10 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:20:10 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:20:11 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:20:11 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@38089a5a
+2015-03-29 12:20:11 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:20:11 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@3cc41abc] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:20:11 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:20:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@62dae540, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@654d8173]; rollback [true]
+2015-03-29 12:20:12 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@62dae540, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:20:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@64df9a61, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@654d8173]; rollback [true]
+2015-03-29 12:20:12 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@64df9a61, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:20:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2c3dec30, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@654d8173]; rollback [true]
+2015-03-29 12:20:12 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2c3dec30, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:20:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2cac4385, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@654d8173]; rollback [true]
+2015-03-29 12:20:12 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@4bff1903 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2cac4385, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@5827af16 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:20:12 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@271053e1: startup date [Sun Mar 29 12:20:08 BRT 2015]; root of context hierarchy
+2015-03-29 12:20:12 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:20:12 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:25:12 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:25:12 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f112965, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a04f701, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e91d63f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d4342c2]
+2015-03-29 12:25:12 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:25:13 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@188715b5: startup date [Sun Mar 29 12:25:13 BRT 2015]; root of context hierarchy
+2015-03-29 12:25:14 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:25:15 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:25:15 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:25:15 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:25:15 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:25:15 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:25:15 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:25:15 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:25:15 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:25:15 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:25:15 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:25:15 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:25:15 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:25:15 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:25:15 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:25:15 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:25:15 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:25:15 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:25:16 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:25:16 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:25:16 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:25:16 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:25:16 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:25:16 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:25:16 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:25:16 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:25:16 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:25:16 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:25:16 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:25:16 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:25:16 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:25:16 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:25:16 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:25:16 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:25:16 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:25:16 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:25:16 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:25:16 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:25:16 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:25:16 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:25:16 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:25:16 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:25:16 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:25:16 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@7fcff1b9
+2015-03-29 12:25:17 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:25:17 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@6b474074] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:25:17 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:25:18 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@e1e2e5e, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:25:18 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@e1e2e5e, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:25:18 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@6b00ad9, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:25:18 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@6b00ad9, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:25:18 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@7afbf561, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:25:18 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@7afbf561, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:25:18 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@771cbb1a, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:25:18 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@771cbb1a, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:25:18 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@188715b5: startup date [Sun Mar 29 12:25:13 BRT 2015]; root of context hierarchy
+2015-03-29 12:25:18 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:25:18 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:28:27 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:28:27 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@670002, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f0f1111, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49c386c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56528192]
+2015-03-29 12:28:27 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:28:28 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@50eac852: startup date [Sun Mar 29 12:28:28 BRT 2015]; root of context hierarchy
+2015-03-29 12:28:29 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:28:30 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:28:30 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:28:30 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:28:30 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:28:30 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:28:30 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:28:30 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:28:31 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:28:31 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:28:31 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:28:31 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:28:31 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:28:31 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:28:31 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:28:31 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:28:31 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:28:31 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:28:31 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:28:31 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:28:31 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:28:31 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:28:31 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:28:31 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:28:31 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:28:31 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:28:31 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:28:31 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:28:31 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:28:31 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:28:31 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:28:31 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:28:31 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:28:31 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:28:31 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:28:31 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:28:31 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:28:31 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:28:31 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:28:31 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:28:31 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:28:31 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:28:31 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:28:31 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@33a630fa
+2015-03-29 12:28:32 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:28:32 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@65fd6708] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:28:32 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:28:33 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@661c46bc, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:28:33 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@661c46bc, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:28:33 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@338cc75f, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:28:33 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@338cc75f, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:28:33 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2f98635e, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:28:33 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2f98635e, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:28:33 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2416498e, testMethod = listTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:28:33 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2416498e, testMethod = listTest@RateDAOTest, testException = org.hibernate.InstantiationException: No default constructor for entity: com.IMaylatov.Recommend.Model.Rate$RatePK, mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:28:33 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@1416a80a, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:28:33 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@1416a80a, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:28:33 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@50eac852: startup date [Sun Mar 29 12:28:28 BRT 2015]; root of context hierarchy
+2015-03-29 12:28:33 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:28:33 INFO  SessionFactoryImpl:927 - closing
+2015-03-29 12:29:06 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:29:06 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f112965, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a04f701, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e91d63f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d4342c2]
+2015-03-29 12:29:06 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:29:07 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@1ea9f6af: startup date [Sun Mar 29 12:29:07 BRT 2015]; root of context hierarchy
+2015-03-29 12:29:08 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:29:09 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:29:09 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:29:09 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:29:09 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:29:09 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:29:09 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:29:10 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:29:10 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:29:10 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:29:10 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:29:10 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:29:10 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:29:10 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:29:10 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:29:10 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:29:10 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:29:10 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:29:10 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:29:10 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:29:10 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:29:10 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:29:10 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:29:10 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:29:10 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:29:10 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:29:10 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:29:10 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:29:10 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:29:10 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:29:10 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:29:10 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:29:10 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:29:10 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:29:10 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:29:10 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:29:10 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:29:10 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:29:10 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:29:10 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:29:10 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:29:10 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:29:10 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:29:11 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@697446d4
+2015-03-29 12:29:11 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:29:11 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@108531c2] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:29:11 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:29:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@66153688, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:29:12 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@23940f86 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@66153688, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:29:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@3ec2ecea, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:29:12 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@23940f86 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@3ec2ecea, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:29:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@53a5e217, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:29:12 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@23940f86 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@53a5e217, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:29:12 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@23940f86 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2f98635e, testMethod = listTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@455824ad testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@7318daf8]; rollback [true]
+2015-03-29 12:30:19 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:30:19 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f112965, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a04f701, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e91d63f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d4342c2]
+2015-03-29 12:30:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:30:21 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@1ea9f6af: startup date [Sun Mar 29 12:30:21 BRT 2015]; root of context hierarchy
+2015-03-29 12:30:22 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:30:22 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:30:22 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:30:22 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:30:22 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:30:22 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:30:23 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:30:23 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:30:23 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:30:23 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:30:23 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:30:23 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:30:23 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:30:23 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:30:23 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:30:23 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:30:23 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:30:23 INFO  PojoInstantiator:65 - no default (no-argument) constructor for class: com.IMaylatov.Recommend.Model.Rate$RatePK (class must be instantiated by Interceptor)
+2015-03-29 12:30:23 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:30:24 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:30:24 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:30:24 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:30:24 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:30:24 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:30:24 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:30:24 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:30:24 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:30:24 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:30:24 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:30:24 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:30:24 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:30:24 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:30:24 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:30:24 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:30:24 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:30:24 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:30:24 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:30:24 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:30:24 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:30:24 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:30:24 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:30:24 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:30:24 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:30:24 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@697446d4
+2015-03-29 12:30:25 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:30:25 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@108531c2] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:30:25 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:30:26 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@e1e2e5e, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:30:26 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@e1e2e5e, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:30:26 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@6b00ad9, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:30:26 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@6b00ad9, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:30:26 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@7afbf561, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:30:26 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@7afbf561, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:30:26 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@3be4fcc0 testClass = RateDAOTest, testInstance = DAO.RateDAOTest@771cbb1a, testMethod = listTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@661c46bc testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@37864b77]; rollback [true]
+2015-03-29 12:31:21 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-03-29 12:31:21 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@670002, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f0f1111, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49c386c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56528192]
+2015-03-29 12:31:21 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-03-29 12:31:23 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@50eac852: startup date [Sun Mar 29 12:31:23 BRT 2015]; root of context hierarchy
+2015-03-29 12:31:24 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: org.postgresql.Driver
+2015-03-29 12:31:24 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-03-29 12:31:24 INFO  Environment:603 - Hibernate 3.6.9.Final
+2015-03-29 12:31:24 INFO  Environment:636 - hibernate.properties not found
+2015-03-29 12:31:24 INFO  Environment:814 - Bytecode provider name : javassist
+2015-03-29 12:31:24 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-03-29 12:31:25 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Person
+2015-03-29 12:31:25 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Person on table Person
+2015-03-29 12:31:25 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Rate
+2015-03-29 12:31:25 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Rate on table Rate
+2015-03-29 12:31:25 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.IMaylatov.Recommend.Model.Song
+2015-03-29 12:31:25 INFO  EntityBinder:530 - Bind entity com.IMaylatov.Recommend.Model.Song on table Song
+2015-03-29 12:31:25 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Song.rateList -> Rate
+2015-03-29 12:31:25 INFO  CollectionBinder:762 - Mapping collection: com.IMaylatov.Recommend.Model.Person.rateList -> Rate
+2015-03-29 12:31:25 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-03-29 12:31:25 INFO  AnnotationSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-03-29 12:31:25 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-03-29 12:31:25 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-03-29 12:31:26 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2015-03-29 12:31:26 INFO  JdbcSupportLoader:108 - Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-03-29 12:31:26 INFO  SettingsFactory:126 - Database ->
+       name : PostgreSQL
+    version : 9.3.3
+      major : 9
+      minor : 3
+2015-03-29 12:31:26 INFO  SettingsFactory:132 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.3 JDBC4.1 (build 1100)
+      major : 9
+      minor : 3
+2015-03-29 12:31:26 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-03-29 12:31:26 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-03-29 12:31:26 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:190 - JDBC batch size: 10
+2015-03-29 12:31:26 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-03-29 12:31:26 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-03-29 12:31:26 INFO  SettingsFactory:210 - JDBC result set fetch size: 50
+2015-03-29 12:31:26 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-03-29 12:31:26 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 3
+2015-03-29 12:31:26 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-03-29 12:31:26 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-03-29 12:31:26 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-03-29 12:31:26 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-03-29 12:31:26 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-03-29 12:31:26 INFO  SettingsFactory:275 - Query cache: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-03-29 12:31:26 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-03-29 12:31:26 INFO  SettingsFactory:323 - Statistics: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-03-29 12:31:26 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-03-29 12:31:26 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-03-29 12:31:26 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-03-29 12:31:26 INFO  SessionFactoryImpl:202 - building session factory
+2015-03-29 12:31:26 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@5ffc5491
+2015-03-29 12:31:26 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-03-29 12:31:27 INFO  HibernateTransactionManager:418 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@3ed0918d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-03-29 12:31:27 INFO  CglibAopProxy:264 - Unable to proxy method [public final void org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests.setApplicationContext(org.springframework.context.ApplicationContext)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+2015-03-29 12:31:27 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@661c46bc, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:31:27 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@661c46bc, testMethod = saveTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:31:28 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@338cc75f, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:31:28 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@338cc75f, testMethod = findTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:31:28 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2f98635e, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:31:28 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2f98635e, testMethod = updateTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:31:28 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2416498e, testMethod = listTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:31:44 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@2416498e, testMethod = listTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:31:45 INFO  TransactionContext:101 - Began transaction (1) for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@4096aa05, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@2b98b3bb]; rollback [true]
+2015-03-29 12:31:45 INFO  TransactionContext:136 - Rolled back transaction for test context [DefaultTestContext@e1e2e5e testClass = RateDAOTest, testInstance = DAO.RateDAOTest@4096aa05, testMethod = deleteTest@RateDAOTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37864b77 testClass = RateDAOTest, locations = '{classpath:app-context.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+2015-03-29 12:31:45 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@50eac852: startup date [Sun Mar 29 12:31:23 BRT 2015]; root of context hierarchy
+2015-03-29 12:31:45 INFO  AnnotationSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-03-29 12:31:45 INFO  SessionFactoryImpl:927 - closing

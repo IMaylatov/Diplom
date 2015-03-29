@@ -2,16 +2,18 @@ package DAO;
 
 import com.IMaylatov.Recommend.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Model.Person;
-import com.IMaylatov.Recommend.Model.Rate;
 import com.IMaylatov.Recommend.Model.Song;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,31 +26,48 @@ public class SongDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private SongDAO songDAO;
     @Autowired
-    private PersonDAO personDAO;
+    private SessionFactory sessionFactory;
+
+    private Session session;
+
+    @Before
+    public void init(){
+        session = sessionFactory.getCurrentSession();
+    }
 
     @Test
     public void saveTest() {
-        int countSongBeforeAdd = songDAO.list().size();
         Song song = new Song();
         songDAO.save(song);
-        List<Song> songList = songDAO.list();
-        Assert.assertEquals("Песня добавлена", countSongBeforeAdd + 1, songList.size());
-        Assert.assertTrue("Созданная песня есть в БД", songList.contains(song));
+        Song findSong = (Song) session.get(Song.class, song.getId());
+        Assert.assertNotNull("Песня добавлена", findSong);
+        Assert.assertTrue("Созданная песня есть в БД", song.equals(findSong));
     }
 
     @Test
     public void findTest(){
         Song song = new Song();
-        songDAO.save(song);
+        session.save(song);
         Assert.assertEquals("Песня найдена", song.getId(), songDAO.find(song.getId()).getId());
     }
 
     @Test
     public void deleteTest(){
         Song song = new Song();
-        songDAO.save(song);
-        int countSongBeforeDelete = songDAO.list().size();
+        session.save(song);
         songDAO.delete(song);
-        Assert.assertEquals("Песня удалена", countSongBeforeDelete - 1, songDAO.list().size());
+        song = (Song) session.get(Song.class, song.getId());
+        Assert.assertNull("Песня удалена", song);
+    }
+
+    @Test
+    public void listTest(){
+        List<Song> songList = new ArrayList<Song>();
+        for (int i = 0; i < 7; i++) {
+            Song song = new Song();
+            songList.add(song);
+            session.save(song);
+        }
+        Assert.assertTrue("Песни найдены", songDAO.list().containsAll(songList));
     }
 }

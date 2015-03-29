@@ -86,6 +86,9 @@ public class Rate{
         //endregion
 
         //region Constructor
+        private RatePK(){
+        }
+
         public RatePK(Person person, Song song) {
             this.person = person;
             this.song = song;
