@@ -73,11 +73,11 @@ public class Rate{
     public static class RatePK implements Serializable {
         //region field
         @ManyToOne(fetch = FetchType.EAGER)
-        @JoinColumn(name = "PersonId")
+        @JoinColumn(name = "PersonId", nullable = false)
         private Person person;
 
         @ManyToOne(fetch = FetchType.EAGER)
-        @JoinColumn(name = "SongId")
+        @JoinColumn(name = "SongId", nullable = false)
         private Song song;
         //endregion
 
@@ -86,8 +86,8 @@ public class Rate{
         }
 
         public RatePK(Person person, Song song) {
-            this.person = person;
-            this.song = song;
+            setPerson(person);
+            setSong(song);
         }
         //endregion
 
@@ -96,6 +96,8 @@ public class Rate{
             return person;
         }
         public void setPerson(Person person) {
+            if (person == null)
+                throw new NullPointerException("Пользователь не может быть null");
             this.person = person;
         }
 
@@ -103,6 +105,8 @@ public class Rate{
             return song;
         }
         public void setSong(Song song) {
+            if (song == null)
+                throw new NullPointerException("Песня не может быть null");
             this.song = song;
         }
         //endregion

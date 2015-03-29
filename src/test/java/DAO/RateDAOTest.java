@@ -61,7 +61,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         rate = new Rate(new Rate.RatePK(person, song), 4);
         rateDAO.save(rate);
 
-        rate = (Rate) session.get(Rate.class, new Rate.RatePK(person, song));
+        rate = (Rate) session.get(Rate.class, rate.getId());
         Assert.assertNull("Оценка не может быть добавлена", rate);
     }
 
