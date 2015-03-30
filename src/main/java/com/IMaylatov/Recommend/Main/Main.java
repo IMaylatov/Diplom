@@ -15,13 +15,15 @@ import com.IMaylatov.Recommend.Model.Song;
 public class Main {
     public static void main(String[] args) {
         PersonDAO personDAO = DbContext.INSTANCE.getDAO("PersonDAO");
-        Person person = personDAO.find(6L);
-
-        SongDAO songDAO = DbContext.INSTANCE.getDAO("SongDAO");
-        Song song = songDAO.find(1L);
-
         RateDAO rateDAO = DbContext.INSTANCE.getDAO("RateDAO");
-        Rate rate = rateDAO.find(new Rate.RatePK(person, song));
+        SongDAO songDAO = DbContext.INSTANCE.getDAO("SongDAO");
+
+        Song song = new Song();
+        Person person = new Person();
+        personDAO.save(person);
+        //songDAO.save(song);
+        Rate rate = new Rate(new Rate.RatePK(person, song), 4);
+        rateDAO.save(rate);
 
         System.out.println();
     }

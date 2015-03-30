@@ -11,15 +11,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Тест для проверки RateDAO
  */
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:app-context.xml" })
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
 public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
@@ -38,7 +40,6 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Test
     public void saveTest(){
         // Оценка не может быть добавлена, если песни или пользователя не существует
-
         // Сохранить оценку с существующими пользователями и песней
         Person person = new Person();
         session.save(person);
@@ -59,10 +60,19 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         person = new Person();
         session.save(person);
         rate = new Rate(new Rate.RatePK(person, song), 4);
-        rateDAO.save(rate);
+        try {
+            rateDAO.save(rate);
+            Assert.assertTrue("Оценка не может быть добавлена", false);
+        }catch (Exception ex){}
 
-        rate = (Rate) session.get(Rate.class, rate.getId());
-        Assert.assertNull("Оценка не может быть добавлена", rate);
+        song = new Song();
+        session.save(song);
+        person = new Person();
+        rate = new Rate(new Rate.RatePK(person, song), 4);
+        try{
+            rateDAO.save(rate);
+            Assert.assertTrue("Оценка не может быть добавлена", false);
+        }catch (Exception ex){}
     }
 
     @Test
