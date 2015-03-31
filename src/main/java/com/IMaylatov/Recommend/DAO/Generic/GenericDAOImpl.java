@@ -78,5 +78,10 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     public List<T> list() {
         return currentSession().createCriteria(typeEntity).list();
     }
+
+    @Override
+    public void shutdown(){
+        currentSession().createSQLQuery("SHUTDOWN").executeUpdate();
+    }
     //endregion
 }

@@ -1,6 +1,5 @@
 package DAO;
 
-import com.IMaylatov.Recommend.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Model.Song;
 import org.hibernate.Session;

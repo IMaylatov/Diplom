@@ -42,4 +42,9 @@ public interface GenericDAO<T, K extends Serializable> {
      * @return возвращаемый список
      */
     public List<T> list();
+
+    /**
+     * Завершить сессию
+     */
+    public void shutdown();
 }

@@ -7,6 +7,7 @@ import com.IMaylatov.Recommend.DbContext;
 import com.IMaylatov.Recommend.Model.Person;
 import com.IMaylatov.Recommend.Model.Rate;
 import com.IMaylatov.Recommend.Model.Song;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 /**
@@ -14,17 +15,20 @@ import com.IMaylatov.Recommend.Model.Song;
  */
 public class Main {
     public static void main(String[] args) {
-        PersonDAO personDAO = DbContext.INSTANCE.getDAO("PersonDAO");
-        RateDAO rateDAO = DbContext.INSTANCE.getDAO("RateDAO");
-        SongDAO songDAO = DbContext.INSTANCE.getDAO("SongDAO");
+        ClassPathXmlApplicationContext instance =
+                (new ClassPathXmlApplicationContext(new String[] {"app-context.xml"},true));
 
-        Song song = new Song();
+        PersonDAO personDAO = (PersonDAO) instance.getBean("PersonDAO");
+        RateDAO rateDAO = (RateDAO) instance.getBean("RateDAO");
+        SongDAO songDAO = (SongDAO) instance.getBean("SongDAO");
+
         Person person = new Person();
-        personDAO.save(person);
-        //songDAO.save(song);
+        Song song = new Song();
         Rate rate = new Rate(new Rate.RatePK(person, song), 4);
+
+        personDAO.save(person);
+        songDAO.save(song);
         rateDAO.save(rate);
 
-        System.out.println();
     }
 }
