@@ -1,9 +1,9 @@
 package DAO;
 
-import com.IMaylatov.Recommend.DAO.Model.Rate.RateDAO;
-import com.IMaylatov.Recommend.Model.Person;
-import com.IMaylatov.Recommend.Model.Rate;
-import com.IMaylatov.Recommend.Model.Song;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Rate.RateDAO;
+import com.IMaylatov.Recommend.Logic.Model.Person;
+import com.IMaylatov.Recommend.Logic.Model.Rate;
+import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Assert;

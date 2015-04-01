@@ -1,7 +1,7 @@
 package DAO;
 
-import com.IMaylatov.Recommend.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Model.Song;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
+import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Assert;

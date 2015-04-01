@@ -1,7 +1,7 @@
 package DAO;
 
-import com.IMaylatov.Recommend.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Model.Person;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
+import com.IMaylatov.Recommend.Logic.Model.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Before;
@@ -14,10 +14,6 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by Liggoriya on 26.03.2015.
- */
 
 /**
  * Тест для проверки PersonDAO
