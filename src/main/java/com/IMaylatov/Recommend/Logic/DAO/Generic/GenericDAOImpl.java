@@ -3,6 +3,7 @@ package com.IMaylatov.Recommend.Logic.DAO.Generic;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -80,8 +81,8 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     }
 
     @Override
-    public void shutdown(){
-        currentSession().createSQLQuery("SHUTDOWN").executeUpdate();
+    public int executeSql(String query){
+        return currentSession().createSQLQuery(query).executeUpdate();
     }
     //endregion
 }

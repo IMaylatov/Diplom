@@ -1,4 +1,4 @@
-package DAO;
+package Logic.DAO;
 
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Logic.Model.Song;

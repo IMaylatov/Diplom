@@ -1,5 +1,7 @@
 package com.IMaylatov.Recommend.Logic.DAO.Generic;
 
+import org.hibernate.Session;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -44,7 +46,9 @@ public interface GenericDAO<T, K extends Serializable> {
     public List<T> list();
 
     /**
-     * Завершить сессию
+     * Выполнить sql запрос
+     * @param query sql запрос
+     * @return Спикок возвращенных объектов
      */
-    public void shutdown();
+    public int executeSql(String query);
 }

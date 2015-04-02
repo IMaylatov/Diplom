@@ -10,6 +10,11 @@ package com.IMaylatov.Recommend.Data;
  */
 public interface LoaderData {
     /**
+     * Загрузить все данные
+     */
+    public void loadAll();
+
+    /**
      * Загрузить пользователей
      */
     public void loadPerson();
