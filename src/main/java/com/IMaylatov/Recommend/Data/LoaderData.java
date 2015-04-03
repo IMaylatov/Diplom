@@ -5,27 +5,30 @@ package com.IMaylatov.Recommend.Data;
  * date: 31.03.2015.
  */
 
+import java.util.Map;
+
 /**
  * Интрерфейс для загрузки данных
  */
 public interface LoaderData {
     /**
-     * Загрузить все данные
+     * Загрузить информацию из пакета для перечисленных файлов
+     * @param files Имена файлов
      */
-    public void loadAll();
+    void loadAll(Map<String, String> files);
 
     /**
      * Загрузить пользователей
      */
-    public void loadPerson();
+    void loadPerson(String personFile);
 
     /**
      * Загрузить песни
      */
-    public void loadSong();
+    void loadSong(String songFile);
 
     /**
      * Загрузить оценки
      */
-    public void loadRate();
+    void loadRate(String rateFile);
 }

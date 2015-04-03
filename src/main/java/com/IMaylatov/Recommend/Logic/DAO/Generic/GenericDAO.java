@@ -44,11 +44,4 @@ public interface GenericDAO<T, K extends Serializable> {
      * @return возвращаемый список
      */
     public List<T> list();
-
-    /**
-     * Выполнить sql запрос
-     * @param query sql запрос
-     * @return Спикок возвращенных объектов
-     */
-    public int executeSql(String query);
 }

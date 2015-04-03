@@ -3,7 +3,6 @@ package com.IMaylatov.Recommend.Logic.DAO.Generic;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,10 +41,6 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     //endregion
 
     //region public method
-    public void setSessionFactory(SessionFactory sessionFactory){
-        this.sessionFactory = sessionFactory;
-    }
-
     public Session currentSession() {
         return sessionFactory.getCurrentSession();
     }
@@ -78,11 +73,6 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<T> list() {
         return currentSession().createCriteria(typeEntity).list();
-    }
-
-    @Override
-    public int executeSql(String query){
-        return currentSession().createSQLQuery(query).executeUpdate();
     }
     //endregion
 }

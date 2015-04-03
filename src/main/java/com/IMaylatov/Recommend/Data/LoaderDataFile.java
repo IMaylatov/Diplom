@@ -4,16 +4,13 @@ package com.IMaylatov.Recommend.Data;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 01.04.2015.
  */
-
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Rate.RateDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
+import com.IMaylatov.Recommend.Logic.DbUtil.DbUtil;
 import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -22,25 +19,8 @@ import java.util.Scanner;
 public class LoaderDataFile implements LoaderData {
     //region Private field
     private static Logger log = Logger.getLogger(LoaderDataFile.class.getName());
-
-    private String dataPackage;
-    private final ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
-
-    private final static String defalutDataPackage = "data/";
-    private final static String personFile = "person.dat";
-    private final static String songFile = "song.dat";
-    private final static String rateFile = "ratings.dat";
-
-    //endregion
-
-    //region Constructor
-    public LoaderDataFile(){
-        this(defalutDataPackage);
-    }
-
-    public LoaderDataFile(String dataPackage){
-        this.dataPackage = dataPackage;
-    }
+    private final ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
+    private DbUtil dbUtil;
     //endregion
 
     /**
@@ -49,71 +29,82 @@ public class LoaderDataFile implements LoaderData {
      * С другой стороны мы можем выполнить скрипт и вставить сразу несколько записей одним запросом
      */
 
+    //region Constructor
+    public LoaderDataFile(){
+        dbUtil = (DbUtil) context.getBean("DbUtil");
+    }
+    //endregion
+
+
     //region Public method
     @Override
-    public void loadAll(){
-        loadPerson();
-        loadSong();
-        loadRate();
+    public void loadAll(Map<String, String> files){
+        try(InputStream streamPerson = java.lang.ClassLoader.getSystemResourceAsStream(files.get("person"));
+            InputStream streamSong = java.lang.ClassLoader.getSystemResourceAsStream(files.get("song"));
+            InputStream streamRate = java.lang.ClassLoader.getSystemResourceAsStream(files.get("rate"))){
+
+            StringBuilder insertSql = insertQueryString(streamPerson, "Person", "ID");
+            insertSql.append(";");
+
+            insertSql.append(insertQueryString(streamSong, "Song", "ID"));
+            insertSql.append(";");
+
+            insertSql.append(insertQueryString(streamRate, "Rate", "PersonID", "SongID", "Value"));
+
+            dbUtil.execute(insertSql.toString());
+        }catch (IOException e){
+            log.error(e);
+        }
     }
 
     @Override
-    public void loadPerson() {
-        try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(defalutDataPackage + personFile);
-            Scanner scanner = new Scanner(stream)){
-            PersonDAO personDAO = (PersonDAO) context.getBean("PersonDAO");
-            StringBuilder insertSql = new StringBuilder();
-            insertSql.append("INSERT INTO Person (ID) VALUES ");
-
-            while(scanner.hasNext()){
-                String[] infoPerson = scanner.nextLine().split("\\|");
-                String insert = "(" + infoPerson[0] + "),";
-                insertSql.append(insert);
-            }
-            insertSql.deleteCharAt(insertSql.length() - 1);
-            personDAO.executeSql(insertSql.toString());
+    public void loadPerson(String personFile) {
+        try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(personFile)){
+            dbUtil.execute(insertQueryString(stream, "Person", "ID").toString());
         } catch (IOException e) {
             log.error(e);
         }
     }
 
     @Override
-    public void loadSong() {
-        try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(defalutDataPackage + songFile);
-            Scanner scanner = new Scanner(stream)){
-            SongDAO songDAO = (SongDAO) context.getBean("SongDAO");
-            StringBuilder insertSql = new StringBuilder();
-            insertSql.append("INSERT INTO Song (ID) VALUES ");
-
-            while(scanner.hasNext()){
-                String[] infoSong = scanner.nextLine().split("\\|");
-                String insert = "(" + infoSong[0] + "),";
-                insertSql.append(insert);
-            }
-            insertSql.deleteCharAt(insertSql.length() - 1);
-            songDAO.executeSql(insertSql.toString());
+    public void loadSong(String songFile) {
+        try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(songFile)){
+            dbUtil.execute(insertQueryString(stream, "Song", "ID").toString());
         } catch (IOException e) {
             log.error(e);
         }
     }
 
     @Override
-    public void loadRate() {
-        try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(defalutDataPackage + rateFile);
-            Scanner scanner = new Scanner(stream)){
-            RateDAO rateDAO = (RateDAO) context.getBean("RateDAO");
-            StringBuilder insertSql = new StringBuilder();
-            insertSql.append("INSERT INTO Rate (PersonId, SongId, Value) VALUES ");
-
-            while(scanner.hasNext()){
-                String[] infoRate = scanner.nextLine().split("\t");
-                String insert = "(" + infoRate[0] + "," + infoRate[1] + "," + infoRate[2] + "),";
-                insertSql.append(insert);
-            }
-            insertSql.deleteCharAt(insertSql.length() - 1);
-            rateDAO.executeSql(insertSql.toString());
+    public void loadRate(String rateFile) {
+        try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(rateFile)){
+            dbUtil.execute(insertQueryString(stream, "Rate", "PersonID", "SongID", "Value").toString());
         } catch (IOException e) {
             log.error(e);
+        }
+    }
+    //endregion
+
+    //region Private method
+    /**
+     * Сформировать строку вставки в таблицу по указанным полям
+     * @param stream Входной поток, откуда перется информация
+     * @param table Таблица для вставки
+     * @param valuesName Имена столбцов, по которым осуществляется вставка
+     * @return Сформированный запрос в виде строки
+     */
+    private StringBuilder insertQueryString(InputStream stream, String table, String ... valuesName){
+        try(Scanner scanner = new Scanner(stream)){
+            StringBuilder insertSql = new StringBuilder(String.format("INSERT INTO %s (%s) VALUES ",
+                    table,
+                    String.join(",", valuesName)));
+
+            while (scanner.hasNext()){
+                String infoLine = "(" + String.join(",", scanner.nextLine().split(" ")) + "),";
+                insertSql.append(infoLine);
+            }
+            insertSql.deleteCharAt(insertSql.length() - 1);
+            return insertSql;
         }
     }
     //endregion
