@@ -1,7 +1,5 @@
 package com.IMaylatov.Recommend.Logic.DAO.Generic;
 
-import org.hibernate.Session;
-
 import java.io.Serializable;
 import java.util.List;
 

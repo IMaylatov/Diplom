@@ -6,7 +6,10 @@ package com.IMaylatov.Recommend.Data;
  */
 import com.IMaylatov.Recommend.Logic.DbUtil.DbUtil;
 import org.apache.log4j.Logger;
+import org.hibernate.SessionFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -58,6 +61,7 @@ public class LoaderDataFile implements LoaderData {
     }
 
     @Override
+    @Transactional
     public void loadPerson(String personFile) {
         try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(personFile)){
             dbUtil.execute(insertQueryString(stream, "Person", "ID").toString());

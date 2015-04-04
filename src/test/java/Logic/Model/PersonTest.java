@@ -51,4 +51,16 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
         songDAO.save(songWithoutRate);
         Assert.assertNull("Пользователь не ставил оценки этой песне", person.getRate(songWithoutRate));
     }
+
+    @Test
+    public void addRate(){
+        Person person = new Person();
+        Song song = new Song();
+        person.addRate(song, 4);
+        Assert.assertEquals("Пользователь поставил 1 оценку", 1, person.getRateList().size());
+        person.addRate(song, 5);
+        Assert.assertEquals("Пользователь обновил оценку", 1, person.getRateList().size());
+        Assert.assertEquals("Значение оценки обновлено", 5, person.getRate(song).getValue());
+    }
+
 }

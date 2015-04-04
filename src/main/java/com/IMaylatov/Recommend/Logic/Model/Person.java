@@ -32,19 +32,21 @@ public class Person {
     public long getId() {
         return id;
     }
-    public void setId(long id){
-        this.id = id;
-    }
 
     /**
-     * Пользователь ставит оценку
+     * Пользователь ставит оценку или обновляет её если она уже поставлена
      * @param song песня
      * @param value оценка
      * @return оценка
      */
     public Rate addRate(Song song, int value){
-        Rate rate = new Rate(new Rate.RatePK(this, song), value);
-        rateList.add(rate);
+        Rate rate = getRate(song);
+        if (rate == null) {
+            rate = new Rate(new Rate.RatePK(this, song), value);
+            rateList.add(rate);
+        }
+        else
+            rate.setValue(value);
         return rate;
     }
 
@@ -58,6 +60,11 @@ public class Person {
             if (rate.getSong().equals(song))
                 return rate;
         return null;
+    }
+
+    public List<Rate> getRateList(){
+        List<Rate> cloneRateList = new ArrayList<>(rateList);
+        return cloneRateList;
     }
     //endregion
 
