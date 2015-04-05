@@ -1,0 +1,35 @@
+CREATE TABLE Person(
+    ID SERIAL PRIMARY KEY NOT NULL
+);
+
+CREATE TABLE Song(
+    ID Serial PRIMARY KEY not null
+);
+
+CREATE TABLE Rate(
+    PersonID INTEGER NOT NULL ,
+    SongID INTEGER NOT NULL ,
+    Value SMALLINT CHECK (Value >= 0 AND Value <= 5),
+    PRIMARY KEY (PersonID, SongID),
+    FOREIGN KEY (PersonID) REFERENCES Person(ID),
+    FOREIGN KEY (SongID) REFERENCES Song(ID)
+);
+
+CREATE TABLE Cluster(
+    ID SERIAL PRIMARY KEY NOT NULL
+);
+
+CREATE TABLE Centroid(
+    ID SERIAL PRIMARY KEY NOT NULL ,
+    ClusterID INTEGER NOT NULL ,
+    FOREIGN KEY (ClusterID) REFERENCES Cluster(ID)
+);
+
+CREATE TABLE RateCentroid(
+    CentroidID INTEGER NOT NULL ,
+    SongID INTEGER NOT NULL ,
+    Value SMALLINT CHECK (Value >= 0 AND Value <=5),
+    PRIMARY KEY (CentroidID, SongID),
+    FOREIGN KEY (CentroidID) REFERENCES Centroid(ID),
+    FOREIGN KEY (SongID) REFERENCES Song(ID)
+);

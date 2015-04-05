@@ -1,6 +1,6 @@
 package com.IMaylatov.Recommend.Logic.Service.Model.Rate;
 
-import com.IMaylatov.Recommend.Logic.Model.Rate;
+import com.IMaylatov.Recommend.Logic.Model.RatePerson;
 import com.IMaylatov.Recommend.Logic.Service.Generic.GenericServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +12,5 @@ import org.springframework.stereotype.Service;
  * Класс предоставляющий службы для работы с сущностью Rate
  */
 @Service("RateService")
-public class RateServiceImpl extends GenericServiceImpl<Rate, Rate.RatePK> implements RateService{
+public class RateServiceImpl extends GenericServiceImpl<RatePerson, RatePerson.PairKey> implements RateService{
 }

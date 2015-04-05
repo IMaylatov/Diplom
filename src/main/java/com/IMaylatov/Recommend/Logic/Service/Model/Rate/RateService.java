@@ -1,6 +1,6 @@
 package com.IMaylatov.Recommend.Logic.Service.Model.Rate;
 
-import com.IMaylatov.Recommend.Logic.Model.Rate;
+import com.IMaylatov.Recommend.Logic.Model.RatePerson;
 import com.IMaylatov.Recommend.Logic.Service.Generic.GenericService;
 
 /**
@@ -10,5 +10,5 @@ import com.IMaylatov.Recommend.Logic.Service.Generic.GenericService;
 /**
  * Интерфейс предоставляющий службы для работы с сущностью Rate
  */
-public interface RateService  extends GenericService<Rate, Rate.RatePK> {
+public interface RateService  extends GenericService<RatePerson, RatePerson.PairKey> {
 }

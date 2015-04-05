@@ -1,6 +1,9 @@
 package com.IMaylatov.Recommend.Logic.Model;
 
+import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +12,7 @@ import java.util.List;
  */
 @Entity
 @Table(name="Person")
-public class Person {
+public class Person implements Serializable{
     //region field
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="person_id_seq")
@@ -18,13 +21,16 @@ public class Person {
     private long id;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "PersonId")
-    private List<Rate> rateList;
+    @JoinColumn(name = "PersonId", updatable = false)
+    private List<RatePerson> rates = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ClusterId")
+    private Cluster cluster;
     //endregion
 
     //region Constructor
     public Person() {
-        rateList = new ArrayList<>();
     }
     //endregion
 
@@ -39,11 +45,11 @@ public class Person {
      * @param value оценка
      * @return оценка
      */
-    public Rate addRate(Song song, int value){
-        Rate rate = getRate(song);
+    public RatePerson addRate(Song song, int value){
+        RatePerson rate = getRate(song);
         if (rate == null) {
-            rate = new Rate(new Rate.RatePK(this, song), value);
-            rateList.add(rate);
+            rate = new RatePerson(new RatePerson.PairKey(this, song), value);
+            rates.add(rate);
         }
         else
             rate.setValue(value);
@@ -55,40 +61,39 @@ public class Person {
      * @param song песня для которой нужно найти оценку
      * @return найденная оценка
      */
-    public Rate getRate(Song song){
-        for (Rate rate : rateList)
-            if (rate.getSong().equals(song))
+    public RatePerson getRate(Song song){
+        for (RatePerson rate : rates)
+            if (rate.getSong().getId() == song.getId())
                 return rate;
         return null;
     }
 
-    public List<Rate> getRateList(){
-        List<Rate> cloneRateList = new ArrayList<>(rateList);
+    public void removeRate(Song song){
+        RatePerson rate = getRate(song);
+        if (rate != null){
+            rates.remove(rate);
+        }
+    }
+
+    public List<RatePerson> getRates(){
+        List<RatePerson> cloneRateList = new ArrayList<>(rates);
         return cloneRateList;
     }
+
+    public Cluster getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(Cluster cluster) {
+        this.cluster = cluster;
+    }
+
     //endregion
 
     //region public method
     @Override
     public String toString(){
         return "Person: id = " + id;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-
-        Person person = (Person) object;
-
-        if (id != person.id) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return (int) (id ^ (id >>> 32));
     }
     //endregion
 }

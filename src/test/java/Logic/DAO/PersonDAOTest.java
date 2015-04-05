@@ -42,7 +42,7 @@ public class PersonDAOTest extends AbstractTransactionalJUnit4SpringContextTests
         personDAO.save(person);
         Person findPerson = (Person) session.get(Person.class, person.getId());
         Assert.assertNotNull("Персона добавлена", findPerson);
-        Assert.assertTrue("Созданная персона есть в БД", person.equals(findPerson));
+        Assert.assertTrue("Созданная персона есть в БД", person.getId() == findPerson.getId());
     }
 
     @Test

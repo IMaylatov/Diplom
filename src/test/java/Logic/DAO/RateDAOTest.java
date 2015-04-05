@@ -1,8 +1,8 @@
 package Logic.DAO;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Rate.RateDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Rate.RatePersonDAO;
 import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Rate;
+import com.IMaylatov.Recommend.Logic.Model.RatePerson;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,7 +26,7 @@ import java.util.List;
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
 public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
-    private RateDAO rateDAO;
+    private RatePersonDAO rateDAO;
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -49,26 +49,27 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         person = (Person) session.get(Person.class, person.getId());
         song = (Song) session.get(Song.class, song.getId());
 
-        Rate rate = new Rate(new Rate.RatePK(person, song), 4);
+        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
         rateDAO.save(rate);
-        rate = (Rate) session.get(Rate.class, rate.getId());
+        rate = (RatePerson) session.get(RatePerson.class, rate.getId());
         Assert.assertNotNull("Оценка добавлена", rate);
         Assert.assertEquals("Оценка сохранилась верно", 4, rate.getValue());
 
-        // Сохранить оценку с существующим пользователем, но не существующей песней
+        // Сохранить оценку с существующим пользователем, но несуществующей песней
         song = new Song();
         person = new Person();
         session.save(person);
-        rate = new Rate(new Rate.RatePK(person, song), 4);
+        rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
         try {
             rateDAO.save(rate);
             Assert.assertTrue("Оценка не может быть добавлена", false);
         }catch (Exception ex){}
 
+        // Сохранить оценку с несуществующим пользователем, но с существующей песней
         song = new Song();
         session.save(song);
         person = new Person();
-        rate = new Rate(new Rate.RatePK(person, song), 4);
+        rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
         try{
             rateDAO.save(rate);
             Assert.assertTrue("Оценка не может быть добавлена", false);
@@ -79,7 +80,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     public void findTest(){
         Person person = new Person();
         Song song = new Song();
-        Rate rate = new Rate(new Rate.RatePK(person, song), 4);
+        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
         session.save(rate);
         rate = rateDAO.find(rate.getId());
         Assert.assertNotNull("Оценка найдена", rate);
@@ -92,11 +93,11 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         session.save(person);
         Song song = new Song();
         session.save(song);
-        Rate rate = new Rate(new Rate.RatePK(person, song), 4);
+        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
         session.save(rate);
         rate.setValue(5);
         rateDAO.update(rate);
-        rate = (Rate) session.get(Rate.class, rate.getId());
+        rate = (RatePerson) session.get(RatePerson.class, rate.getId());
         Assert.assertNotNull("Оценка обновлена", rate);
         Assert.assertEquals("Значение оценки обновлено правильно", 5, rate.getValue());
     }
@@ -107,23 +108,23 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         session.save(person);
         Song song = new Song();
         session.save(song);
-        Rate rate = new Rate(new Rate.RatePK(person, song), 4);
+        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
         session.save(rate);
         rateDAO.delete(rate);
-        rate = (Rate) session.get(Rate.class, rate.getId());
+        rate = (RatePerson) session.get(RatePerson.class, rate.getId());
         Assert.assertNull("Оценка удалена", rate);
     }
 
     @Test
     public void listTest(){
-        List<Rate> rateList = new ArrayList<Rate>();
+        List<RatePerson> rateList = new ArrayList<RatePerson>();
         for (int i = 0; i < 7; i++) {
             Person person = new Person();
             session.save(person);
             Song song = new Song();
             session.save(song);
 
-            Rate rate = new Rate(new Rate.RatePK(person, song), i % 5 + 1);
+            RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), i % 5 + 1);
             rateList.add(rate);
             session.save(rate);
         }

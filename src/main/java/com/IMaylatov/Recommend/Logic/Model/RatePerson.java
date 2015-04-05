@@ -2,27 +2,26 @@ package com.IMaylatov.Recommend.Logic.Model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import javax.persistence.Embeddable;
 
 /**
  * Сущность "Персона"
  */
 @Entity
-@Table(name="Rate")
-public class Rate{
+@Table(name="RatePerson")
+public class RatePerson{
     //region field
     @EmbeddedId
-    private RatePK id;
+    private PairKey id;
 
     @Column(name="Value")
     private int value;
     //endregion
 
     //region Constructor
-    private Rate() {
+    private RatePerson() {
     }
 
-    public Rate(RatePK id, int value) {
+    public RatePerson(PairKey id, int value) {
         this.id = id;
         this.value = value;
     }
@@ -36,16 +35,17 @@ public class Rate{
         this.value = value;
     }
 
-    public RatePK getId() {
+    public PairKey getId() {
         return id;
+    }
+
+
+    public Song getSong() {
+        return id.getSong();
     }
 
     public Person getPerson() {
         return id.getPerson();
-    }
-
-    public Song getSong() {
-        return id.getSong();
     }
     //endregion
 
@@ -59,58 +59,36 @@ public class Rate{
     }
     //endregion
 
-    //region Primary Key
+    //region Primary key
     @Embeddable
-    public static class RatePK implements Serializable {
-        //region field
+    public static class PairKey implements Serializable {
+        //region Private field
         @ManyToOne(fetch = FetchType.EAGER)
         @JoinColumn(name = "PersonId", nullable = false)
         private Person person;
 
         @ManyToOne(fetch = FetchType.EAGER)
-        @JoinColumn(name = "SongId", nullable = false)
+        @JoinColumn(name = "SongID", nullable = false)
         private Song song;
         //endregion
 
         //region Constructor
-        private RatePK(){
+        private PairKey(){
         }
 
-        public RatePK(Person person, Song song) {
+        public PairKey(Person person, Song song) {
             this.person = person;
             this.song = song;
         }
         //endregion
 
-        //region getter setter
+        //region Getter Setter
         public Person getPerson() {
             return person;
         }
 
         public Song getSong() {
             return song;
-        }
-        //endregion
-
-        //region public method
-        @Override
-        public boolean equals(Object object) {
-            if (this == object) return true;
-            if (object == null || getClass() != object.getClass()) return false;
-
-            RatePK ratePK = (RatePK) object;
-
-            if (person != null ? !person.equals(ratePK.person) : ratePK.person != null) return false;
-            if (song != null ? !song.equals(ratePK.song) : ratePK.song != null) return false;
-
-            return true;
-        }
-
-        @Override
-        public int hashCode() {
-            int result = person != null ? person.hashCode() : 0;
-            result = 31 * result + (song != null ? song.hashCode() : 0);
-            return result;
         }
         //endregion
     }

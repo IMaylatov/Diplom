@@ -5,10 +5,6 @@ import com.IMaylatov.Recommend.Logic.Model.Person;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by Liggoriya on 21.03.2015.
- */
-
-/**
  * Класс для работы с сущность Person
  */
 @Repository("PersonDAO")

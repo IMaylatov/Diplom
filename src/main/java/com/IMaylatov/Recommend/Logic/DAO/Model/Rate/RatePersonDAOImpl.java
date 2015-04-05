@@ -1,7 +1,7 @@
 package com.IMaylatov.Recommend.Logic.DAO.Model.Rate;
 
 import com.IMaylatov.Recommend.Logic.DAO.Generic.GenericDAOImpl;
-import com.IMaylatov.Recommend.Logic.Model.Rate;
+import com.IMaylatov.Recommend.Logic.Model.RatePerson;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 /**
  * Класс для работы с сущность Person
  */
-@Repository("RateDAO")
-public class RateDAOImpl extends GenericDAOImpl<Rate, Rate.RatePK> implements RateDAO {
+@Repository("RatePersonDAO")
+public class RatePersonDAOImpl extends GenericDAOImpl<RatePerson, RatePerson.PairKey> implements RatePersonDAO {
 }

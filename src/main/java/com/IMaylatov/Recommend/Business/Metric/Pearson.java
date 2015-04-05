@@ -6,7 +6,7 @@ package com.IMaylatov.Recommend.Business.Metric;
  */
 
 import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Rate;
+import com.IMaylatov.Recommend.Logic.Model.RatePerson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,8 @@ public class Pearson implements Metric{
         double X = 0, Y = 0;
 
         List<Pair> commonRate = new ArrayList<>();
-        for (Rate ratePerson1 : person1.getRateList()){
-            Rate ratePerson2 = person2.getRate(ratePerson1.getSong());
+        for (RatePerson ratePerson1 : person1.getRates()){
+            RatePerson ratePerson2 = person2.getRate(ratePerson1.getSong());
             if (ratePerson2 != null) {
                 commonRate.add(new Pair(ratePerson1, ratePerson2));
                 X += ratePerson1.getValue();
@@ -49,9 +49,9 @@ public class Pearson implements Metric{
     }
 
     class Pair{
-        public Rate person1Rate;
-        public Rate person2Rate;
-        public Pair(Rate person1Rate, Rate person2Rate) {
+        public RatePerson person1Rate;
+        public RatePerson person2Rate;
+        public Pair(RatePerson person1Rate, RatePerson person2Rate) {
             this.person1Rate = person1Rate;
             this.person2Rate = person2Rate;
         }
