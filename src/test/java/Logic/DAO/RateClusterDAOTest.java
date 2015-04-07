@@ -1,6 +1,8 @@
 package Logic.DAO;
 
+import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster.RateClusterDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Cluster.RateCluster;
 import com.IMaylatov.Recommend.Logic.Model.Song;
@@ -29,6 +31,10 @@ import java.util.List;
 public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private RateClusterDAO rateClusterDAO;
+    @Autowired
+    private ClusterDAO clusterDAO;
+    @Autowired
+    private SongDAO songDAO;
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -131,5 +137,38 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
             session.save(rate);
         }
         Assert.assertTrue("Оценки найдены", rateClusterDAO.list().containsAll(rateList));
+    }
+
+    @Test
+    public void deleteAllTest(){
+        Song song1 = new Song();
+        Song song2 = new Song();
+        Song song3 = new Song();
+        songDAO.save(song1);
+        songDAO.save(song2);
+        songDAO.save(song3);
+
+        Cluster cluster1 = new Cluster();
+        Cluster cluster2 = new Cluster();
+        Cluster cluster3 = new Cluster();
+
+        cluster1.addRate(song1, 3);
+        cluster1.addRate(song2, 4);
+        cluster1.addRate(song3, 2);
+
+        cluster2.addRate(song1, 5);
+        cluster2.addRate(song2, 3);
+
+        cluster3.addRate(song1, 2);
+
+        clusterDAO.save(cluster1);
+        clusterDAO.save(cluster2);
+        clusterDAO.save(cluster3);
+
+        Assert.assertEquals("Оценки добавлены в таблицу", 6, rateClusterDAO.list().size());
+
+        rateClusterDAO.deleteAll();
+
+        Assert.assertEquals("Таблица RateCluster была очищена", 0, rateClusterDAO.list().size());
     }
 }

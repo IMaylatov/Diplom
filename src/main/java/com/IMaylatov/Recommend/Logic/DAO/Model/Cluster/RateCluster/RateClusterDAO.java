@@ -12,4 +12,10 @@ import com.IMaylatov.Recommend.Logic.Model.Cluster.RateCluster;
  * Интерфейс для работы с сущность RateCluster
  */
 public interface RateClusterDAO extends GenericDAO<RateCluster, RateCluster.PairKey> {
+    /**
+     * Очистить таблицу оценок
+     * @return Количество затронутых - удаленных строк
+     * @throws org.hibernate.HibernateException
+     */
+    int deleteAll();
 }

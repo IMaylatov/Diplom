@@ -12,4 +12,9 @@ import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
  * Интерфейс для работы с сущностью Cluster
  */
 public interface ClusterDAO extends GenericDAO<Cluster, Long> {
+    /**
+     * Очистить таблицу кластеров
+     * @return Количество затронутых строк - удаленных кластеров
+     */
+    int deleteAll();
 }

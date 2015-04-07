@@ -24,19 +24,17 @@ public class Cluster {
     @Column(name="id")
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "ClusterID", updatable = false)
-    private List<RateCluster> rateClusters;
+    private List<RateCluster> rateClusters = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ClusterID")
-    private List<Person> persons;
+    private List<Person> persons = new ArrayList<>();
     //endregion
 
     //region Constructor
     public Cluster(){
-        rateClusters = new ArrayList<>();
-        persons = new ArrayList<>();
     }
     //endregion
 
@@ -123,4 +121,12 @@ public class Cluster {
         persons.remove(person);
     }
     //endregion
+
+
+    @Override
+    public String toString() {
+        return "Cluster{" +
+                "id=" + id +
+                '}';
+    }
 }
