@@ -9,6 +9,7 @@ import com.IMaylatov.Recommend.Logic.Model.Song;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -82,9 +83,8 @@ public class Cluster {
         }
     }
 
-    public List<RateCluster> getRates(){
-        List<RateCluster> cloneRateClusters = new ArrayList<>(rateClusters);
-        return cloneRateClusters;
+    public Iterator<RateCluster> getRateClusterIterator(){
+        return rateClusters.iterator();
     }
 
     /**
@@ -119,6 +119,10 @@ public class Cluster {
      */
     public void removePerson(Person person){
         persons.remove(person);
+    }
+
+    public Iterator<Person> getPersonIterator(){
+        return persons.iterator();
     }
     //endregion
 

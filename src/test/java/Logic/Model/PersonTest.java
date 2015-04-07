@@ -64,9 +64,9 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
         Person person = new Person();
         Song song = new Song();
         person.addRate(song, 4);
-        Assert.assertEquals("Пользователь поставил 1 оценку", 1, person.getRates().size());
+        Assert.assertEquals("Пользователь поставил оценку 4", 4, person.getRatePersonIterator().next().getValue());
         person.addRate(song, 5);
-        Assert.assertEquals("Пользователь обновил оценку", 1, person.getRates().size());
+        Assert.assertEquals("Пользователь обновил оценку 5", 5, person.getRatePersonIterator().next().getValue());
         Assert.assertEquals("Значение оценки обновлено", 5, person.getRate(song).getValue());
     }
 

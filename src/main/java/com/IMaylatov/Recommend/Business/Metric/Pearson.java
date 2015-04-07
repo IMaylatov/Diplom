@@ -9,6 +9,7 @@ import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.RatePerson;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -20,7 +21,9 @@ public class Pearson implements Metric{
         double X = 0, Y = 0;
 
         List<Pair> commonRate = new ArrayList<>();
-        for (RatePerson ratePerson1 : person1.getRates()){
+        Iterator<RatePerson> ratePersonIterator = person1.getRatePersonIterator();
+        while(ratePersonIterator.hasNext()){
+            RatePerson ratePerson1 = ratePersonIterator.next();
             RatePerson ratePerson2 = person2.getRate(ratePerson1.getSong());
             if (ratePerson2 != null) {
                 commonRate.add(new Pair(ratePerson1, ratePerson2));

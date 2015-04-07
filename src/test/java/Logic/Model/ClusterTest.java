@@ -60,10 +60,9 @@ public class ClusterTest extends AbstractTransactionalJUnit4SpringContextTests {
         Cluster cluster = new Cluster();
         Song song = new Song();
         cluster.addRate(song, 4);
-        Assert.assertEquals(1, cluster.getRates().size());
+        Assert.assertEquals(4, cluster.getRateClusterIterator().next().getValue());
         cluster.addRate(song, 5);
-        Assert.assertEquals(1, cluster.getRates().size());
-        Assert.assertEquals(5, cluster.getRate(song).getValue());
+        Assert.assertEquals(5, cluster.getRateClusterIterator().next().getValue());
     }
 
     @Test

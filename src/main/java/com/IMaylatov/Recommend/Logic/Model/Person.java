@@ -5,6 +5,7 @@ import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -75,9 +76,8 @@ public class Person implements Serializable{
         }
     }
 
-    public List<RatePerson> getRates(){
-        List<RatePerson> cloneRateList = new ArrayList<>(rates);
-        return cloneRateList;
+    public Iterator<RatePerson> getRatePersonIterator(){
+        return rates.iterator();
     }
 
     public Cluster getCluster() {

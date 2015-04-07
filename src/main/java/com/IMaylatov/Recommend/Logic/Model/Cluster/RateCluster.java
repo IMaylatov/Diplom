@@ -48,13 +48,23 @@ public class RateCluster {
     }
 
     public Cluster getCluster(){
-        return id.getCentroid();
+        return id.getCluster();
     }
 
     public Song getSong(){
         return id.getSong();
     }
     //endregion
+
+
+    @Override
+    public String toString() {
+        return "RateCluster{" +
+                "ClusterId=" + id.getCluster().getId() +
+                ", SongId=" + id.getSong().getId() +
+                ", value=" + value +
+                '}';
+    }
 
     //region Primary key
     @Embeddable
@@ -80,7 +90,7 @@ public class RateCluster {
         //endregion
 
         //region Getter Setter
-        public Cluster getCentroid() {
+        public Cluster getCluster() {
             return cluster;
         }
 
