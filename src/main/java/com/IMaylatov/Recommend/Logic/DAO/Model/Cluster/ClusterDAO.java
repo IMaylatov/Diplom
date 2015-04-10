@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster;
+package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -6,7 +6,7 @@ package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster;
  */
 
 import com.IMaylatov.Recommend.Logic.DAO.Generic.GenericDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 
 /**
  * Интерфейс для работы с сущностью Cluster

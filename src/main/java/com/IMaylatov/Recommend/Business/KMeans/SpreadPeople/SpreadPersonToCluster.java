@@ -5,7 +5,8 @@ package com.IMaylatov.Recommend.Business.KMeans.SpreadPeople;
  * date: 07.04.2015.
  */
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Business.Metric.Metric;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 
 import java.util.List;
@@ -21,4 +22,13 @@ public interface SpreadPersonToCluster {
      * @return Список кластеров, содержащий распределенных пользователей
      */
     List<Cluster> simpleSpread(List<Person> persons, int k);
+
+    /**
+     * Распределяет пользователей по кластерам с учетом их расстояния до кластера по заданной метрике
+     * @param clusters Кластера по которым происходит распределние
+     * @param persons Пользователи, которых необходимо распределить
+     * @param metric Метрика, по которой происходит распределение
+     * @return List<Person> список распределенных пользователей
+     */
+    List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric);
 }

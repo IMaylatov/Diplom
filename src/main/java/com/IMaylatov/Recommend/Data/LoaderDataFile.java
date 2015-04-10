@@ -41,7 +41,7 @@ public class LoaderDataFile implements LoaderData {
     @Override
     public void loadAll(Map<String, String> files){
         try(InputStream streamPerson = java.lang.ClassLoader.getSystemResourceAsStream(files.get("person"));
-            InputStream streamSong = java.lang.ClassLoader.getSystemResourceAsStream(files.get("song"));
+            InputStream streamSong = java.lang.ClassLoader.getSystemResourceAsStream(files.get("k2"));
             InputStream streamRate = java.lang.ClassLoader.getSystemResourceAsStream(files.get("rate"))){
 
             StringBuilder insertSql = insertQueryString(streamPerson, "Person", "ID");
@@ -50,7 +50,7 @@ public class LoaderDataFile implements LoaderData {
             insertSql.append(insertQueryString(streamSong, "Song", "ID"));
             insertSql.append(";");
 
-            insertSql.append(insertQueryString(streamRate, "Rate", "PersonID", "SongID", "Value"));
+            insertSql.append(insertQueryString(streamRate, "RatePerson", "PersonID", "SongID", "Value"));
 
             dbUtil.execute(insertSql.toString());
         }catch (IOException e){
@@ -80,7 +80,7 @@ public class LoaderDataFile implements LoaderData {
     @Override
     public void loadRate(String rateFile) {
         try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(rateFile)){
-            dbUtil.execute(insertQueryString(stream, "Rate", "PersonID", "SongID", "Value").toString());
+            dbUtil.execute(insertQueryString(stream, "RatePerson", "PersonID", "SongID", "Value").toString());
         } catch (IOException e) {
             log.error(e);
         }

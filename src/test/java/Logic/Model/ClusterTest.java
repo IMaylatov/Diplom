@@ -1,9 +1,9 @@
 package Logic.Model;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster.ClusterDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.junit.Assert;
@@ -60,9 +60,9 @@ public class ClusterTest extends AbstractTransactionalJUnit4SpringContextTests {
         Cluster cluster = new Cluster();
         Song song = new Song();
         cluster.addRate(song, 4);
-        Assert.assertEquals(4, cluster.getRateClusterIterator().next().getValue());
+        Assert.assertEquals(4, cluster.getRateIterator().next().getValue());
         cluster.addRate(song, 5);
-        Assert.assertEquals(5, cluster.getRateClusterIterator().next().getValue());
+        Assert.assertEquals(5, cluster.getRateIterator().next().getValue());
     }
 
     @Test

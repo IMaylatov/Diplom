@@ -1,11 +1,11 @@
-package com.IMaylatov.Recommend.Logic.Model.Cluster;
+package com.IMaylatov.Recommend.Logic.Model;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 04.04.2015.
  */
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateCluster;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "Cluster")
-public class Cluster {
+public class Cluster{
     //region Private field
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="cluster_id_seq")
@@ -53,7 +53,7 @@ public class Cluster {
     public RateCluster addRate(Song song, int value){
         RateCluster rate = getRate(song);
         if (rate == null){
-            rate = new RateCluster(new RateCluster.PairKey(this, song), value);
+            rate = new RateCluster(new PairKey<>(this, song), value);
             rateClusters.add(rate);
         }else
             rate.setValue(value);
@@ -83,7 +83,18 @@ public class Cluster {
         }
     }
 
-    public Iterator<RateCluster> getRateClusterIterator(){
+    /**
+     * Возращает оценку для песни
+     * @throws IllegalArgumentException Если нет оценки для песни
+     */
+    public int getRateValue(Song song){
+        RateCluster rate = getRate(song);
+        if (rate != null)
+            return rate.getValue();
+        throw new IllegalArgumentException("Для песни songId = " + song.getId() + " нет оценки");
+    }
+
+    public Iterator<RateCluster> getRateIterator(){
         return rateClusters.iterator();
     }
 
@@ -125,7 +136,6 @@ public class Cluster {
         return persons.iterator();
     }
     //endregion
-
 
     @Override
     public String toString() {

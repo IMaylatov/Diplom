@@ -2,9 +2,9 @@ package Business.SpreadPersonToCluster;
 
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonToCluster;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonToClusterImpl;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster.ClusterDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import org.junit.Assert;
 import org.junit.Test;

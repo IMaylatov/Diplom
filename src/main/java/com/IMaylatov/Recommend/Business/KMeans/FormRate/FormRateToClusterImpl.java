@@ -1,8 +1,8 @@
 package com.IMaylatov.Recommend.Business.KMeans.FormRate;
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.RatePerson;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
 
 import java.util.*;
 
@@ -19,7 +19,7 @@ public class FormRateToClusterImpl implements FormRateToCluster {
         while(personIterator.hasNext()){
             Person person = personIterator.next();
 
-            Iterator<RatePerson> ratePersonIterator = person.getRatePersonIterator();
+            Iterator<RatePerson> ratePersonIterator = person.getRateIterator();
             while(ratePersonIterator.hasNext()){
                 RatePerson ratePerson = ratePersonIterator.next();
                 if (!songsIdSet.contains(ratePerson.getSong().getId())){

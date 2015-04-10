@@ -1,8 +1,9 @@
 package Logic.DAO;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Rate.RatePersonDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Person.RatePerson.RatePersonDAO;
 import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.RatePerson;
+import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,7 +25,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:app-context.xml" })
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
-public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class RatePersonDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private RatePersonDAO rateDAO;
     @Autowired
@@ -49,7 +50,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         person = (Person) session.get(Person.class, person.getId());
         song = (Song) session.get(Song.class, song.getId());
 
-        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
+        RatePerson rate = new RatePerson(new PairKey<>(person, song), 4);
         rateDAO.save(rate);
         rate = (RatePerson) session.get(RatePerson.class, rate.getId());
         Assert.assertNotNull("Оценка добавлена", rate);
@@ -59,7 +60,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         song = new Song();
         person = new Person();
         session.save(person);
-        rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
+        rate = new RatePerson(new PairKey<>(person, song), 4);
         try {
             rateDAO.save(rate);
             Assert.assertTrue("Оценка не может быть добавлена", false);
@@ -69,7 +70,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         song = new Song();
         session.save(song);
         person = new Person();
-        rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
+        rate = new RatePerson(new PairKey<>(person, song), 4);
         try{
             rateDAO.save(rate);
             Assert.assertTrue("Оценка не может быть добавлена", false);
@@ -80,7 +81,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
     public void findTest(){
         Person person = new Person();
         Song song = new Song();
-        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
+        RatePerson rate = new RatePerson(new PairKey<>(person, song), 4);
         session.save(rate);
         rate = rateDAO.find(rate.getId());
         Assert.assertNotNull("Оценка найдена", rate);
@@ -93,7 +94,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         session.save(person);
         Song song = new Song();
         session.save(song);
-        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
+        RatePerson rate = new RatePerson(new PairKey<>(person, song), 4);
         session.save(rate);
         rate.setValue(5);
         rateDAO.update(rate);
@@ -108,7 +109,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
         session.save(person);
         Song song = new Song();
         session.save(song);
-        RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), 4);
+        RatePerson rate = new RatePerson(new PairKey<>(person, song), 4);
         session.save(rate);
         rateDAO.delete(rate);
         rate = (RatePerson) session.get(RatePerson.class, rate.getId());
@@ -124,7 +125,7 @@ public class RateDAOTest extends AbstractTransactionalJUnit4SpringContextTests {
             Song song = new Song();
             session.save(song);
 
-            RatePerson rate = new RatePerson(new RatePerson.PairKey(person, song), i % 5 + 1);
+            RatePerson rate = new RatePerson(new PairKey<>(person, song), i % 5 + 1);
             rateList.add(rate);
             session.save(rate);
         }

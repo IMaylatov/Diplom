@@ -1,6 +1,7 @@
 package com.IMaylatov.Recommend.Business.KMeans.SpreadPeople;
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Business.Metric.Metric;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 
 import java.util.ArrayList;
@@ -30,5 +31,29 @@ public class SpreadPersonToClusterImpl implements SpreadPersonToCluster{
         }
 
         return clusters;
+    }
+
+    @Override
+    public List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric) {
+        if ((clusters == null) || (persons == null) || (metric == null))
+            throw new IllegalArgumentException("clusters = " + clusters +
+                                                ";persons = " + persons +
+                                                  ";metric = " + metric);
+        if (persons.size() < clusters.size() || persons.size() < 0)
+            throw new IllegalArgumentException("clusters count = " + clusters.size() +
+                                                ";persons count = " + persons.size());
+
+//        for(Person person : persons){
+//            Iterator<Cluster> clusterIterator = clusters.iterator();
+//            Cluster minCluster = clusterIterator.next();
+//            double minDistance = metric.compare(person, minCluster);
+//            while(clusterIterator.hasNext()){
+//                Cluster k1 = clusterIterator.next();
+//                if (minDistance > metric.compare(person, k1))
+//                    minCluster = k1;
+//            }
+//        }
+
+        return persons;
     }
 }

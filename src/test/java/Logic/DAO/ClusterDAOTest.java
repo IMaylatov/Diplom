@@ -1,11 +1,10 @@
 package Logic.DAO;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster.ClusterDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster.RateClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.hibernate.Session;

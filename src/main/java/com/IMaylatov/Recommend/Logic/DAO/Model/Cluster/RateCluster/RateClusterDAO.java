@@ -6,12 +6,15 @@ package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster;
  */
 
 import com.IMaylatov.Recommend.Logic.DAO.Generic.GenericDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Song;
 
 /**
  * Интерфейс для работы с сущность RateCluster
  */
-public interface RateClusterDAO extends GenericDAO<RateCluster, RateCluster.PairKey> {
+public interface RateClusterDAO extends GenericDAO<RateCluster, PairKey<Cluster, Song>> {
     /**
      * Очистить таблицу оценок
      * @return Количество затронутых - удаленных строк

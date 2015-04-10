@@ -2,10 +2,10 @@ package Business.FormRateToClusterTest;
 
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormRateToCluster;
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormRateToClusterImpl;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster.ClusterDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.junit.Assert;

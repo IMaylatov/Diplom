@@ -5,7 +5,6 @@ package com.IMaylatov.Recommend.Business.Metric;
  * date: 03.04.2015.
  */
 
-import com.IMaylatov.Recommend.Logic.Model.Person;
 
 /**
  * Метрика сравнения пользователей
@@ -17,5 +16,5 @@ public interface Metric {
      * @param person2 Второй пользователь
      * @return Расстояние между пользователями
      */
-    double compare(Person person1, Person person2) throws IllegalArgumentException;
+    double compare(Pearson person1, Pearson person2) throws IllegalArgumentException;
 }

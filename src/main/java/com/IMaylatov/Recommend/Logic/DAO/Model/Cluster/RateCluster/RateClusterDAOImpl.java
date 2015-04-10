@@ -6,7 +6,10 @@ package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster;
  */
 
 import com.IMaylatov.Recommend.Logic.DAO.Generic.GenericDAOImpl;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository("RateClusterDAO")
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
-public class RateClusterDAOImpl extends GenericDAOImpl<RateCluster, RateCluster.PairKey> implements RateClusterDAO  {
+public class RateClusterDAOImpl extends GenericDAOImpl<RateCluster, PairKey<Cluster, Song>> implements RateClusterDAO  {
     @Override
     public int deleteAll() {
         return currentSession().createQuery("delete from RateCluster").executeUpdate();

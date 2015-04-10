@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster;
+package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -6,12 +6,11 @@ package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster;
  */
 
 import com.IMaylatov.Recommend.Logic.DAO.Generic.GenericDAOImpl;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

@@ -6,7 +6,7 @@ package com.IMaylatov.Recommend.Business.Metric;
  */
 
 import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.RatePerson;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,34 +17,34 @@ import java.util.List;
  */
 public class Pearson implements Metric{
     @Override
-    public double compare(Person person1, Person person2) throws IllegalArgumentException {
+    public double compare(Pearson person1, Pearson person2) throws IllegalArgumentException {
         double X = 0, Y = 0;
 
-        List<Pair> commonRate = new ArrayList<>();
-        Iterator<RatePerson> ratePersonIterator = person1.getRatePersonIterator();
-        while(ratePersonIterator.hasNext()){
-            RatePerson ratePerson1 = ratePersonIterator.next();
-            RatePerson ratePerson2 = person2.getRate(ratePerson1.getSong());
-            if (ratePerson2 != null) {
-                commonRate.add(new Pair(ratePerson1, ratePerson2));
-                X += ratePerson1.getValue();
-                Y += ratePerson2.getValue();
-            }
-        }
-        if (commonRate.size() < 3)
-            throw new IllegalArgumentException(" оличество сравниваемых точек должно быть не меньше 3");
-        X /= commonRate.size();
-        Y /= commonRate.size();
+//        List<Pair> commonRate = new ArrayList<>();
+//        Iterator<RatePerson> ratePersonIterator = person1.getRateIterator();
+//        while(ratePersonIterator.hasNext()){
+//            RatePerson ratePerson1 = ratePersonIterator.next();
+//            RatePerson ratePerson2 = person2.getRate(ratePerson1.getK2());
+//            if (ratePerson2 != null) {
+//                commonRate.add(new Pair(ratePerson1, ratePerson2));
+//                X += ratePerson1.getValue();
+//                Y += ratePerson2.getValue();
+//            }
+//        }
+//        if (commonRate.size() < 3)
+//            throw new IllegalArgumentException(" оличество сравниваемых точек должно быть не меньше 3");
+//        X /= commonRate.size();
+//        Y /= commonRate.size();
 
         //„ислитель, знаменатель дл€ X и Y, промежуточные переменные(необходимы дл€ числител€ и знаменател€)
         double numerator = 0, denominatorX = 0, denominatorY = 0, gapX, gapY;
-        for (Pair pair : commonRate){
-            gapX = pair.person1Rate.getValue() - X;
-            gapY = pair.person2Rate.getValue() - Y;
-            numerator += gapX * gapY;
-            denominatorX += gapX * gapX;
-            denominatorY += gapY * gapY;
-        }
+//        for (Pair pair : commonRate){
+//            gapX = pair.person1Rate.getValue() - X;
+//            gapY = pair.person2Rate.getValue() - Y;
+//            numerator += gapX * gapY;
+//            denominatorX += gapX * gapX;
+//            denominatorY += gapY * gapY;
+//        }
         if((denominatorX*denominatorY <= 0) || (numerator < 0))
             throw new IllegalArgumentException("ќтсутствует коррел€ционна€ зависимость");
 

@@ -1,6 +1,5 @@
 package com.IMaylatov.Recommend;
 
-import com.IMaylatov.Recommend.Logic.Model.PairKey.SongPerson.PairKeySongPerson;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 
@@ -13,7 +12,7 @@ public class Main {
 //        LoaderData loaderData = new LoaderDataFile();
 //        HashMap<String, String> files = new HashMap<>();
 //        files.put("person", "data/person.dat");
-//        files.put("song", "data/song.dat");
+//        files.put("k2", "data/k2.dat");
 //        files.put("rate", "data/ratings.dat");
 //        loaderData.loadAll(files);
 

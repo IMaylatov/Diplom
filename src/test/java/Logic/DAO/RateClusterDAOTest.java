@@ -1,10 +1,11 @@
 package Logic.DAO;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster.ClusterDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster.RateClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateCluster;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.junit.Assert;
 import org.hibernate.Session;
@@ -57,7 +58,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
         cluster = (Cluster) session.get(Cluster.class, cluster.getId());
         song = (Song) session.get(Song.class, song.getId());
 
-        RateCluster rateCluster = new RateCluster(new RateCluster.PairKey(cluster, song), 3);
+        RateCluster rateCluster = new RateCluster(new PairKey<Cluster, Song>(cluster, song), 3);
         rateClusterDAO.save(rateCluster);
         rateCluster = (RateCluster) session.get(RateCluster.class, rateCluster.getId());
         Assert.assertNotNull(" ластерна€ оценка добавлена", rateCluster);
@@ -67,7 +68,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
         song = new Song();
         cluster = new Cluster();
         session.save(cluster);
-        rateCluster = new RateCluster(new RateCluster.PairKey(cluster, song), 3);
+        rateCluster = new RateCluster(new PairKey<>(cluster, song), 3);
         try{
             rateClusterDAO.save(rateCluster);
             Assert.assertTrue("ќценка не может быть добавлена", false);
@@ -77,7 +78,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
         song = new Song();
         session.save(song);
         cluster = new Cluster();
-        rateCluster = new RateCluster(new RateCluster.PairKey(cluster, song), 3);
+        rateCluster = new RateCluster(new PairKey<>(cluster, song), 3);
         try{
             rateClusterDAO.save(rateCluster);
             Assert.assertTrue("ќценка не может быть добавлена", false);
@@ -88,7 +89,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
     public void findTest(){
         Cluster cluster = new Cluster();
         Song song = new Song();
-        RateCluster rate = new RateCluster(new RateCluster.PairKey(cluster, song), 4);
+        RateCluster rate = new RateCluster(new PairKey<>(cluster, song), 4);
         session.save(rate);
         rate = rateClusterDAO.find(rate.getId());
         Assert.assertNotNull("ќценка найдена", rate);
@@ -101,7 +102,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
         session.save(cluster);
         Song song = new Song();
         session.save(song);
-        RateCluster rate = new RateCluster(new RateCluster.PairKey(cluster, song),4);
+        RateCluster rate = new RateCluster(new PairKey<>(cluster, song),4);
         session.save(rate);
         rate.setValue(5);
         rateClusterDAO.update(rate);
@@ -116,7 +117,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
         session.save(cluster);
         Song song = new Song();
         session.save(song);
-        RateCluster rate = new RateCluster(new RateCluster.PairKey(cluster, song), 4);
+        RateCluster rate = new RateCluster(new PairKey<>(cluster, song), 4);
         session.save(rate);
         rateClusterDAO.delete(rate);
         rate = (RateCluster) session.get(RateCluster.class, rate.getId());
@@ -132,7 +133,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
             Song song = new Song();
             session.save(song);
 
-            RateCluster rate = new RateCluster(new RateCluster.PairKey(cluster, song), i % 5 + 1);
+            RateCluster rate = new RateCluster(new PairKey<>(cluster, song), i % 5 + 1);
             rateList.add(rate);
             session.save(rate);
         }

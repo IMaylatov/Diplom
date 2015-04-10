@@ -1,9 +1,9 @@
 package Logic.Model;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.Cluster.ClusterDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.junit.runner.RunWith;
@@ -64,9 +64,9 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
         Person person = new Person();
         Song song = new Song();
         person.addRate(song, 4);
-        Assert.assertEquals("Пользователь поставил оценку 4", 4, person.getRatePersonIterator().next().getValue());
+        Assert.assertEquals("Пользователь поставил оценку 4", 4, person.getRateIterator().next().getValue());
         person.addRate(song, 5);
-        Assert.assertEquals("Пользователь обновил оценку 5", 5, person.getRatePersonIterator().next().getValue());
+        Assert.assertEquals("Пользователь обновил оценку 5", 5, person.getRateIterator().next().getValue());
         Assert.assertEquals("Значение оценки обновлено", 5, person.getRate(song).getValue());
     }
 

@@ -5,7 +5,7 @@ package com.IMaylatov.Recommend.Business.KMeans.FormRate;
  * date: 07.04.2015.
  */
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Cluster;
 
 /**
  * Формирует оценки в кластере

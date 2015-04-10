@@ -1,6 +1,7 @@
 package com.IMaylatov.Recommend.Logic.Model;
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -49,7 +50,7 @@ public class Person implements Serializable{
     public RatePerson addRate(Song song, int value){
         RatePerson rate = getRate(song);
         if (rate == null) {
-            rate = new RatePerson(new RatePerson.PairKey(this, song), value);
+            rate = new RatePerson(new PairKey<>(this, song), value);
             rates.add(rate);
         }
         else
@@ -76,7 +77,18 @@ public class Person implements Serializable{
         }
     }
 
-    public Iterator<RatePerson> getRatePersonIterator(){
+    /**
+     * Возращает оценку для песни
+     * @throws IllegalArgumentException Если нет оценки для песни
+     */
+    public int getRateValue(Song song){
+        RatePerson rate = getRate(song);
+        if (rate != null)
+            return rate.getValue();
+        throw new IllegalArgumentException("Для песни songId = " + song.getId() + " нет оценки");
+    }
+
+    public Iterator<RatePerson> getRateIterator(){
         return rates.iterator();
     }
 
