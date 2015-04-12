@@ -8,7 +8,7 @@ package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster;
 import com.IMaylatov.Recommend.Logic.DAO.Generic.GenericDAO;
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
-import com.IMaylatov.Recommend.Logic.Model.Rate.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RateCluster;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 
 /**

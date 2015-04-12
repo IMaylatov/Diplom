@@ -1,14 +1,16 @@
-package com.IMaylatov.Recommend.Logic.Model.Rate;
+package com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate;
 
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.Rate;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateImpl;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="RatePerson")
-public class RatePerson extends Rate implements AppraiserSongable<Person, Song>{
+public class RatePerson extends RateImpl implements Rate<Person, Song> {
     //region field
     @EmbeddedId
     @AssociationOverrides({

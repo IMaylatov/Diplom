@@ -28,11 +28,10 @@ public class Song implements Serializable {
     }
     //endregion
 
-
-    //region public method
     @Override
-    public String toString(){
-        return "Song: id = " + id;
+    public String toString() {
+        return "Song{" +
+                "id=" + id +
+                '}';
     }
-    //endregion
 }

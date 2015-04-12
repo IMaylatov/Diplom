@@ -2,6 +2,7 @@ package Logic.Model;
 
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Person.RatePerson.RatePersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
@@ -32,6 +33,8 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
     private SongDAO songDAO;
     @Autowired
     private ClusterDAO clusterDAO;
+    @Autowired
+    private RatePersonDAO ratePersonDAO;
 
     @Test
     public void rateListTest(){

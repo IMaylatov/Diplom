@@ -2,7 +2,7 @@ package com.IMaylatov.Recommend.Business.KMeans.FormRate;
 
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
+import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
 
 import java.util.*;
 

@@ -1,8 +1,5 @@
 package com.IMaylatov.Recommend.Business.Metric;
 
-import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
-import java.util.Iterator;
-
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 03.04.2015.

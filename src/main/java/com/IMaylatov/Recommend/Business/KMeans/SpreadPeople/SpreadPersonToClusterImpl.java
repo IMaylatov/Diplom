@@ -44,7 +44,7 @@ public class SpreadPersonToClusterImpl implements SpreadPersonToCluster{
                                                 ";persons count = " + persons.size());
 
 //        for(Person person : persons){
-//            Iterator<Cluster> clusterIterator = clusters.iterator();
+//            Iterator<Cluster> clusterIterator = clusters.iteratorRates();
 //            Cluster minCluster = clusterIterator.next();
 //            double minDistance = metric.compare(person, minCluster);
 //            while(clusterIterator.hasNext()){

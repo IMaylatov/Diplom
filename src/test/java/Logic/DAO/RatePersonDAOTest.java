@@ -3,7 +3,7 @@ package Logic.DAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.RatePerson.RatePersonDAO;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
-import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
+import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

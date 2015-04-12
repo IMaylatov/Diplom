@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Logic.Model.Rate;
+package com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -7,13 +7,15 @@ package com.IMaylatov.Recommend.Logic.Model.Rate;
 
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Rate.Rate;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateImpl;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "RateCluster")
-public class RateCluster extends Rate implements AppraiserSongable<Cluster, Song>{
+public class RateCluster extends RateImpl implements Rate<Cluster, Song> {
     //region Private field
     @EmbeddedId
     @AssociationOverrides({

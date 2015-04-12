@@ -5,12 +5,7 @@ package com.IMaylatov.Recommend.Business.Metric;
  * date: 04.04.2015.
  */
 
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Rate.RatePerson;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
 
 /**
  * Корреляция Пирсона
