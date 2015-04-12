@@ -13,7 +13,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "RateCluster")
-public class RateCluster {
+public class RateCluster extends Rate implements AppraiserSongable<Cluster, Song>{
     //region Private field
     @EmbeddedId
     @AssociationOverrides({
@@ -21,9 +21,6 @@ public class RateCluster {
             @AssociationOverride(name="k2", joinColumns = @JoinColumn(name="SongID"))
     })
     private PairKey<Cluster, Song> id;
-
-    @Column(name="Value")
-    private int value;
     //endregion
 
     //region Contructor
@@ -37,14 +34,6 @@ public class RateCluster {
     //endregion
 
     //region Getter Setter
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public PairKey<Cluster, Song> getId(){
         return id;
     }
@@ -52,6 +41,7 @@ public class RateCluster {
     public Cluster getCluster(){
         return id.getK1();
     }
+    public Cluster getAppraiser(){return getCluster();}
 
     public Song getSong(){
         return id.getK2();

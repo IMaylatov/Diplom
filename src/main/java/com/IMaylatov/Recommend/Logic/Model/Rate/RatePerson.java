@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="RatePerson")
-public class RatePerson{
+public class RatePerson extends Rate implements AppraiserSongable<Person, Song>{
     //region field
     @EmbeddedId
     @AssociationOverrides({
@@ -16,9 +16,6 @@ public class RatePerson{
             @AssociationOverride(name="k2", joinColumns = @JoinColumn(name="SongID"))
     })
     private PairKey<Person, Song> id;
-
-    @Column(name="Value")
-    private int value;
     //endregion
 
     //region Constructor
@@ -32,13 +29,6 @@ public class RatePerson{
     //endregion
 
     //region getter setter
-    public int getValue() {
-        return value;
-    }
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public PairKey getId() {
         return id;
     }
@@ -46,6 +36,7 @@ public class RatePerson{
     public Person getPerson() {
         return id.getK1();
     }
+    public Person getAppraiser(){return getPerson();}
 
     public Song getSong() {
         return id.getK2();
