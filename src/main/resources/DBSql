@@ -1,12 +1,14 @@
 CREATE TABLE Person(
-    ID SERIAL PRIMARY KEY NOT NULL
+    ID SERIAL PRIMARY KEY NOT NULL,
+	ClusterID INTEGER,
+	FOREIGN KEY (ClusterID) REFERENCES Cluster(ID)
 );
 
 CREATE TABLE Song(
     ID Serial PRIMARY KEY not null
 );
 
-CREATE TABLE Rate(
+CREATE TABLE RatePerson(
     PersonID INTEGER NOT NULL ,
     SongID INTEGER NOT NULL ,
     Value SMALLINT CHECK (Value >= 0 AND Value <= 5),
@@ -19,17 +21,11 @@ CREATE TABLE Cluster(
     ID SERIAL PRIMARY KEY NOT NULL
 );
 
-CREATE TABLE Centroid(
-    ID SERIAL PRIMARY KEY NOT NULL ,
+CREATE TABLE RateCluster(
     ClusterID INTEGER NOT NULL ,
-    FOREIGN KEY (ClusterID) REFERENCES Cluster(ID)
-);
-
-CREATE TABLE RateCentroid(
-    CentroidID INTEGER NOT NULL ,
     SongID INTEGER NOT NULL ,
     Value SMALLINT CHECK (Value >= 0 AND Value <=5),
-    PRIMARY KEY (CentroidID, SongID),
-    FOREIGN KEY (CentroidID) REFERENCES Centroid(ID),
+    PRIMARY KEY (ClusterID, SongID),
+    FOREIGN KEY (ClusterID) REFERENCES Cluster(ID),
     FOREIGN KEY (SongID) REFERENCES Song(ID)
 );
