@@ -1,19 +1,21 @@
 package com.IMaylatov.Recommend.Business.KMeans.SpreadPeople;
 
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInClusterable;
 import com.IMaylatov.Recommend.Business.Metric.Metric;
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 07.04.2015.
  */
-public class SpreadPersonToClusterImpl implements SpreadPersonToCluster{
+public class SpreadPersonInCluster implements SpreadPersonInClusterable {
     @Override
-    public List<Cluster> simpleSpread(List<Person> persons, int k) {
+    public List<Cluster> simpleSpread(List<Person> persons, int k, FormingRateInClusterable formingRateInCluster) {
         if (persons == null)
             throw new IllegalArgumentException("Persons = null");
         if ((k <= 0) && (persons.size() >= k))
@@ -30,6 +32,9 @@ public class SpreadPersonToClusterImpl implements SpreadPersonToCluster{
             indexCurrentCluster++;
         }
 
+        for(Cluster cluster : clusters)
+            formingRateInCluster.form(cluster);
+
         return clusters;
     }
 
@@ -43,16 +48,25 @@ public class SpreadPersonToClusterImpl implements SpreadPersonToCluster{
             throw new IllegalArgumentException("clusters count = " + clusters.size() +
                                                 ";persons count = " + persons.size());
 
-//        for(Person person : persons){
-//            Iterator<Cluster> clusterIterator = clusters.iteratorRates();
-//            Cluster minCluster = clusterIterator.next();
-//            double minDistance = metric.compare(person, minCluster);
-//            while(clusterIterator.hasNext()){
-//                Cluster k1 = clusterIterator.next();
-//                if (minDistance > metric.compare(person, k1))
-//                    minCluster = k1;
-//            }
-//        }
+        for(Person person : persons){
+            Iterator<Cluster> clusterIterator = clusters.iterator();
+            Cluster nearCluster = clusterIterator.next();
+            double minDistance = metric.compare(person, nearCluster);
+            while(clusterIterator.hasNext()){
+                Cluster k1 = clusterIterator.next();
+                double distance;
+                try{
+                    distance = metric.compare(person, k1);
+                }catch (IllegalArgumentException ex){
+                    distance = Double.MAX_VALUE;
+                }
+                if (minDistance > distance) {
+                    nearCluster = k1;
+                    minDistance = distance;
+                }
+            }
+            person.setCluster(nearCluster);
+        }
 
         return persons;
     }

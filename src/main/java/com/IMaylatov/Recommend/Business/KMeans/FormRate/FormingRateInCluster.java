@@ -10,16 +10,16 @@ import java.util.*;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 07.04.2015.
  */
-public class FormRateToClusterImpl implements FormRateToCluster {
+public class FormingRateInCluster implements FormingRateInClusterable {
     @Override
     public void form(Cluster cluster) {
         Set<Long> songsIdSet = new HashSet<>();
 
-        Iterator<Person> personIterator = cluster.getPersonIterator();
+        Iterator<Person> personIterator = cluster.iteratorPerson();
         while(personIterator.hasNext()){
             Person person = personIterator.next();
 
-            Iterator<RatePerson> ratePersonIterator = person.getRateIterator();
+            Iterator<RatePerson> ratePersonIterator = person.iteratorRates();
             while(ratePersonIterator.hasNext()){
                 RatePerson ratePerson = ratePersonIterator.next();
                 if (!songsIdSet.contains(ratePerson.getSong().getId())){

@@ -10,10 +10,9 @@ import com.IMaylatov.Recommend.Logic.Model.Cluster;
 /**
  * Формирует оценки в кластере
  */
-public interface FormRateToCluster {
+public interface FormingRateInClusterable {
     /**
      * В кластере формирует оценки. Для каждой песни, прослушанной пользователем в кластере, выставляет оценку
-     * @param cluster Кластер, в котором формируются оценки
      */
     void form(Cluster cluster);
 }

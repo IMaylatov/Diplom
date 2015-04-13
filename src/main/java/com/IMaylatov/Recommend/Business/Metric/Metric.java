@@ -6,15 +6,11 @@ package com.IMaylatov.Recommend.Business.Metric;
  */
 
 
-/**
- * Метрика сравнения пользователей
- */
+import com.IMaylatov.Recommend.Logic.Model.Rate.HasRates;
+
 public interface Metric {
     /**
-     * Сравнивает пользователей и возвращает расстояние между ними
-     * @param person1 Первый пользователь
-     * @param person2 Второй пользователь
-     * @return Расстояние между пользователями
+     * Сравнивает сущности, которые обладают оценками и возвращает расстояние между ними
      */
-    double compare(Pearson person1, Pearson person2) throws IllegalArgumentException;
+    double compare(HasRates person1, HasRates person2) throws IllegalArgumentException;
 }

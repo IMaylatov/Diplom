@@ -5,6 +5,7 @@ package com.IMaylatov.Recommend.Logic.Model;
  * date: 04.04.2015.
  */
 import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RateCluster;
+import com.IMaylatov.Recommend.Logic.Model.Rate.HasRates;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
 
 import javax.persistence.*;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Cluster")
-public class Cluster{
+public class Cluster implements HasRates<RateCluster>{
     //region Private field
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="cluster_id_seq")
@@ -86,7 +87,7 @@ public class Cluster{
         persons.remove(person);
     }
 
-    public Iterator<Person> getPersonIterator(){
+    public Iterator<Person> iteratorPerson(){
         return persons.iterator();
     }
     //endregion

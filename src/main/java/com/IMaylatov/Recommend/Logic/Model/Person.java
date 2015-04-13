@@ -1,5 +1,6 @@
 package com.IMaylatov.Recommend.Logic.Model;
 
+import com.IMaylatov.Recommend.Logic.Model.Rate.HasRates;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
 import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name="Person")
-public class Person implements Serializable{
+public class Person implements HasRates<RatePerson>, Serializable{
     //region field
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="person_id_seq")
@@ -59,7 +60,7 @@ public class Person implements Serializable{
         return rates.remove(rate);
     }
 
-    public Iterator<RatePerson> getRateIterator(){
+    public Iterator<RatePerson> iteratorRates(){
         return rates.iterator();
     }
 
