@@ -1,4 +1,4 @@
-package Business.FormRateToClusterTest;
+package Business.KMeans.FormRateToClusterTest;
 
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInClusterable;
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInCluster;

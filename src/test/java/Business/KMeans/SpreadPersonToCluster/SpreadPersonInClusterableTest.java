@@ -1,4 +1,4 @@
-package Business.SpreadPersonToCluster;
+package Business.KMeans.SpreadPersonToCluster;
 
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInCluster;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInClusterable;
