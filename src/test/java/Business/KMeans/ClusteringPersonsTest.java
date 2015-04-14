@@ -1,14 +1,11 @@
 package Business.KMeans;
 
 import com.IMaylatov.Recommend.Business.KMeans.ClusteringPersons;
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInCluster;
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRates;
 import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverCluster;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInCluster;
 import com.IMaylatov.Recommend.Business.Metric.Euclid;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster.RateClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.RatePerson.RatePersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
@@ -90,8 +87,12 @@ public class ClusteringPersonsTest extends AbstractTransactionalJUnit4SpringCont
         for (Person person : persons)
             personDAO.save(person);
 
-        clusteringPersons.spread(4, new Euclid(), new SpreadPersonInCluster(),
-                new FormingRateInCluster(), new MoverCluster());
+        clusteringPersons = clusteringPersons.setMetric(new Euclid()).
+                setFormingRate(new BuilderRates()).
+                setMover(new MoverCluster()).
+                setSpread(new SpreadPersonInCluster());
+
+        clusteringPersons.spread(4);
 
         Assert.assertEquals(persons.get(0).getCluster().getId(), persons.get(4).getCluster().getId());
         Assert.assertNotEquals(persons.get(0).getCluster().getId(), persons.get(1).getCluster().getId());

@@ -1,6 +1,6 @@
 package Business.KMeans.SpreadPersonToCluster;
 
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInCluster;
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRates;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInClusterable;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInCluster;
 import com.IMaylatov.Recommend.Business.Metric.Euclid;
@@ -47,7 +47,7 @@ public class SpreadPersonInClusterableTest extends AbstractTransactionalJUnit4Sp
         }
 
         SpreadPersonInClusterable spread = new SpreadPersonInCluster();
-        List<Cluster> clusters = spread.simpleSpread(persons, 3, new FormingRateInCluster());
+        List<Cluster> clusters = spread.simpleSpread(persons, 3, new BuilderRates());
         for(Cluster cluster : clusters)
             clusterDAO.save(cluster);
 

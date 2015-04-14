@@ -1,6 +1,6 @@
 package com.IMaylatov.Recommend.Business.KMeans.SpreadPeople;
 
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInClusterable;
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
 import com.IMaylatov.Recommend.Business.Metric.Metric;
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Person;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class SpreadPersonInCluster implements SpreadPersonInClusterable {
     @Override
-    public List<Cluster> simpleSpread(List<Person> persons, int k, FormingRateInClusterable formingRateInCluster) {
+    public List<Cluster> simpleSpread(List<Person> persons, int k, BuilderRatesable formingRateInCluster) {
         if (persons == null)
             throw new IllegalArgumentException("Persons = null");
         if ((k <= 0) && (persons.size() >= k))

@@ -1,8 +1,8 @@
 package com.IMaylatov.Recommend.Business.KMeans;
 
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInClusterable;
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
+import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverCluster;
 import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverClusterable;
-import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInCluster;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInClusterable;
 import com.IMaylatov.Recommend.Business.Metric.Metric;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
@@ -35,6 +35,33 @@ public class ClusteringPersonsImpl implements ClusteringPersons{
 
     private final int MAX_ITERATION = 10;
 
+    private Metric metric;
+    private SpreadPersonInClusterable spread;
+    private BuilderRatesable formingRate;
+    private MoverClusterable mover;
+
+    private ClusteringPersonsImpl(){}
+
+    public ClusteringPersonsImpl setMetric(Metric metric){
+        this.metric = metric;
+        return this;
+    }
+
+    public ClusteringPersonsImpl setSpread(SpreadPersonInClusterable spread){
+        this.spread = spread;
+        return this;
+    }
+
+    public ClusteringPersonsImpl setFormingRate(BuilderRatesable formingRate){
+        this.formingRate = formingRate;
+        return this;
+    }
+
+    public ClusteringPersonsImpl setMover(MoverCluster mover){
+        this.mover = mover;
+        return this;
+    }
+
     /**
      * Чтобы распределить пользователей по кластерам, кластера сначала надо очистить и собрать их заново.
      * Распределим пользователей по кластерам в порядке их очередности. По оценкам этих пользователей
@@ -44,22 +71,26 @@ public class ClusteringPersonsImpl implements ClusteringPersons{
      * Пока центроид двигается, нужно перераспределять пользователей и двигать центроид в центр масс
      */
     @Override
-    public void spread(int k,  Metric metric,
-                               SpreadPersonInClusterable spread,
-                               FormingRateInClusterable formingRateInCluster,
-                               MoverClusterable moverCluster) {
+    public void spread(int k) {
+        if (metric == null || spread == null || formingRate == null || mover == null)
+            throw new IllegalArgumentException("Null field{"+
+                                                " Metric=" + metric +
+                                                " Spread=" + spread +
+                                                " FormingRate=" + formingRate +
+                                                " Mover=" + mover);
+
         rateClusterDAO.deleteAll();
         clusterDAO.deleteAll();
 
         List<Person> persons = personDAO.list();
-        List<Cluster>  clusters = spread.simpleSpread(persons, k, formingRateInCluster);
+        List<Cluster>  clusters = spread.simpleSpread(persons, k, formingRate);
 
         boolean isMove = false;
         int i = 0;
         do {
             spread.distanceSpread(clusters, persons, metric);
             for (Cluster cluster : clusters)
-                if (moverCluster.move(cluster))
+                if (mover.move(cluster))
                     isMove = true;
         }while ((isMove) && (i++ < MAX_ITERATION));
 

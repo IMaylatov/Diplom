@@ -7,10 +7,7 @@ package com.IMaylatov.Recommend.Business.KMeans.FormRate;
 
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 
-/**
- * Формирует оценки в кластере
- */
-public interface FormingRateInClusterable {
+public interface BuilderRatesable {
     /**
      * В кластере формирует оценки. Для каждой песни, прослушанной пользователем в кластере, выставляет оценку
      */
