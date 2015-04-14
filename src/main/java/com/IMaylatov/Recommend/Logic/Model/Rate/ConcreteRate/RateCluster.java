@@ -8,14 +8,14 @@ package com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate;
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
 import com.IMaylatov.Recommend.Logic.Model.Rate.Rate;
-import com.IMaylatov.Recommend.Logic.Model.Rate.RateImpl;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateValue;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "RateCluster")
-public class RateCluster extends RateImpl implements Rate<Cluster, Song> {
+public class RateCluster extends RateValue implements Rate<Cluster, Song> {
     //region Private field
     @EmbeddedId
     @AssociationOverrides({

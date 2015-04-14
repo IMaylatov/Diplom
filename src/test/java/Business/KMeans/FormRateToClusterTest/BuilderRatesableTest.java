@@ -1,7 +1,7 @@
 package Business.KMeans.FormRateToClusterTest;
 
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInClusterable;
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInCluster;
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRates;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
@@ -24,7 +24,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:app-context.xml" })
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
-public class FormingRateInClusterableTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class BuilderRatesableTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private ClusterDAO clusterDAO;
     @Autowired
@@ -71,7 +71,7 @@ public class FormingRateInClusterableTest extends AbstractTransactionalJUnit4Spr
 
         clusterDAO.save(cluster);
 
-        FormingRateInClusterable spreadRateToCluster = new FormingRateInCluster();
+        BuilderRatesable spreadRateToCluster = new BuilderRates();
         spreadRateToCluster.form(cluster);
 
         clusterDAO.save(cluster);

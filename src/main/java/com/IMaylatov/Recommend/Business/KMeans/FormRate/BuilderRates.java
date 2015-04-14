@@ -10,7 +10,7 @@ import java.util.*;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 07.04.2015.
  */
-public class FormingRateInCluster implements FormingRateInClusterable {
+public class BuilderRates implements BuilderRatesable {
     @Override
     public void form(Cluster cluster) {
         Set<Long> songsIdSet = new HashSet<>();

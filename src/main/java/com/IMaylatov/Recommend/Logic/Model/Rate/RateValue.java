@@ -6,7 +6,7 @@ import javax.persistence.Column;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 12.04.2015.
  */
-public class RateImpl {
+public class RateValue {
     @Column(name="Value")
     protected int value;
 

@@ -1,7 +1,7 @@
 package com.IMaylatov.Recommend.Business.KMeans;
 
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.FormingRateInClusterable;
-import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverClusterable;
+import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
+import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverCluster;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInClusterable;
 import com.IMaylatov.Recommend.Business.Metric.Metric;
 
@@ -14,8 +14,25 @@ public interface ClusteringPersons {
     /**
      * Создать k кластеров и распределить по ним людей в определенной метрике
      */
-    void spread(int k,  Metric metric,
-                SpreadPersonInClusterable spread,
-                FormingRateInClusterable formingRateInCluster,
-                MoverClusterable moverCluster);
+    void spread(int k);
+
+    /**
+     * Устанавливает метрику
+     */
+    ClusteringPersons setMetric(Metric metric);
+
+    /**
+     * Устанавливает класс, который распределяет пользователей по кластерам
+     */
+    ClusteringPersons setSpread(SpreadPersonInClusterable spread);
+
+    /**
+     * Устанавливает класс, который формирует кластерные оценки - центроид
+     */
+    ClusteringPersons setFormingRate(BuilderRatesable formingRate);
+
+    /**
+     * Устанавливает класс, который двигает центроид в центр масс пользователей, принадлежащих кластеру
+     */
+    ClusteringPersons setMover(MoverCluster mover);
 }

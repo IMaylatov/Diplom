@@ -3,14 +3,14 @@ package com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
 import com.IMaylatov.Recommend.Logic.Model.Rate.Rate;
-import com.IMaylatov.Recommend.Logic.Model.Rate.RateImpl;
+import com.IMaylatov.Recommend.Logic.Model.Rate.RateValue;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="RatePerson")
-public class RatePerson extends RateImpl implements Rate<Person, Song> {
+public class RatePerson extends RateValue implements Rate<Person, Song> {
     //region field
     @EmbeddedId
     @AssociationOverrides({
