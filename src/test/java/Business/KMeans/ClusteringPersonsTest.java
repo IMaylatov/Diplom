@@ -12,6 +12,7 @@ import com.IMaylatov.Recommend.Logic.DAO.Model.Person.RatePerson.RatePersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,6 +92,17 @@ public class ClusteringPersonsTest extends AbstractTransactionalJUnit4SpringCont
 
         clusteringPersons.spread(4, new Euclid(), new SpreadPersonInCluster(),
                 new FormingRateInCluster(), new MoverCluster());
+
+        Assert.assertEquals(persons.get(0).getCluster().getId(), persons.get(4).getCluster().getId());
+        Assert.assertNotEquals(persons.get(0).getCluster().getId(), persons.get(1).getCluster().getId());
+        Assert.assertNotEquals(persons.get(0).getCluster().getId(), persons.get(2).getCluster().getId());
+        Assert.assertNotEquals(persons.get(0).getCluster().getId(), persons.get(3).getCluster().getId());
+
+        Assert.assertNotEquals(persons.get(1).getCluster().getId(), persons.get(2).getCluster().getId());
+        Assert.assertNotEquals(persons.get(1).getCluster().getId(), persons.get(3).getCluster().getId());
+
+        Assert.assertNotEquals(persons.get(2).getCluster().getId(), persons.get(3).getCluster().getId());
+
 
         int c = 0;
     }

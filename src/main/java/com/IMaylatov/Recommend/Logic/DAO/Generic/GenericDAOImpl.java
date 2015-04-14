@@ -48,7 +48,6 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     @Override
     public void save(T entity) {
         currentSession().save(entity);
-        currentSession().flush();
     }
 
     @Override
@@ -59,6 +58,11 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     @Override
     public void delete(T entity) {
         currentSession().delete(entity);
+    }
+
+    @Override
+    public void flush(){
+        currentSession().flush();
     }
 
     @Override

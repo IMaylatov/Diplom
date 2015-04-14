@@ -34,6 +34,11 @@ public interface GenericDAO<T, K extends Serializable> {
     T find(K id);
 
     /**
+     * Принудительной выполнение накопленных запросов
+     */
+    void flush();
+
+    /**
      * Список сущностей
      * @return возвращаемый список
      */

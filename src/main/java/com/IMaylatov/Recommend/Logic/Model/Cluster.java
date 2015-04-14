@@ -32,6 +32,12 @@ public class Cluster implements HasRates<RateCluster>{
     private List<Person> persons = new ArrayList<>();
     //endregion
 
+    @PreRemove
+    private void preRemove(){
+        for (Person person : persons)
+            person.setCluster(null);
+    }
+
     //region Constructor
     public Cluster(){
     }
@@ -71,6 +77,7 @@ public class Cluster implements HasRates<RateCluster>{
         Person p = getPerson(person.getId());
         if (p == null) {
             persons.add(person);
+            person.setCluster(this);
             return person;
         }
         return p;

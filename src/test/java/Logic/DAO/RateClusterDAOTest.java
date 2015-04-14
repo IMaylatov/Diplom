@@ -71,6 +71,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
         rateCluster = new RateCluster(new PairKey<>(cluster, song), 3);
         try{
             rateClusterDAO.save(rateCluster);
+            rateClusterDAO.flush();
             Assert.assertTrue("ќценка не может быть добавлена", false);
         }catch (Exception ex){}
 
@@ -81,6 +82,7 @@ public class RateClusterDAOTest extends AbstractTransactionalJUnit4SpringContext
         rateCluster = new RateCluster(new PairKey<>(cluster, song), 3);
         try{
             rateClusterDAO.save(rateCluster);
+            rateClusterDAO.flush();
             Assert.assertTrue("ќценка не может быть добавлена", false);
         }catch (Exception ex){}
     }

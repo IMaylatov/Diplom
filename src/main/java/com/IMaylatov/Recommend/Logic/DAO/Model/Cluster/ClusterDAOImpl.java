@@ -7,10 +7,12 @@ package com.IMaylatov.Recommend.Logic.DAO.Model.Cluster;
 
 import com.IMaylatov.Recommend.Logic.DAO.Generic.GenericDAOImpl;
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Person;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -25,5 +27,13 @@ public class ClusterDAOImpl extends GenericDAOImpl<Cluster, Long> implements Clu
         for (Cluster cluster : clusters)
             delete(cluster);
         return clusters.size();
+    }
+
+    @Override
+    public void delete(Cluster entity){
+        Iterator<Person> personIterator = entity.iteratorPerson();
+        while(personIterator.hasNext())
+            personIterator.next().setCluster(null);
+        currentSession().delete(entity);
     }
 }

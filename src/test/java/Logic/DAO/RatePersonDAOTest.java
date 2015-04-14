@@ -63,6 +63,7 @@ public class RatePersonDAOTest extends AbstractTransactionalJUnit4SpringContextT
         rate = new RatePerson(new PairKey<>(person, song), 4);
         try {
             rateDAO.save(rate);
+            rateDAO.flush();
             Assert.assertTrue("Оценка не может быть добавлена", false);
         }catch (Exception ex){}
 
@@ -73,6 +74,7 @@ public class RatePersonDAOTest extends AbstractTransactionalJUnit4SpringContextT
         rate = new RatePerson(new PairKey<>(person, song), 4);
         try{
             rateDAO.save(rate);
+            rateDAO.flush();
             Assert.assertTrue("Оценка не может быть добавлена", false);
         }catch (Exception ex){}
     }
