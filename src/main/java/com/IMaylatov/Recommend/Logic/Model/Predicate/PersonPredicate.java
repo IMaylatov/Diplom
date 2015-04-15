@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Table(name="PersonPredicate")
 public class PersonPredicate extends PredicateValue{
     @Id
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne
     @JoinColumn(name = "PersonID")
     private Person person;
 

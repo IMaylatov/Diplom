@@ -1,5 +1,6 @@
 package com.IMaylatov.Recommend.Logic.Model;
 
+import com.IMaylatov.Recommend.Logic.Model.Predicate.PersonPredicate;
 import com.IMaylatov.Recommend.Logic.Model.Rate.HasRates;
 import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
 import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
@@ -27,6 +28,9 @@ public class Person implements HasRates<RatePerson>, Serializable{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ClusterId")
     private Cluster cluster;
+
+    @OneToOne(mappedBy = "person")
+    private PersonPredicate predicate = new PersonPredicate(this);
     //endregion
 
     //region Constructor
@@ -70,6 +74,14 @@ public class Person implements HasRates<RatePerson>, Serializable{
     public void setCluster(Cluster cluster) {
         this.cluster = cluster;
     }
+
+    public float getPredicate() {
+        return predicate.getValue();
+    }
+    public void setPredicate(float value) {
+        predicate.setValue(value);
+    }
+
     //endregion
 
     @Override
