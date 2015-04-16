@@ -91,4 +91,20 @@ public class Person implements HasRates<RatePerson>, Serializable{
                 ", cluster_Id=" + (cluster != null ? cluster.getId() : "") +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        Person person = (Person) object;
+
+        return id == person.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
 }

@@ -30,13 +30,13 @@ public class Cluster implements HasRates<RateCluster>{
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ClusterID")
     private List<Person> persons = new ArrayList<>();
-    //endregion
 
-    @PreRemove
-    private void preRemove(){
-        for (Person person : persons)
-            person.setCluster(null);
-    }
+    @Column(name = "CountRate")
+    private int countRate;
+
+    @Column(name = "SummaRate")
+    private int summaRate;
+    //endregion
 
     //region Constructor
     public Cluster(){
@@ -97,6 +97,21 @@ public class Cluster implements HasRates<RateCluster>{
     public Iterator<Person> iteratorPerson(){
         return persons.iterator();
     }
+
+    public int getCountRate() {
+        return countRate;
+    }
+    public void setCountRate(int countRate) {
+        this.countRate = countRate;
+    }
+
+    public int getSummaRate() {
+        return summaRate;
+    }
+    public void setSummaRate(int summaRate) {
+        this.summaRate = summaRate;
+    }
+
     //endregion
 
     @Override

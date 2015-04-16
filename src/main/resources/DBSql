@@ -1,7 +1,13 @@
+CREATE TABLE Cluster(
+    ID SERIAL PRIMARY KEY NOT NULL,
+    CountRate INTEGER,
+    SummaRate INTEGER
+);
+
 CREATE TABLE Person(
     ID SERIAL PRIMARY KEY NOT NULL,
-	ClusterID INTEGER,
-	FOREIGN KEY (ClusterID) REFERENCES Cluster(ID)
+    ClusterID INTEGER,
+    FOREIGN KEY (ClusterID) REFERENCES Cluster(ID)
 );
 
 CREATE TABLE Song(
@@ -17,10 +23,6 @@ CREATE TABLE RatePerson(
     FOREIGN KEY (SongID) REFERENCES Song(ID)
 );
 
-CREATE TABLE Cluster(
-    ID SERIAL PRIMARY KEY NOT NULL
-);
-
 CREATE TABLE RateCluster(
     ClusterID INTEGER NOT NULL ,
     SongID INTEGER NOT NULL ,
@@ -28,4 +30,20 @@ CREATE TABLE RateCluster(
     PRIMARY KEY (ClusterID, SongID),
     FOREIGN KEY (ClusterID) REFERENCES Cluster(ID),
     FOREIGN KEY (SongID) REFERENCES Song(ID)
+);
+
+CREATE TABLE PersonPredicate(
+    PersonID INTEGER NOT NULL ,
+    Value NUMERIC,
+    PRIMARY KEY (PersonID),
+    FOREIGN KEY (PersonID) REFERENCES Person(ID)
+);
+
+CREATE TABLE SongPredicate(
+    SongID INTEGER NOT NULL ,
+    ClusterID INTEGER NOT NULL ,
+    Value NUMERIC,
+    PRIMARY KEY (SongID, ClusterID),
+    FOREIGN KEY (SongID) REFERENCES Song(ID),
+    FOREIGN KEY (ClusterID) REFERENCES Cluster(ID)
 );

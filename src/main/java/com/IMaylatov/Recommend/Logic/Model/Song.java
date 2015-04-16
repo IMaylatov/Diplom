@@ -53,6 +53,14 @@ public class Song implements Serializable {
         return null;
     }
 
+    public void setPredicate(float value, Cluster cluster){
+        SongPredicate songPredicate = getPredicate(cluster);
+        if (songPredicate == null)
+            predicates.add(new SongPredicate(new PairKey<>(this, cluster), value));
+        else
+            songPredicate.setValue(value);
+    }
+
     public boolean removePredicate(Cluster cluster){
         SongPredicate predicate = getPredicate(cluster);
         return predicates.remove(predicate);
