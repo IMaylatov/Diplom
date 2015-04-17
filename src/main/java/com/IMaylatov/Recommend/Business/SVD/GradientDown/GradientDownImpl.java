@@ -6,6 +6,7 @@ import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com
@@ -39,5 +40,11 @@ public class GradientDownImpl implements GradientDown{
                         cluster);
             }
         }
+    }
+
+    @Override
+    public void down(List<Cluster> clusters) {
+        for(Cluster cluster : clusters)
+            down(cluster);
     }
 }

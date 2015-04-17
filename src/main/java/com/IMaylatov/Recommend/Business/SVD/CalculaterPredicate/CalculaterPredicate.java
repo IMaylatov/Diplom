@@ -75,4 +75,10 @@ public class CalculaterPredicate implements CalculaterPredicateable {
             songInfo.getKey().setPredicate(summa, cluster);
         }
     }
+
+    @Override
+    public void calculate(List<Cluster> clusters) {
+        for(Cluster cluster : clusters)
+            calculate(cluster);
+    }
 }
