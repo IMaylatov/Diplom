@@ -33,7 +33,7 @@ public class SVDImpl implements SVD {
 
     @Override
     public void calculatePredicate(int k) {
-        // Удалим существующие кластера и оценки
+        // Удаляем кластера и кластерные оценки
         rateClusterDAO.deleteAll();
         clusterDAO.deleteAll();
 

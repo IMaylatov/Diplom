@@ -1,5 +1,7 @@
 package com.IMaylatov.Recommend.Logic.DAO.Generic;
 
+import org.hibernate.Query;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -40,7 +42,11 @@ public interface GenericDAO<T, K extends Serializable> {
 
     /**
      * Список сущностей
-     * @return возвращаемый список
      */
     List<T> list();
+
+    /**
+     * Выполнить запрос
+     */
+    int execute(String query);
 }

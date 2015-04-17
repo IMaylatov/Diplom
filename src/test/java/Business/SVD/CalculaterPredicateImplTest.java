@@ -1,6 +1,6 @@
 package Business.SVD;
 
-import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicate;
+import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicateImpl;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
@@ -26,7 +26,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:app-context.xml" })
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
-public class CalculaterPredicateTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class CalculaterPredicateImplTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private PersonDAO personDAO;
     @Autowired
@@ -72,8 +72,8 @@ public class CalculaterPredicateTest extends AbstractTransactionalJUnit4SpringCo
         }
         clusterDAO.save(cluster);
 
-        CalculaterPredicate calculaterPredicate = new CalculaterPredicate();
-        calculaterPredicate.calculate(cluster);
+        CalculaterPredicateImpl calculaterPredicateImpl = new CalculaterPredicateImpl();
+        calculaterPredicateImpl.calculate(cluster);
 
         Assert.assertEquals(0.0168f, persons.get(0).getPredicate(), 0.01f);
         Assert.assertEquals(0.1493f, persons.get(1).getPredicate(), 0.01f);

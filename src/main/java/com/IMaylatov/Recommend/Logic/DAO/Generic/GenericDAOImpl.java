@@ -1,5 +1,6 @@
 package com.IMaylatov.Recommend.Logic.DAO.Generic;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,6 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     }
     //endregion
 
-    //region public method
     public Session currentSession() {
         return sessionFactory.getCurrentSession();
     }
@@ -78,5 +78,9 @@ public abstract class GenericDAOImpl<T, K extends Serializable> implements Gener
     public List<T> list() {
         return currentSession().createCriteria(typeEntity).list();
     }
-    //endregion
+
+    @Override
+    public int execute(String query){
+        return currentSession().createSQLQuery(query).executeUpdate();
+    }
 }

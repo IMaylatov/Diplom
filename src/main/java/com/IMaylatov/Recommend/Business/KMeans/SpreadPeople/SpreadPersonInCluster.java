@@ -51,7 +51,12 @@ public class SpreadPersonInCluster implements SpreadPersonInClusterable {
         for(Person person : persons){
             Iterator<Cluster> clusterIterator = clusters.iterator();
             Cluster nearCluster = clusterIterator.next();
-            double minDistance = metric.compare(person, nearCluster);
+            double minDistance;
+            try{
+                minDistance = metric.compare(person, nearCluster);
+            }catch(IllegalArgumentException e){
+                minDistance = Double.MAX_VALUE;
+            }
             while(clusterIterator.hasNext()){
                 Cluster k1 = clusterIterator.next();
                 double distance;

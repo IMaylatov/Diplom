@@ -42,6 +42,9 @@ public class Person implements HasRates<RatePerson>, Serializable{
     public long getId() {
         return id;
     }
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public boolean addRate(Song song, int value){
         RatePerson rate = getRate(song);
@@ -76,10 +79,17 @@ public class Person implements HasRates<RatePerson>, Serializable{
     }
 
     public float getPredicate() {
-        return predicate.getValue();
+        if(predicate != null)
+            return predicate.getValue();
+        else
+            return 0;
     }
     public void setPredicate(float value) {
-        predicate.setValue(value);
+        if(predicate == null){
+            predicate = new PersonPredicate(this);
+            predicate.setValue(value);
+        }else
+            predicate.setValue(value);
     }
 
     //endregion

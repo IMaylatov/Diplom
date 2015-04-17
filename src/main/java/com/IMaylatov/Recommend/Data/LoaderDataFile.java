@@ -4,24 +4,39 @@ package com.IMaylatov.Recommend.Data;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 01.04.2015.
  */
+import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Logic.DbUtil.DbUtil;
+import com.IMaylatov.Recommend.Logic.Model.Person;
+import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
+import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 /**
  * Загрузчик данных из файла
  */
+@Repository("LoaderData")
 public class LoaderDataFile implements LoaderData {
     //region Private field
     private static Logger log = Logger.getLogger(LoaderDataFile.class.getName());
-    private final ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
+    @Autowired
     private DbUtil dbUtil;
+    @Autowired
+    private PersonDAO personDAO;
+    @Autowired
+    private SongDAO songDAO;
     //endregion
 
     /**
@@ -30,18 +45,11 @@ public class LoaderDataFile implements LoaderData {
      * С другой стороны мы можем выполнить скрипт и вставить сразу несколько записей одним запросом
      */
 
-    //region Constructor
-    public LoaderDataFile(){
-        dbUtil = (DbUtil) context.getBean("DbUtil");
-    }
-    //endregion
-
-
     //region Public method
     @Override
     public void loadAll(Map<String, String> files){
         try(InputStream streamPerson = java.lang.ClassLoader.getSystemResourceAsStream(files.get("person"));
-            InputStream streamSong = java.lang.ClassLoader.getSystemResourceAsStream(files.get("k2"));
+            InputStream streamSong = java.lang.ClassLoader.getSystemResourceAsStream(files.get("song"));
             InputStream streamRate = java.lang.ClassLoader.getSystemResourceAsStream(files.get("rate"))){
 
             StringBuilder insertSql = insertQueryString(streamPerson, "Person", "ID");
@@ -85,15 +93,29 @@ public class LoaderDataFile implements LoaderData {
             log.error(e);
         }
     }
+
+    @Override
+    public List<RatePerson> loadTestRate(String testRateFile){
+        List<RatePerson> ratePersons = new ArrayList<>();
+        try(InputStream stream = java.lang.ClassLoader.getSystemResourceAsStream(testRateFile);
+            Scanner scanner = new Scanner(stream)){
+            while (scanner.hasNext()) {
+                String[] rateInfo = scanner.nextLine().split(" ");
+                Person person = personDAO.find(Long.parseLong(rateInfo[0]));
+                Song song = songDAO.find(Long.parseLong(rateInfo[1]));
+                RatePerson ratePerson = new RatePerson(new PairKey<>(person, song), Integer.parseInt(rateInfo[2]));
+                ratePersons.add(ratePerson);
+            }
+        }catch (IOException e){
+            log.error(e);
+        }
+        return ratePersons;
+    }
     //endregion
 
     //region Private method
     /**
      * Сформировать строку вставки в таблицу по указанным полям
-     * @param stream Входной поток, откуда перется информация
-     * @param table Таблица для вставки
-     * @param valuesName Имена столбцов, по которым осуществляется вставка
-     * @return Сформированный запрос в виде строки
      */
     private StringBuilder insertQueryString(InputStream stream, String table, String ... valuesName){
         try(Scanner scanner = new Scanner(stream)){

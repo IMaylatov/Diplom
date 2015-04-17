@@ -11,6 +11,9 @@ public class DealerRateImpl implements DealerRate{
     @Override
     public int getRate(Person person, Song song) {
         float average = (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate();
-        return Math.round(average + person.getPredicate() + song.getPredicate(person.getCluster()).getValue());
+        if(song.getPredicate(person.getCluster()) == null)
+            return Math.round(average + person.getPredicate());
+        else
+            return Math.round(average + person.getPredicate() + song.getPredicate(person.getCluster()).getValue());
     }
 }

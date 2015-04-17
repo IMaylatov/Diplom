@@ -1,6 +1,6 @@
 package Business.SVD;
 
-import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicate;
+import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicateImpl;
 import com.IMaylatov.Recommend.Business.SVD.GradientDown.GradientDown;
 import com.IMaylatov.Recommend.Business.SVD.GradientDown.GradientDownImpl;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
@@ -74,13 +74,11 @@ public class GradientDownTest extends AbstractTransactionalJUnit4SpringContextTe
         }
         clusterDAO.save(cluster);
 
-        CalculaterPredicate calculaterPredicate = new CalculaterPredicate();
-        calculaterPredicate.calculate(cluster);
+        CalculaterPredicateImpl calculaterPredicateImpl = new CalculaterPredicateImpl();
+        calculaterPredicateImpl.calculate(cluster);
 
         GradientDown gradientDown = new GradientDownImpl();
         gradientDown.down(cluster);
-
-        int c = 0;
 
         Assert.assertEquals(0.0183f, persons.get(0).getPredicate(), 0.01f);
         Assert.assertEquals(0.1675f, persons.get(1).getPredicate(), 0.01f);

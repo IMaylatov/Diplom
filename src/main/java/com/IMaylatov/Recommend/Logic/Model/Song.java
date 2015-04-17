@@ -36,6 +36,9 @@ public class Song implements Serializable {
     public long getId() {
         return id;
     }
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public boolean addPredicate(float value, Cluster cluster){
         SongPredicate predicate = getPredicate(cluster);
