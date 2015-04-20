@@ -1,12 +1,12 @@
 package Logic.DAO;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster.RateClusterDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
-import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RateCluster;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDAO;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.RateCluster.RateClusterDAO;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDAO;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Rate.PairKey.PairKey;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RateCluster;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 import org.junit.Assert;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

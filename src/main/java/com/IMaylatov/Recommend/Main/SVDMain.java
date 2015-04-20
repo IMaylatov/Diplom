@@ -1,6 +1,6 @@
-package com.IMaylatov.Recommend.Main;
+package com.IMaylatov.recommend.Main;
 
-import com.IMaylatov.Recommend.Business.SVD.SVD;
+import com.IMaylatov.recommend.Business.SVD.SVD;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

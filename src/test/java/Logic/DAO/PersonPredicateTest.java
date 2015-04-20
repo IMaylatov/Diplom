@@ -1,8 +1,8 @@
 package Logic.DAO;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Predicate.Person.PersonPredicateDAO;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Predicate.PersonPredicate;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Predicate.Person.PersonPredicateDAO;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Predicate.PersonPredicate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Assert;

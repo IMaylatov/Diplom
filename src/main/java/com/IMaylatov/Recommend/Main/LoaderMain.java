@@ -1,6 +1,6 @@
-package com.IMaylatov.Recommend.Main;
+package com.IMaylatov.recommend.Main;
 
-import com.IMaylatov.Recommend.Business.LoaderData.LoaderData;
+import com.IMaylatov.recommend.Business.LoaderData.LoaderData;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
