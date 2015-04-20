@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Data;
+package com.IMaylatov.Recommend.Business.LoaderData;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -13,7 +13,6 @@ import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
 import com.IMaylatov.Recommend.Logic.Model.Song;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

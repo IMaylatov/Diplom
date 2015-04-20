@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Data;
+package com.IMaylatov.Recommend.Business.LoaderData;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)

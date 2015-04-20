@@ -6,6 +6,7 @@ import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRates;
 import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverCluster;
 import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInCluster;
 import com.IMaylatov.Recommend.Business.Metric.Euclid;
+import com.IMaylatov.Recommend.Business.Metric.Pearson;
 import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicate;
 import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicateImpl;
 import com.IMaylatov.Recommend.Business.SVD.GradientDown.GradientDown;
@@ -39,7 +40,7 @@ public class SVDImpl implements SVD {
 
         // Формируем кластера и размещаем в них пользователей
         clusteringPersons.setFormingRate(new BuilderRates())
-                .setMetric(new Euclid())
+                .setMetric(new Pearson())
                 .setMover(new MoverCluster())
                 .setSpread(new SpreadPersonInCluster());
         clusteringPersons.spread(k);
