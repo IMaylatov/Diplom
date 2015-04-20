@@ -12,7 +12,9 @@ import com.IMaylatov.Recommend.Business.SVD.GradientDown.GradientDownImpl;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster.RateClusterDAO;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
+import com.IMaylatov.Recommend.Logic.DAO.Model.Predicate.Person.PersonPredicateDAO;
 import com.IMaylatov.Recommend.Logic.Model.Cluster;
+import com.IMaylatov.Recommend.Logic.Model.Predicate.PersonPredicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -32,6 +34,11 @@ public class SVDImpl implements SVD {
     private ClusteringPersons clusteringPersons;
     @Autowired
     private PersonDAO personDAO;
+    @Autowired
+    private GradientDown gradientDown;
+    @Autowired
+    private PersonPredicateDAO personPredicateDAO;
+
 
     @Override
     public void calculatePredicate() {
@@ -52,7 +59,6 @@ public class SVDImpl implements SVD {
         CalculaterPredicate calculaterPredicate = new CalculaterPredicateImpl();
         calculaterPredicate.calculate(clusters);
 
-        GradientDown gradientDown = new GradientDownImpl();
         gradientDown.down(clusters);
     }
 }

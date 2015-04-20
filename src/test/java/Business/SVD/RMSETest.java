@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ import java.util.List;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:app-context.xml" })
-@TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
+@TransactionConfiguration(defaultRollback = false, transactionManager = "transactionManager")
 public class RMSETest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private LoaderData loaderData;
@@ -32,19 +33,19 @@ public class RMSETest extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Test
     public void calcualteErrorTest(){
-//        HashMap<String, String> files = new HashMap<>();
-//        files.put("person", "data/person.dat");
-//        files.put("song", "data/song.dat");
-//        files.put("rate", "data/ratings.dat");
-//        loaderData.loadAll(files);
+        HashMap<String, String> files = new HashMap<>();
+        files.put("person", "data/person.dat");
+        files.put("song", "data/song.dat");
+        files.put("rate", "data/ratings.dat");
+        loaderData.loadAll(files);
 
         svd.calculatePredicate();
 
-        List<RatePerson> ratesTest = loaderData.loadTestRate("data/testRate.dat");
-
-        RMSE rmse = new RMSEImpl();
-        double error = rmse.calculateError(ratesTest);
-
-        Assert.assertTrue(error < 2);
+//        List<RatePerson> ratesTest = loaderData.loadTestRate("data/testRate.dat");
+//
+//        RMSE rmse = new RMSEImpl();
+//        double error = rmse.calculateError(ratesTest);
+//
+//        Assert.assertTrue(error < 2);
     }
 }

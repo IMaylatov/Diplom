@@ -112,6 +112,13 @@ public class Cluster implements HasRates<RateCluster>{
         this.summaRate = summaRate;
     }
 
+    public List<RateCluster> getListRates() {
+        return listRates;
+    }
+    public void setListRates(List<RateCluster> listRates) {
+        this.listRates = listRates;
+    }
+
     //endregion
 
     @Override
