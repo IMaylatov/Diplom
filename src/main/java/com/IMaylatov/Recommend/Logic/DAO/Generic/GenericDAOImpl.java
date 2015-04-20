@@ -1,6 +1,5 @@
 package com.IMaylatov.Recommend.Logic.DAO.Generic;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

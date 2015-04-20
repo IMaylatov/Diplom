@@ -15,7 +15,6 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -30,18 +29,16 @@ public class RMSETest extends AbstractTransactionalJUnit4SpringContextTests {
     private LoaderData loaderData;
     @Autowired
     private SVD svd;
-    @Autowired
-    private PersonDAO personDAO;
 
     @Test
     public void calcualteErrorTest(){
-        HashMap<String, String> files = new HashMap<>();
-        files.put("person", "data/person.dat");
-        files.put("song", "data/song.dat");
-        files.put("rate", "data/ratings.dat");
-        loaderData.loadAll(files);
+//        HashMap<String, String> files = new HashMap<>();
+//        files.put("person", "data/person.dat");
+//        files.put("song", "data/song.dat");
+//        files.put("rate", "data/ratings.dat");
+//        loaderData.loadAll(files);
 
-        svd.calculatePredicate(1);
+        svd.calculatePredicate();
 
         List<RatePerson> ratesTest = loaderData.loadTestRate("data/testRate.dat");
 

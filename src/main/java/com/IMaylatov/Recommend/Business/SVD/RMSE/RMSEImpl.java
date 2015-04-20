@@ -4,8 +4,6 @@ import com.IMaylatov.Recommend.Business.SVD.DealerRate.DealerRate;
 import com.IMaylatov.Recommend.Business.SVD.DealerRate.DealerRateImpl;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Person.RatePerson.RatePersonDAO;
 import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

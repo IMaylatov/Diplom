@@ -5,7 +5,6 @@ import com.IMaylatov.Recommend.Business.Metric.Pearson;
 import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
 import com.IMaylatov.Recommend.Logic.Model.Person;
 import com.IMaylatov.Recommend.Logic.Model.Song;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

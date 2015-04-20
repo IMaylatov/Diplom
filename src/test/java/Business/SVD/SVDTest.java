@@ -64,7 +64,7 @@ public class SVDTest extends AbstractTransactionalJUnit4SpringContextTests {
         persons.get(3).addRate(songs.get(3), 4);
         persons.get(3).addRate(songs.get(4), 3);
 
-        svd.calculatePredicate(1);
+        svd.calculatePredicate();
 
         Assert.assertEquals(0.0183f, persons.get(0).getPredicate(), 0.01f);
         Assert.assertEquals(0.1675f, persons.get(1).getPredicate(), 0.01f);
