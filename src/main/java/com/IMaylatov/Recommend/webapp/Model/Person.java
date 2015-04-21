@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Entity
-@Table(name="Person")
+@Table(name="person")
 public class Person{
     //region field
     @Id
@@ -17,7 +17,7 @@ public class Person{
     private long id;
 
     @ElementCollection
-    @CollectionTable(name = "RatePerson", joinColumns = @JoinColumn(name = "PersonId"))
+    @CollectionTable(name = "ratePerson", joinColumns = @JoinColumn(name = "PersonId"))
     @Column(name = "value")
     @MapKeyJoinColumn(name = "SongId")
     private Map<Song, Long> rates = new HashMap<>();
@@ -64,7 +64,7 @@ public class Person{
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "person{" +
                 "id=" + id +
                 ", cluster_Id=" + (cluster != null ? cluster.getId() : "") +
                 '}';

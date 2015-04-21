@@ -2,93 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4be840d1-ffe8-4fb7-84e3-01ced8efc9a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Cluster.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/LoaderData/LoaderData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/LoaderData/LoaderDataFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/ConcreteRate/PairKey.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Person.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Person/PersonDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/dao/PersonDaoTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Predicate/Person/PersonPredicateDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Person/RatePerson/RatePersonDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Person/RatePerson/RatePersonDAOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Song.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Predicate/Song/SongPredicateDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Predicate/Song/SongPredicateDAOImpl.java" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Person\PersonDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Person\RatePerson\RatePersonDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Person\RatePerson\RatePersonDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Predicate\Person\PersonPredicateDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Predicate\Song\SongPredicateDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Predicate\Song\SongPredicateDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Cluster.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Person.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Rate\HasRates.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Rate\PairKey\PairKeyable.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Rate\Rate.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Song.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\webapp\Model\Rate\PairKey\PairKey.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/DAO/ClusterDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/DAO/ClusterDAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/Model/ClusterTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/Model/ClusterTest.java" />
-      <change type="MODIFICATION" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\recommend\Main\LoaderMain.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Main/LoaderMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/DAO/PersonDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/DAO/PersonDAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/DAO/PersonPredicateTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/DAO/PersonPredicateTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/Model/PersonTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/Model/PersonTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/DAO/RateClusterDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/DAO/RateClusterDAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/DAO/RatePersonDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/DAO/RatePersonDAOTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/dao/PersonDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/dao/PersonDaoTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend.iml" afterPath="$PROJECT_DIR$/Recommend.iml" />
-      <change type="MODIFICATION" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\recommend\Main\SVDMain.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Main/SVDMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/DAO/SongDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/DAO/SongDAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/DAO/SongPredicateTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/DAO/SongPredicateTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Logic/Model/SongTest.java" afterPath="$PROJECT_DIR$/src/test/java/Logic/Model/SongTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/app-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/app-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/app-context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/app-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/app-context.xml" afterPath="$PROJECT_DIR$/target/classes/app-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\ClusteringPersons.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/ClusteringPersons.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\ClusteringPersonsImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/ClusteringPersonsImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\FormRate\BuilderRates.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/FormRate/BuilderRates.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\FormRate\BuilderRatesable.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/FormRate/BuilderRatesable.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\MoverCluster\MoverCluster.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/MoverCluster/MoverCluster.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\MoverCluster\MoverClusterable.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/MoverCluster/MoverClusterable.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\SpreadPeople\SpreadPersonInCluster.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/SpreadPeople/SpreadPersonInCluster.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\KMeans\SpreadPeople\SpreadPersonInClusterable.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/SpreadPeople/SpreadPersonInClusterable.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\Metric\Euclid.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/Metric/Euclid.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\Metric\Metric.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/Metric/Metric.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\Metric\Pearson.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/Metric/Pearson.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\CalculaterPredicate\CalculaterPredicate.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/CalculaterPredicate/CalculaterPredicate.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\CalculaterPredicate\CalculaterPredicateImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/CalculaterPredicate/CalculaterPredicateImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\DealerRate\DealerRate.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/DealerRate/DealerRate.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\DealerRate\DealerRateImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/DealerRate/DealerRateImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\GradientDown\GradientDown.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/GradientDown/GradientDown.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\GradientDown\GradientDownImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/GradientDown/GradientDownImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\RMSE\RMSE.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/RMSE/RMSE.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\RMSE\RMSEImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/RMSE/RMSEImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\SVD.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/SVD.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Business\SVD\SVDImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/SVDImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Controller\PersonController.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/controller/PersonController.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Generic\GenericDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Generic/GenericDao.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Generic\GenericDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Generic/GenericDaoImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Cluster\ClusterDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Cluster/ClusterDao.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Cluster\ClusterDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Cluster/ClusterDaoImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Cluster\RateCluster\RateClusterDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Cluster/RateCluster/RateClusterDAO.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Cluster\RateCluster\RateClusterDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Cluster/RateCluster/RateClusterDAOImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Person\PersonDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Person/PersonDaoImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Predicate\Person\PersonPredicateDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Predicate/Person/PersonPredicateDAOImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Song\SongDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Song/SongDao.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DAO\Model\Song\SongDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Song/SongDaoImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DbUtil\DbUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dbUtil/DbUtil.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\DbUtil\DbUtilImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dbUtil/DbUtilImpl.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Predicate\PersonPredicate.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/predicate/PersonPredicate.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Predicate\PredicateValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/predicate/PredicateValue.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Predicate\SongPredicate.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/predicate/SongPredicate.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Rate\ConcreteRate\RateCluster.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/ConcreteRate/RateCluster.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Rate\ConcreteRate\RatePerson.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/ConcreteRate/RatePerson.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Model\Rate\RateValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/RateValue.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Service\PersonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/Service/PersonService.java" />
-      <change type="MOVED" beforePath="D:\учеба\диплом\Diplom\src\main\java\com\IMaylatov\Recommend\Logic\Service\PersonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/Service/PersonServiceImpl.java" />
     </list>
     <ignored path="Recommend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,46 +32,7 @@
     <favorites_list name="Recommend" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PersonDaoTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/dao/PersonDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1428#1429#0" expanded="true" />
-                <element signature="e#1469#1470#0" expanded="true" />
-                <element signature="e#1503#1504#0" expanded="true" />
-                <element signature="e#1546#1547#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonPredicate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/predicate/PersonPredicate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-              <folding>
-                <element signature="e#627#628#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -181,35 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Business/KMeans/ClusteringPersonsImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Data/LoaderDataFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Business/SVD/DealerRate/DealerRateImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/view.jsp" />
-        <option value="$PROJECT_DIR$/src/test/java/Logic/Controller/TestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Controller/TestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Service/SVD/SVDService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Service/SVD/SVDServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Business/SVD/SVD.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Business/SVD/SVDTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Model/Dog.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Service/Person/PersonService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Service/Person/PersonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/app-context.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Controller/SVDController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Service/PersonService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Service/PersonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Controller/PersonController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Main.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Business/SVD/RMSETest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Business/SVD/SVDImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Business/SVD/GradientDown/GradientDownImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/LoaderMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/SVDMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Main/SVDMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Model/Song.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Model/Cluster.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Model/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/Model/Rate/ConcreteRate/RatePerson.java" />
@@ -228,10 +77,39 @@
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/ConcreteRate/RateCluster.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Cluster.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Song.java" />
-        <option value="$PROJECT_DIR$/src/test/java/dao/PersonDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/predicate/SongPredicate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/predicate/PersonPredicate.java" />
+        <option value="$PROJECT_DIR$/src/test/java/dao/PersonDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/GenericDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/GenericDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Cluster/RateCluster/ClusterDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Cluster/RateCluster/ClusterDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Person/RatePerson/PersonDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Person/RatePerson/PersonDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Predicate/Person/PersonPredicateDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Predicate/Person/PersonPredicateDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/SongDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/SongDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Person/RatePerson/RatePersonDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/Cluster/RateCluster/RateClusterDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/RateCluster/RateClusterDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/rateCluster/RateClusterDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/ratePerson/RatePersonDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/rateCluster/RateClusterDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/predicate/song/SongPredicateDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/predicate/song/SongPredicateDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/concreteRate/RatePerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/ratePerson/RatePersonDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/ratePerson/RatePersonDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/rateCluster/RateClusterDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/ClusterDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/ClusterDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/PersonDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/PersonDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/song/SongDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/song/SongDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -336,7 +214,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -591,7 +468,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ConcreteRate" />
+              <option name="myItemId" value="concreteRate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -625,11 +502,317 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="song" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="predicate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="song" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="predicate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="person" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="person" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="person" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratePerson" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cluster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cluster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rateCluster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -688,8 +871,38 @@
               <option name="myItemId" value="recommend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logic" />
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recommend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoaderData" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -697,6 +910,7 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -733,11 +947,11 @@
       <recent name="D:\учеба\диплом\RecommendDiplom\src\main\resources\data" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.IMaylatov.recommend.webapp.dao.model.Person" />
+      <recent name="com.IMaylatov.recommend.webapp.dao.model.Cluster" />
       <recent name="com.IMaylatov.Recommend.Logic.Service" />
       <recent name="com.IMaylatov.Recommend.Business.SVD" />
       <recent name="com.IMaylatov.Recommend.Business.KMeans" />
-      <recent name="Business" />
-      <recent name="com.IMaylatov.Recommend.Business" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.PersonDaoTest">
@@ -1204,21 +1418,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32603687" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3249139" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4087256" sideWeight="0.51534736" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14805825" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2600229" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30529955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15024233" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25947186" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30469644" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2645631" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31797236" sideWeight="0.49030694" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30210015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31687716" sideWeight="0.49030694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1262,7 +1476,8 @@
     <MESSAGE value="Класс раздающий предполагаемые оценки" />
     <MESSAGE value="Тест для раздающего оценки" />
     <MESSAGE value="Класс, создает кластера, размещает в них пользователей, рассчитывает предикаты для песен и пользователей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Класс, создает кластера, размещает в них пользователей, рассчитывает предикаты для песен и пользователей" />
+    <MESSAGE value="Поменял имена пакетов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поменял имена пакетов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1295,7 +1510,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="265" />
+      <option name="time" value="266" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1317,99 +1532,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/SpreadPeople/SpreadPersonInCluster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.06952965">
-          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/DealerRate/DealerRate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41717792">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/RMSE/RMSEImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65806454">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Cluster/ClusterDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3360791">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/LoaderData/LoaderData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33278418">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Business/SVD/CalculaterPredicateImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24335378">
-          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="27" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Business/SVD/SVDTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8039539">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6359143">
-          <caret line="136" column="20" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/song.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Song/SongDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3114504">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35084426">
           <caret line="11" column="81" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Person/PersonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22326455">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1448,13 +1574,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/DealerRate/DealerRateImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Logic/SVD/DealerRate/DealerRateImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48247078">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
@@ -1465,13 +1588,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8631052">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/SVD.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Logic/SVD/SVD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28380635">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
@@ -1490,15 +1610,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4678261">
           <caret line="39" column="34" selection-start-line="35" selection-start-column="8" selection-end-line="39" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/LoaderData/LoaderDataFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Logic/LoaderData/LoaderDataFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="117" column="7" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1506,23 +1624,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34736842">
           <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/KMeans/ClusteringPersonsImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Logic/KMeans/ClusteringPersonsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/GradientDown/GradientDownImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Logic/SVD/GradientDown/GradientDownImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1530,21 +1645,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/CalculaterPredicate/CalculaterPredicateImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Logic/SVD/CalculaterPredicate/CalculaterPredicateImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59130436">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/logic/SVD/SVDImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Logic/SVD/SVDImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67478263">
           <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
@@ -1556,7 +1667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29166666">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1572,25 +1682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="27" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Cluster/ClusterDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7863555">
-          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Model/Person/RatePerson/RatePersonDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4578097">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1598,40 +1689,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36624774">
           <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/controller/PersonController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/Controller/PersonController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7935368">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Generic/GenericDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7714286">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/Generic/GenericDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7714286">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-          <folding>
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1826#1827#0" expanded="true" />
-            <element signature="e#1847#1877#0" expanded="true" />
-            <element signature="e#1976#1977#0" expanded="true" />
-            <element signature="e#2049#2050#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1641,36 +1707,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/ConcreteRate/PairKey.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/concreteRate/PairKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26608697">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/ConcreteRate/RateCluster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6921739">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/ConcreteRate/RatePerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67478263">
-          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1710,39 +1756,212 @@
         <state vertical-scroll-proportion="0.37913042">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1469#1470#0" expanded="true" />
-            <element signature="e#1503#1504#0" expanded="true" />
-            <element signature="e#1546#1547#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/predicate/PersonPredicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.44260356">
           <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding>
-            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58343196">
+          <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/generic/GenericDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24142012">
+          <caret line="13" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/generic/GenericDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9597633">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding>
+            <element signature="e#931#961#0" expanded="true" />
+            <element signature="e#1636#1666#0" expanded="true" />
+            <element signature="e#1847#1877#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/concreteRate/RateCluster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46272188">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/dao/PersonDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.34201184">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/model/rate/concreteRate/RatePerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08047337">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding>
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/rateCluster/RateClusterDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/rateCluster/RateClusterDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/ClusterDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16094674">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/cluster/ClusterDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16094674">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/ratePerson/RatePersonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/ratePerson/RatePersonDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/PersonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/person/PersonDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06035503">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/predicate/person/PersonPredicateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/predicate/person/PersonPredicateDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22130178">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/predicate/song/SongPredicateDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="123" selection-start-line="14" selection-start-column="123" selection-end-line="14" selection-end-column="123" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/song/SongDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06035503">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/song/SongDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06035503">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/webapp/dao/model/predicate/song/SongPredicateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24142012">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/recommend/Business/LoaderData/LoaderData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2816568">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
       </provider>

@@ -2,7 +2,7 @@ package com.IMaylatov.recommend.webapp.model.predicate;
 
 import com.IMaylatov.recommend.webapp.model.Cluster;
 import com.IMaylatov.recommend.webapp.model.Song;
-import com.IMaylatov.recommend.webapp.model.rate.ConcreteRate.PairKey;
+import com.IMaylatov.recommend.webapp.model.rate.concreteRate.PairKey;
 
 import javax.persistence.*;
 

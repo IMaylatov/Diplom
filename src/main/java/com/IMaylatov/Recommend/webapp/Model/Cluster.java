@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "Cluster")
+@Table(name = "cluster")
 public class Cluster{
     //region Private field
     @Id
@@ -18,7 +18,7 @@ public class Cluster{
     private long id;
 
     @ElementCollection
-    @CollectionTable(name = "RateCluster", joinColumns = @JoinColumn(name = "ClusterId"))
+    @CollectionTable(name = "rateCluster", joinColumns = @JoinColumn(name = "ClusterId"))
     @Column(name = "value")
     @MapKeyJoinColumn(name = "SongId")
     private Map<Song, Long> rates = new HashMap<>();
@@ -69,7 +69,7 @@ public class Cluster{
 
     @Override
     public String toString() {
-        return "Cluster{" +
+        return "cluster{" +
                 "id=" + id +
                 ", countRate=" + countRate +
                 ", summaRate=" + summaRate +

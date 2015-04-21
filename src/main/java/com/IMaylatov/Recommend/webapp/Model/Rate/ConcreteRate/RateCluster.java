@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.model.rate.ConcreteRate;
+package com.IMaylatov.recommend.webapp.model.rate.concreteRate;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -12,7 +12,7 @@ import com.IMaylatov.recommend.webapp.model.rate.RateValue;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "RateCluster")
+@Table(name = "rateCluster")
 public class RateCluster extends RateValue {
     //region Private field
     @EmbeddedId
@@ -44,7 +44,7 @@ public class RateCluster extends RateValue {
 
     @Override
     public String toString() {
-        return "RateCluster{" +
+        return "rateCluster{" +
                 "ClusterId=" + id.getK1().getId() +
                 ", SongId=" + id.getK2().getId() +
                 ", value=" + value +

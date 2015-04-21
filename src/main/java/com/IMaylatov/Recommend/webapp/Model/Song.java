@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Entity
-@Table(name="Song")
+@Table(name="song")
 public class Song implements Serializable {
     //region field
     @Id
@@ -42,7 +42,7 @@ public class Song implements Serializable {
 
     @Override
     public String toString() {
-        return "Song{" +
+        return "song{" +
                 "id=" + id +
                 '}';
     }

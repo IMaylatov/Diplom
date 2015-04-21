@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.model.rate.ConcreteRate;
+package com.IMaylatov.recommend.webapp.model.rate.concreteRate;
 
 import com.IMaylatov.recommend.webapp.model.Person;
 import com.IMaylatov.recommend.webapp.model.Song;
@@ -7,7 +7,7 @@ import com.IMaylatov.recommend.webapp.model.rate.RateValue;
 import javax.persistence.*;
 
 @Entity
-@Table(name="RatePerson")
+@Table(name="ratePerson")
 public class RatePerson extends RateValue {
     //region field
     @EmbeddedId
@@ -40,7 +40,7 @@ public class RatePerson extends RateValue {
 
     @Override
     public String toString() {
-        return "RatePerson{" +
+        return "ratePerson{" +
                 "id=" + id +
                 " ,PersonId=" + id.getK1().getId() +
                 " , SongId=" + id.getK2().getId() +

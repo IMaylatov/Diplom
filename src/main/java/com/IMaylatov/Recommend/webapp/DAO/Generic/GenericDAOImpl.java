@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.dao.Generic;
+package com.IMaylatov.recommend.webapp.dao.generic;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,19 +15,19 @@ import java.util.List;
  */
 
 /**
- * РћР±С‰РёР№ РєР»Р°СЃСЃ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ СЃСѓС‰РЅРѕСЃС‚СЏРјРё
+ * Общий класс для работы с сущностями
  * @param <T>
  */
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
 public abstract class GenericDaoImpl<T, K extends Serializable> implements GenericDao<T, K> {
     //region field
     /**
-     * Р¤Р°Р±СЂРёРєР° СЃРµСЃСЃРёР№ РёР· РєРѕРЅС‚РµР№РЅРµСЂР° Spring
+     * Фабрика сессий из контейнера Spring
      */
     @Autowired
     private SessionFactory sessionFactory;
     /**
-     * РўРёРї СЃСѓС‰РЅРѕСЃС‚Рё
+     * Тип сущности
      */
     protected Class<T> typeEntity;
     //endregion
