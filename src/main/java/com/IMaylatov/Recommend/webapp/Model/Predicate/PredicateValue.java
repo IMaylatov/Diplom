@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.model.predicate;
+package com.IMaylatov.Recommend.webapp.Model.Predicate;
 
 import javax.persistence.Column;
 import java.io.Serializable;

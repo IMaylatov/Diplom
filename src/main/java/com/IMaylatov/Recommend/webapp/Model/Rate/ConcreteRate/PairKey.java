@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.model.rate.concreteRate;
+package com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate;
 
 import javax.persistence.*;
 import java.io.Serializable;

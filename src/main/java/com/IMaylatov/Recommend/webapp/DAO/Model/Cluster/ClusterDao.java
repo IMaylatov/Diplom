@@ -1,13 +1,12 @@
-package com.IMaylatov.recommend.webapp.dao.model.cluster;
+package com.IMaylatov.Recommend.webapp.DAO.Model.Cluster;
+
+import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
- * date: 04.04.2015.
+ * date: 21.04.2015
  */
-
-import com.IMaylatov.recommend.webapp.dao.generic.GenericDao;
-import com.IMaylatov.recommend.webapp.model.Cluster;
-
 public interface ClusterDao extends GenericDao<Cluster, Long> {
     /**
      * Очистить таблицу кластеров

@@ -1,12 +1,8 @@
-package com.IMaylatov.recommend.webapp.dao.generic;
+package com.IMaylatov.Recommend.webapp.DAO.Generic;
 
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Общий интерфейс для работы с сущностями
- * @param <T> сущность
- */
 public interface GenericDao<T, K extends Serializable> {
     /**
      * Сохранить сущность

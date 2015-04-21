@@ -1,6 +1,6 @@
-package com.IMaylatov.recommend.webapp.model;
+package com.IMaylatov.Recommend.webapp.Model;
 
-import com.IMaylatov.recommend.webapp.model.predicate.PersonPredicate;
+import com.IMaylatov.Recommend.webapp.Model.Predicate.PersonPredicate;
 
 import javax.persistence.*;
 import java.util.HashMap;

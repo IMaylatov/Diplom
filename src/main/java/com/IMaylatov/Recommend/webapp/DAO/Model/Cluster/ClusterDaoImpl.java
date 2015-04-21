@@ -1,14 +1,10 @@
-package com.IMaylatov.recommend.webapp.dao.model.cluster;
+package com.IMaylatov.Recommend.webapp.DAO.Model.Cluster;
 
-/**
- * Author Ivan Maylatov (IMaylatov@gmail.com)
- * date: 04.04.2015.
- */
-
-import com.IMaylatov.recommend.webapp.dao.generic.GenericDaoImpl;
-import com.IMaylatov.recommend.webapp.dao.model.person.PersonDao;
-import com.IMaylatov.recommend.webapp.model.Cluster;
-import com.IMaylatov.recommend.webapp.model.Person;
+import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDaoImpl;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -16,6 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Author Ivan Maylatov (IMaylatov@gmail.com)
+ * date: 21.04.2015
+ */
 @Repository("ClusterDAO")
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
 public class ClusterDaoImpl extends GenericDaoImpl<Cluster, Long> implements ClusterDao {

@@ -8,11 +8,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/Recommend/Logic" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/Recommend/Main" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Controller" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/recommend/Business/LoaderData" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/recommend/Logic" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/recommend/Main" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/recommend/webapp/Controller" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/IMaylatov/recommend/webapp/Service" />
       <excludeFolder url="file://$MODULE_DIR$/src/test/java/Business" />
       <excludeFolder url="file://$MODULE_DIR$/src/test/java/Logic/DAO" />
       <excludeFolder url="file://$MODULE_DIR$/src/test/java/Logic/Model" />

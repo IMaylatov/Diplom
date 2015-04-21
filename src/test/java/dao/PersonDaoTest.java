@@ -1,9 +1,9 @@
 package dao;
 
-import com.IMaylatov.recommend.webapp.dao.model.cluster.ClusterDao;
-import com.IMaylatov.recommend.webapp.dao.model.person.PersonDao;
-import com.IMaylatov.recommend.webapp.dao.model.song.SongDao;
-import com.IMaylatov.recommend.webapp.model.Person;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.Model.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

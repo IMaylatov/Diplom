@@ -1,8 +1,8 @@
-package com.IMaylatov.recommend.webapp.model.rate.concreteRate;
+package com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate;
 
-import com.IMaylatov.recommend.webapp.model.Person;
-import com.IMaylatov.recommend.webapp.model.Song;
-import com.IMaylatov.recommend.webapp.model.rate.RateValue;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Rate.RateValue;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 
 import javax.persistence.*;
 

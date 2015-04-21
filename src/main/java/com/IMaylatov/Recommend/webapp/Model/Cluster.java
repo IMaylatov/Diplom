@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.model;
+package com.IMaylatov.Recommend.webapp.Model;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)

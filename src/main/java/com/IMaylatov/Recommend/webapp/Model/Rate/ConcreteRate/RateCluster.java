@@ -1,13 +1,13 @@
-package com.IMaylatov.recommend.webapp.model.rate.concreteRate;
+package com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 04.04.2015.
  */
 
-import com.IMaylatov.recommend.webapp.model.Cluster;
-import com.IMaylatov.recommend.webapp.model.Song;
-import com.IMaylatov.recommend.webapp.model.rate.RateValue;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Rate.RateValue;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 
 import javax.persistence.*;
 

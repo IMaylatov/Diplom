@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.model.rate;
+package com.IMaylatov.Recommend.webapp.Model.Rate;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;

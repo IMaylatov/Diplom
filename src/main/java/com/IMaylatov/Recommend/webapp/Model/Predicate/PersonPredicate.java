@@ -1,6 +1,6 @@
-package com.IMaylatov.recommend.webapp.model.predicate;
+package com.IMaylatov.Recommend.webapp.Model.Predicate;
 
-import com.IMaylatov.recommend.webapp.model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person;
 
 import javax.persistence.*;
 

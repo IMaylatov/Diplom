@@ -1,5 +1,6 @@
-package com.IMaylatov.recommend.webapp.dao.generic;
+package com.IMaylatov.Recommend.webapp.DAO.Generic;
 
+import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +11,6 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-/**
- * Created by Liggoriya on 21.03.2015.
- */
-
-/**
- * Общий класс для работы с сущностями
- * @param <T>
- */
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
 public abstract class GenericDaoImpl<T, K extends Serializable> implements GenericDao<T, K> {
     //region field

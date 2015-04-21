@@ -1,8 +1,8 @@
-package com.IMaylatov.recommend.webapp.model.predicate;
+package com.IMaylatov.Recommend.webapp.Model.Predicate;
 
-import com.IMaylatov.recommend.webapp.model.Cluster;
-import com.IMaylatov.recommend.webapp.model.Song;
-import com.IMaylatov.recommend.webapp.model.rate.concreteRate.PairKey;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 
 import javax.persistence.*;
 
