@@ -19,7 +19,7 @@ public class Song implements Serializable {
     @CollectionTable(name = "SongPredicate", joinColumns = @JoinColumn(name = "SongId"))
     @Column(name = "value")
     @MapKeyJoinColumn(name = "ClusterId")
-    private Map<Cluster, Long> predicates = new HashMap<>();
+    private Map<Cluster, Float> predicates = new HashMap<>();
     //endregion
 
     //region Constructor
@@ -35,7 +35,7 @@ public class Song implements Serializable {
         this.id = id;
     }
 
-    public Map<Cluster, Long> getPredicates() {
+    public Map<Cluster, Float> getPredicates() {
         return predicates;
     }
 //endregion

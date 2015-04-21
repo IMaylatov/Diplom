@@ -1,7 +1,6 @@
 package com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.RateCluster;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDaoImpl;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.RateCluster.RateClusterDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RateCluster;

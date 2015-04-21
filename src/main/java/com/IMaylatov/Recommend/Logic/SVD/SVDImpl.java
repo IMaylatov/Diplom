@@ -1,20 +1,14 @@
-package com.IMaylatov.Recommend.Business.SVD;
+package com.IMaylatov.Recommend.Logic.SVD;
 
-import com.IMaylatov.Recommend.Business.KMeans.ClusteringPersons;
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRates;
-import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverCluster;
-import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInCluster;
-import com.IMaylatov.Recommend.Business.Metric.Pearson;
-import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicate;
-import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicateImpl;
-import com.IMaylatov.Recommend.Business.SVD.GradientDown.GradientDown;
-import com.IMaylatov.Recommend.Business.SVD.GradientDown.GradientDownImpl;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.RateCluster.RateClusterDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Predicate.Person.PersonPredicateDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Predicate.PersonPredicate;
+import com.IMaylatov.Recommend.Logic.KMeans.ClusteringPerson.ClusteringPersons;
+import com.IMaylatov.Recommend.Logic.Metric.Euclid;
+import com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate.CalculaterPredicate;
+import com.IMaylatov.Recommend.Logic.SVD.GradientDown.GradientDown;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.RateCluster.RateClusterDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Predicate.Person.PersonPredicateDao;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,36 +21,30 @@ import java.util.List;
 @Repository("SVD")
 public class SVDImpl implements SVD {
     @Autowired
-    private ClusterDAO clusterDAO;
+    private ClusterDao clusterDAO;
     @Autowired
-    private RateClusterDAO rateClusterDAO;
+    private RateClusterDao rateClusterDAO;
     @Autowired
     private ClusteringPersons clusteringPersons;
     @Autowired
-    private PersonDAO personDAO;
+    private PersonDao personDAO;
     @Autowired
     private GradientDown gradientDown;
     @Autowired
-    private PersonPredicateDAO personPredicateDAO;
-
+    private PersonPredicateDao personPredicateDAO;
+    @Autowired
+    private CalculaterPredicate calculaterPredicate;
 
     @Override
     public void calculatePredicate() {
-        // Удаляем кластера и кластерные оценки
         rateClusterDAO.deleteAll();
         clusterDAO.deleteAll();
 
         int k = personDAO.list().size() / 100;
 
-        // Формируем кластера и размещаем в них пользователей
-        clusteringPersons.setFormingRate(new BuilderRates())
-                .setMetric(new Pearson())
-                .setMover(new MoverCluster())
-                .setSpread(new SpreadPersonInCluster());
-        clusteringPersons.spread(k);
+        clusteringPersons.clustering(k, new Euclid());
 
         List<Cluster> clusters = clusterDAO.list();
-        CalculaterPredicate calculaterPredicate = new CalculaterPredicateImpl();
         calculaterPredicate.calculate(clusters);
 
         gradientDown.down(clusters);

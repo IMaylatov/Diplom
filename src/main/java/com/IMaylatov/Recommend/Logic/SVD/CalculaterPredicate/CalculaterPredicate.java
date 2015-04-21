@@ -1,6 +1,7 @@
-package com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate;
+package com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate;
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
+
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 
 import java.util.List;
 

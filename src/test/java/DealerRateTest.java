@@ -1,14 +1,12 @@
-package Business.SVD;
-
-import com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate.CalculaterPredicateImpl;
-import com.IMaylatov.Recommend.Business.SVD.DealerRate.DealerRate;
-import com.IMaylatov.Recommend.Business.SVD.DealerRate.DealerRateImpl;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Cluster.ClusterDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate.CalculaterPredicate;
+import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRate;
+import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRateImpl;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,11 +28,13 @@ import java.util.List;
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
 public class DealerRateTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
-    private PersonDAO personDAO;
+    private PersonDao personDAO;
     @Autowired
-    private SongDAO songDAO;
+    private SongDao songDAO;
     @Autowired
-    private ClusterDAO clusterDAO;
+    private ClusterDao clusterDAO;
+    @Autowired
+    private CalculaterPredicate calculaterPredicate;
 
     @Test
     public void getRateTest(){
@@ -48,34 +48,36 @@ public class DealerRateTest extends AbstractTransactionalJUnit4SpringContextTest
         List<Person> persons = new ArrayList<>();
         for(int i = 0; i < 4; i++){
             Person person = new Person();
-            personDAO.save(person);
             persons.add(person);
         }
 
-        persons.get(0).addRate(songs.get(1), 4);
-        persons.get(0).addRate(songs.get(3), 3);
+        persons.get(0).getRates().put(songs.get(1), 4);
+        persons.get(0).getRates().put(songs.get(3), 3);
 
-        persons.get(1).addRate(songs.get(0), 5);
-        persons.get(1).addRate(songs.get(2), 4);
-        persons.get(1).addRate(songs.get(3), 5);
+        persons.get(1).getRates().put(songs.get(0), 5);
+        persons.get(1).getRates().put(songs.get(2), 4);
+        persons.get(1).getRates().put(songs.get(3), 5);
 
-        persons.get(2).addRate(songs.get(1), 2);
-        persons.get(2).addRate(songs.get(4), 3);
+        persons.get(2).getRates().put(songs.get(1), 2);
+        persons.get(2).getRates().put(songs.get(4), 3);
 
-        persons.get(3).addRate(songs.get(0), 1);
-        persons.get(3).addRate(songs.get(2), 2);
-        persons.get(3).addRate(songs.get(3), 4);
-        persons.get(3).addRate(songs.get(4), 3);
+        persons.get(3).getRates().put(songs.get(0), 1);
+        persons.get(3).getRates().put(songs.get(2), 2);
+        persons.get(3).getRates().put(songs.get(3), 4);
+        persons.get(3).getRates().put(songs.get(4), 3);
 
         Cluster cluster = new Cluster();
         for(Person person : persons){
             personDAO.save(person);
-            cluster.addPerson(person);
+            cluster.getPersons().add(person);
+            person.setCluster(cluster);
         }
+        cluster.setSummaRate(36);
+        cluster.setCountRate(11);
         clusterDAO.save(cluster);
+        clusterDAO.flush();
 
-        CalculaterPredicateImpl calculaterPredicateImpl = new CalculaterPredicateImpl();
-        calculaterPredicateImpl.calculate(cluster);
+        calculaterPredicate.calculate(cluster);
 
         DealerRate dealerRate = new DealerRateImpl();
 

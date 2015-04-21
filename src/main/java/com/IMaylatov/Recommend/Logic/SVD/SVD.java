@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Business.SVD;
+package com.IMaylatov.Recommend.Logic.SVD;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com

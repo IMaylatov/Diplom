@@ -1,11 +1,9 @@
-package Business.SVD;
-
-import com.IMaylatov.Recommend.Business.SVD.SVD;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.Logic.SVD.SVD;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,9 +25,9 @@ import java.util.List;
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
 public class SVDTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
-    private PersonDAO personDAO;
+    private PersonDao personDAO;
     @Autowired
-    private SongDAO songDAO;
+    private SongDao songDAO;
     @Autowired
     private SVD svd;
 
@@ -49,20 +47,20 @@ public class SVDTest extends AbstractTransactionalJUnit4SpringContextTests {
             persons.add(person);
         }
 
-        persons.get(0).addRate(songs.get(1), 4);
-        persons.get(0).addRate(songs.get(3), 3);
+        persons.get(0).getRates().put(songs.get(1), 4);
+        persons.get(0).getRates().put(songs.get(3), 3);
 
-        persons.get(1).addRate(songs.get(0), 5);
-        persons.get(1).addRate(songs.get(2), 4);
-        persons.get(1).addRate(songs.get(3), 5);
+        persons.get(1).getRates().put(songs.get(0), 5);
+        persons.get(1).getRates().put(songs.get(2), 4);
+        persons.get(1).getRates().put(songs.get(3), 5);
 
-        persons.get(2).addRate(songs.get(1), 2);
-        persons.get(2).addRate(songs.get(4), 3);
+        persons.get(2).getRates().put(songs.get(1), 2);
+        persons.get(2).getRates().put(songs.get(4), 3);
 
-        persons.get(3).addRate(songs.get(0), 1);
-        persons.get(3).addRate(songs.get(2), 2);
-        persons.get(3).addRate(songs.get(3), 4);
-        persons.get(3).addRate(songs.get(4), 3);
+        persons.get(3).getRates().put(songs.get(0), 1);
+        persons.get(3).getRates().put(songs.get(2), 2);
+        persons.get(3).getRates().put(songs.get(3), 4);
+        persons.get(3).getRates().put(songs.get(4), 3);
 
         svd.calculatePredicate();
 
@@ -72,10 +70,10 @@ public class SVDTest extends AbstractTransactionalJUnit4SpringContextTests {
         Assert.assertEquals(-0.1199f, persons.get(3).getPredicate(), 0.01f);
 
         Cluster cluster = persons.get(0).getCluster();
-        Assert.assertEquals(-0.0515f, songs.get(0).getPredicate(cluster).getValue(), 0.01f);
-        Assert.assertEquals(-0.0442f, songs.get(1).getPredicate(cluster).getValue(), 0.01f);
-        Assert.assertEquals(-0.0514f, songs.get(2).getPredicate(cluster).getValue(), 0.01f);
-        Assert.assertEquals(0.1713f, songs.get(3).getPredicate(cluster).getValue(), 0.01f);
-        Assert.assertEquals(-0.0332f, songs.get(4).getPredicate(cluster).getValue(), 0.01f);
+        Assert.assertEquals(-0.0515f, songs.get(0).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(-0.0442f, songs.get(1).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(-0.0514f, songs.get(2).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(0.1713f, songs.get(3).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(-0.0332f, songs.get(4).getPredicates().get(cluster), 0.01f);
     }
 }

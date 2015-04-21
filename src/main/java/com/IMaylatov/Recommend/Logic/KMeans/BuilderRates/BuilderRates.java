@@ -11,5 +11,5 @@ public interface BuilderRates {
     /**
      * В кластере формирует оценки. Для каждой песни, прослушанной пользователем в кластере, выставляет оценку
      */
-    void form(Cluster cluster);
+    void build(Cluster cluster);
 }

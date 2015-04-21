@@ -5,7 +5,6 @@ import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.DbUtil.DbUtil;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Song;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,20 +25,18 @@ public class BuilderRatesImpl implements BuilderRates {
     private SongDao songDao;
 
     @Override
-    public void form(Cluster cluster) {
-        List<Song> songs = songDao.list(Restrictions.sqlRestriction(
-                String.format(
-                        "Id in (Select Song.Id from Cluster" +
-                                " inner join Person on Cluster.Id = Person.ClusterId and Cluster.Id = %d" +
-                                " inner join RatePerson on Person.Id = RatePerson.PersonId" +
-                                " inner join Song on Song.Id = RatePerson.SongId" +
-                                " group by Song.Id)"
-                        , cluster.getId())
-        ));
+    public void build(Cluster cluster) {
+        List<Song> songs = songDao.songsInCluster(cluster);
 
+        cluster.setCountRate(0);
+        cluster.setSummaRate(0);
+        Random random = new Random();
         for(Song song : songs){
-            cluster.getRates().put(song, 3);
+            int value = random.nextInt(5) + 1;
+            cluster.getRates().put(song, value);
+            cluster.setCountRate(cluster.getCountRate() + 1);
+            cluster.setSummaRate(cluster.getSummaRate() + value);
         }
-        clusterDao.save(cluster);
+        clusterDao.update(cluster);
     }
 }

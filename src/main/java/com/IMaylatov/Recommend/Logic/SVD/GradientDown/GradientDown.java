@@ -1,7 +1,6 @@
-package com.IMaylatov.Recommend.Business.SVD.GradientDown;
+package com.IMaylatov.Recommend.Logic.SVD.GradientDown;
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import java.util.List;
 
 /**
@@ -10,7 +9,7 @@ import java.util.List;
  */
 public interface GradientDown {
     /**
-     * Спуститься вниз
+     * Спуститься вниз, стохастический спуск
      */
     void down(Cluster cluster);
     void down(List<Cluster> clusters);

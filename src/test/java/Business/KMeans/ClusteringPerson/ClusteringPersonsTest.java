@@ -1,14 +1,11 @@
 package Business.KMeans.ClusteringPerson;
 
-import com.IMaylatov.Recommend.Business.KMeans.ClusteringPersons;
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRates;
-import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverCluster;
-import com.IMaylatov.Recommend.Business.KMeans.SpreadPeople.SpreadPersonInCluster;
-import com.IMaylatov.Recommend.Business.Metric.Euclid;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.Logic.KMeans.ClusteringPerson.ClusteringPersons;
+import com.IMaylatov.Recommend.Logic.Metric.Euclid;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,9 +29,9 @@ public class ClusteringPersonsTest extends AbstractTransactionalJUnit4SpringCont
     @Autowired
     private ClusteringPersons clusteringPersons;
     @Autowired
-    private SongDAO songDAO;
+    private SongDao songDAO;
     @Autowired
-    private PersonDAO personDAO;
+    private PersonDao personDAO;
 
     @Test
     public void spreadTest(){
@@ -49,62 +46,44 @@ public class ClusteringPersonsTest extends AbstractTransactionalJUnit4SpringCont
         for (int i = 0; i < 5; i++)
             persons.add(new Person());
 
-        persons.get(0).addRate(songs.get(0), 4);
-        persons.get(0).addRate(songs.get(1), 1);
-        persons.get(0).addRate(songs.get(3), 2);
-        persons.get(0).addRate(songs.get(5), 2);
-        persons.get(0).addRate(songs.get(6), 4);
-        persons.get(0).addRate(songs.get(7), 5);
-        persons.get(0).addRate(songs.get(8), 3);
+        persons.get(0).getRates().put(songs.get(0), 4);
+        persons.get(0).getRates().put(songs.get(1), 1);
+        persons.get(0).getRates().put(songs.get(3), 2);
+        persons.get(0).getRates().put(songs.get(5), 2);
+        persons.get(0).getRates().put(songs.get(6), 4);
+        persons.get(0).getRates().put(songs.get(7), 5);
+        persons.get(0).getRates().put(songs.get(8), 3);
 
-        persons.get(1).addRate(songs.get(0), 4);
-        persons.get(1).addRate(songs.get(1), 4);
-        persons.get(1).addRate(songs.get(2), 4);
-        persons.get(1).addRate(songs.get(4), 2);
-        persons.get(1).addRate(songs.get(5), 2);
-        persons.get(1).addRate(songs.get(7), 5);
+        persons.get(1).getRates().put(songs.get(0), 4);
+        persons.get(1).getRates().put(songs.get(1), 4);
+        persons.get(1).getRates().put(songs.get(2), 4);
+        persons.get(1).getRates().put(songs.get(4), 2);
+        persons.get(1).getRates().put(songs.get(5), 2);
+        persons.get(1).getRates().put(songs.get(7), 5);
 
-        persons.get(2).addRate(songs.get(0), 4);
-        persons.get(2).addRate(songs.get(2), 4);
-        persons.get(2).addRate(songs.get(5), 5);
-        persons.get(2).addRate(songs.get(8), 4);
+        persons.get(2).getRates().put(songs.get(0), 4);
+        persons.get(2).getRates().put(songs.get(2), 4);
+        persons.get(2).getRates().put(songs.get(5), 5);
+        persons.get(2).getRates().put(songs.get(8), 4);
 
-        persons.get(3).addRate(songs.get(1), 5);
-        persons.get(3).addRate(songs.get(2), 4);
-        persons.get(3).addRate(songs.get(3), 3);
-        persons.get(3).addRate(songs.get(4), 2);
-        persons.get(3).addRate(songs.get(5), 3);
-        persons.get(3).addRate(songs.get(6), 3);
-        persons.get(3).addRate(songs.get(7), 4);
-        persons.get(3).addRate(songs.get(8), 4);
+        persons.get(3).getRates().put(songs.get(1), 5);
+        persons.get(3).getRates().put(songs.get(2), 4);
+        persons.get(3).getRates().put(songs.get(3), 3);
+        persons.get(3).getRates().put(songs.get(4), 2);
+        persons.get(3).getRates().put(songs.get(5), 3);
+        persons.get(3).getRates().put(songs.get(6), 3);
+        persons.get(3).getRates().put(songs.get(7), 4);
+        persons.get(3).getRates().put(songs.get(8), 4);
 
-        persons.get(4).addRate(songs.get(0), 5);
-        persons.get(4).addRate(songs.get(1), 2);
-        persons.get(4).addRate(songs.get(3), 5);
-        persons.get(4).addRate(songs.get(5), 1);
-        persons.get(4).addRate(songs.get(7), 2);
+        persons.get(4).getRates().put(songs.get(0), 5);
+        persons.get(4).getRates().put(songs.get(1), 2);
+        persons.get(4).getRates().put(songs.get(3), 5);
+        persons.get(4).getRates().put(songs.get(5), 1);
+        persons.get(4).getRates().put(songs.get(7), 2);
 
         for (Person person : persons)
             personDAO.save(person);
 
-        clusteringPersons = clusteringPersons.setMetric(new Euclid()).
-                setFormingRate(new BuilderRates()).
-                setMover(new MoverCluster()).
-                setSpread(new SpreadPersonInCluster());
-
-        clusteringPersons.spread(4);
-
-        Assert.assertEquals(persons.get(0).getCluster().getId(), persons.get(4).getCluster().getId());
-        Assert.assertNotEquals(persons.get(0).getCluster().getId(), persons.get(1).getCluster().getId());
-        Assert.assertNotEquals(persons.get(0).getCluster().getId(), persons.get(2).getCluster().getId());
-        Assert.assertNotEquals(persons.get(0).getCluster().getId(), persons.get(3).getCluster().getId());
-
-        Assert.assertNotEquals(persons.get(1).getCluster().getId(), persons.get(2).getCluster().getId());
-        Assert.assertNotEquals(persons.get(1).getCluster().getId(), persons.get(3).getCluster().getId());
-
-        Assert.assertNotEquals(persons.get(2).getCluster().getId(), persons.get(3).getCluster().getId());
-
-
-        int c = 0;
+        clusteringPersons.clustering(4, new Euclid());
     }
 }

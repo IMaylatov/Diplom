@@ -1,78 +1,66 @@
-package com.IMaylatov.Recommend.Business.SVD.CalculaterPredicate;
+package com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate;
 
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
-import com.IMaylatov.Recommend.Logic.Model.Rate.Rate;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.RatePerson.RatePersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.DbUtil.DbUtil;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
+import com.IMaylatov.Recommend.webapp.Model.Song;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.Map.*;
+import java.util.Map.Entry;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 15.04.2015.
  */
+@Service("CalculaterPredicate")
 public class CalculaterPredicateImpl implements CalculaterPredicate {
     private final int L2 = 25;
     private final int L3 = 10;
 
+    @Autowired
+    private SongDao songDao;
+    @Autowired
+    private PersonDao personDao;
+    @Autowired
+    private RatePersonDao ratePersonDao;
+    @Autowired
+    private DbUtil dbUtil;
+
     @Override
     public void calculate(Cluster cluster) {
-        int count = 0;
-        float average = 0;
+        if(cluster.getCountRate() <= 0)
+            throw new IllegalArgumentException("Invalid count rate in cluster, count = " + cluster.getCountRate());
+        float average = (float) cluster.getSummaRate() / (float) cluster.getCountRate();
 
-        Map<Person, List<Rate>> personRate = new HashMap<>();
-        Map<Song, List<Rate>> songRate = new HashMap<>();
+        List<Person> personsInCluster = cluster.getPersons();
+        List<Song> songInCluster = songDao.songsInCluster(cluster);
 
-        Iterator<Person> personIterator = cluster.iteratorPerson();
-        while(personIterator.hasNext()){
-            Person person = personIterator.next();
-            Iterator<RatePerson> ratePersonIterator = person.iteratorRates();
-            while(ratePersonIterator.hasNext()){
-                RatePerson ratePerson = ratePersonIterator.next();
-
-                if(personRate.containsKey(ratePerson.getPerson()))
-                    personRate.get(ratePerson.getPerson()).add(ratePerson);
-                else {
-                    List<Rate> rates = new ArrayList<>();
-                    rates.add(ratePerson);
-                    personRate.put(ratePerson.getPerson(), rates);
-                }
-
-                if(songRate.containsKey(ratePerson.getSong()))
-                    songRate.get(ratePerson.getSong()).add(ratePerson);
-                else{
-                    List<Rate> rates = new ArrayList<>();
-                    rates.add(ratePerson);
-                    songRate.put(ratePerson.getSong(), rates);
-                }
-
-                count++;
-                average += ratePerson.getValue();
-            }
-        }
-        cluster.setSummaRate((int)average);
-        cluster.setCountRate(count);
-
-        average /= count;
-
-        for(Entry<Person, List<Rate>> personInfo : personRate.entrySet()){
+        for(Person person : personsInCluster){
             float summa = 0;
-            for(Rate rate : personInfo.getValue()){
+            for(Entry<Song, Integer> rate : person.getRates().entrySet()){
                 summa += rate.getValue() - average;
             }
-            summa /= (L2 + personInfo.getValue().size());
-            personInfo.getKey().setPredicate(summa);
+            summa /= (L2 + person.getRates().size());
+            person.setPredicate(summa);
+
+            personDao.update(person);
         }
 
-        for(Entry<Song, List<Rate>> songInfo : songRate.entrySet()){
+        for(Song song : songInCluster){
+            List<RatePerson> rateForSongInCluster = ratePersonDao.getRateForSongInCluster(song, cluster);
             float summa = 0;
-            for(Rate rate : songInfo.getValue()){
-                summa += rate.getValue() - average - ((Person)rate.getAppraiser()).getPredicate();
+            for(RatePerson rate : rateForSongInCluster){
+                summa += rate.getValue() - average - rate.getPerson().getPredicate();
             }
-            summa /= (L3 + songInfo.getValue().size());
-            songInfo.getKey().setPredicate(summa, cluster);
+            summa /= (L3 + rateForSongInCluster.size());
+            song.getPredicates().put(cluster, summa);
+            songDao.update(song);
         }
     }
 

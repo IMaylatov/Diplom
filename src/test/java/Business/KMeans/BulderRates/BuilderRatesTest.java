@@ -74,7 +74,7 @@ public class BuilderRatesTest extends AbstractTransactionalJUnit4SpringContextTe
 
         clusterDAO.flush();
 
-        builderRates.form(cluster);
+        builderRates.build(cluster);
 
         clusterDAO.save(cluster);
 

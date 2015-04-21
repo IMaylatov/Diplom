@@ -1,7 +1,7 @@
-package com.IMaylatov.Recommend.Business.SVD.DealerRate;
+package com.IMaylatov.Recommend.Logic.SVD.DealerRate;
 
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com
@@ -11,9 +11,9 @@ public class DealerRateImpl implements DealerRate{
     @Override
     public int getRate(Person person, Song song) {
         float average = (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate();
-        if(song.getPredicate(person.getCluster()) == null)
+        if(!song.getPredicates().containsKey(person.getCluster()))
             return Math.round(average + person.getPredicate());
         else
-            return Math.round(average + person.getPredicate() + song.getPredicate(person.getCluster()).getValue());
+            return Math.round(average + person.getPredicate() + song.getPredicates().get(person.getCluster()));
     }
 }

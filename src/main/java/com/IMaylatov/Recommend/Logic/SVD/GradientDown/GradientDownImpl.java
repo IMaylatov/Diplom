@@ -1,23 +1,21 @@
-package com.IMaylatov.Recommend.Business.SVD.GradientDown;
+package com.IMaylatov.Recommend.Logic.SVD.GradientDown;
 
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
-import com.IMaylatov.Recommend.Logic.Model.Song;
-import com.sun.prism.paint.Gradient;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com
  * date: 17.04.2015
  */
-@Repository("GradientDown")
+@Service("GradientDown")
 public class GradientDownImpl implements GradientDown{
     //Параметр регулиризации
     private final double L4 = 0.02;
@@ -25,33 +23,28 @@ public class GradientDownImpl implements GradientDown{
     private final double learningRates = 0.005;
 
     @Autowired
-    private PersonDAO personDAO;
+    private PersonDao personDAO;
     @Autowired
-    private SongDAO songDAO;
+    private SongDao songDAO;
 
     @Override
     public void down(Cluster cluster) {
         float average = (float)cluster.getSummaRate() / (float)cluster.getCountRate();
 
-        Iterator<Person> personIterator = cluster.iteratorPerson();
-        while(personIterator.hasNext()){
-            Person person = personIterator.next();
-            Iterator<RatePerson> ratePersonIterator = person.iteratorRates();
-            while(ratePersonIterator.hasNext()){
-                RatePerson ratePerson = ratePersonIterator.next();
-
-                Song song = ratePerson.getSong();
-                float e = ratePerson.getValue() - (average + person.getPredicate() + song.getPredicate(cluster).getValue());
+        for(Person person : cluster.getPersons()){
+            for(Entry<Song, Integer> rate : person.getRates().entrySet()){
+                Song song = rate.getKey();
+                float e = rate.getValue() -
+                        (average + person.getPredicate() + rate.getKey().getPredicates().get(cluster));
 
                 person.setPredicate((float) (person.getPredicate() +
-                        learningRates * (e - L4 * person.getPredicate())));
+                                    learningRates * (e -L4 * person.getPredicate())));
+                song.getPredicates().put(cluster,
+                        (float) (song.getPredicates().get(cluster) +
+                                learningRates * (e - L4 * song.getPredicates().get(cluster))));
 
-                song.setPredicate((float) (song.getPredicate(cluster).getValue() +
-                        learningRates * (e - L4 * song.getPredicate(cluster).getValue())),
-                        cluster);
-
-                personDAO.update(person);
-                songDAO.update(song);
+                personDAO.save(person);
+                songDAO.save(song);
             }
         }
     }

@@ -45,9 +45,9 @@ public class RatePerson extends RateValue {
     @Override
     public String toString() {
         return "ratePerson{" +
-                "id=" + id +
-                " ,PersonId=" + id.getK1().getId() +
+                "PersonId=" + id.getK1().getId() +
                 " , SongId=" + id.getK2().getId() +
+                " , Value =" + getValue() +
                 '}';
     }
 }

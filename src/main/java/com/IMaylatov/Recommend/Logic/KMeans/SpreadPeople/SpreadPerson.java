@@ -11,19 +11,14 @@ import com.IMaylatov.Recommend.webapp.Model.Person;
 
 import java.util.List;
 
-/**
- * –аспредел€т пользователей по кластерам
- */
-public interface SpreadPersonInClusterable {
+public interface SpreadPerson {
     /**
      * –авномерно распредел€ет пользователей по кластерам
-     * @return —писок кластеров, содержащий распределенных пользователей
      */
-    List<Cluster> simpleSpread(List<Person> persons, int k, BuilderRatesable formingRateInCluster);
+    List<Cluster> evenlySpread(List<Person> persons, int k);
 
     /**
      * –аспредел€ет пользователей по ближайшим кластерам по заданной метрике
-     * @return —писок распределенных пользователей
      */
-   //List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric);
+    List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric);
 }
