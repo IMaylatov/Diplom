@@ -1,10 +1,11 @@
 package Business.Metric;
 
-import com.IMaylatov.Recommend.Business.Metric.Euclid;
-import com.IMaylatov.Recommend.Business.Metric.Metric;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.Logic.Metric.Euclid;
+import com.IMaylatov.Recommend.Logic.Metric.Metric;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -22,7 +23,7 @@ import org.junit.Test;
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
 public class EuclidTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
-    SongDAO songDAO;
+    SongDao songDao;
 
     /**
      * У пользователей нет общих оценок
@@ -34,20 +35,18 @@ public class EuclidTest extends AbstractTransactionalJUnit4SpringContextTests {
 
         for (int i = 0; i < 2; i++) {
             Song song = new Song();
-            songDAO.save(song);
-            person1.addRate(song, 5);
+            songDao.save(song);
+            person1.getRates().put(song, 5);
         }
         for (int i = 0; i < 3; i++){
             Song song = new Song();
-            songDAO.save(song);
-            person2.addRate(song, 4);
+            songDao.save(song);
+            person2.getRates().put(song, 4);
         }
 
         Metric metric = new Euclid();
-        try{
-//            double distance = metric.compare(person1, person2);
-//            Assert.assertTrue("У пользователей нет общих оценок", false);
-        }catch (IllegalArgumentException e){}
+        double distance = metric.compare(person1, person2);
+        Assert.assertEquals("У пользователей нет общих оценок", Double.MAX_VALUE, distance, 0.001);
     }
 
     @Test
@@ -57,23 +56,23 @@ public class EuclidTest extends AbstractTransactionalJUnit4SpringContextTests {
 
         for (int i = 0; i < 5; i++){
             Song song = new Song();
-            songDAO.save(song);
-            person1.addRate(song, 4);
-            person2.addRate(song, 5);
+            songDao.save(song);
+            person1.getRates().put(song, 4);
+            person2.getRates().put(song, 5);
         }
 
         for (int i = 0; i < 3; i++){
             Song song = new Song();
-            songDAO.save(song);
-            person1.addRate(song, 3);
+            songDao.save(song);
+            person1.getRates().put(song, 3);
         }
         for (int i = 0; i < 2; i++){
             Song song = new Song();
-            songDAO.save(song);
-            person2.addRate(song, 2);
+            songDao.save(song);
+            person2.getRates().put(song, 2);
         }
 
         Metric metric = new Euclid();
-        //Assert.assertEquals("Расстояние между польлзователями", Math.sqrt(5), metric.compare(person1, person2), 0.001);
+        Assert.assertEquals("Расстояние между польлзователями", Math.sqrt(5), metric.compare(person1, person2), 0.001);
     }
 }

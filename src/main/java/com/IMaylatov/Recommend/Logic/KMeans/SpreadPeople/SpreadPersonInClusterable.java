@@ -1,14 +1,13 @@
-package com.IMaylatov.Recommend.Business.KMeans.SpreadPeople;
+package com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 07.04.2015.
  */
 
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
-import com.IMaylatov.Recommend.Business.Metric.Metric;
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Person;
+import com.IMaylatov.Recommend.Logic.KMeans.FormRate.BuilderRatesable;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
 
 import java.util.List;
 

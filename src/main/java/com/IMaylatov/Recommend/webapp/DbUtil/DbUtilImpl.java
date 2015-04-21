@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.dbUtil;
+package com.IMaylatov.Recommend.webapp.DbUtil;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

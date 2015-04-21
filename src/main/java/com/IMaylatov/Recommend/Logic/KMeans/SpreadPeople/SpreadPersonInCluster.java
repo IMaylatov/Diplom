@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Business.KMeans.SpreadPeople;
+package com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople;
 
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
 import com.IMaylatov.Recommend.Business.Metric.Metric;

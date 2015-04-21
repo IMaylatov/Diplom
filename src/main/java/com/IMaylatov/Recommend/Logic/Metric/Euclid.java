@@ -1,36 +1,32 @@
-package com.IMaylatov.Recommend.Business.Metric;
+package com.IMaylatov.Recommend.Logic.Metric;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 03.04.2015.
  */
 
-import com.IMaylatov.Recommend.Logic.Model.Rate.HasRates;
-import com.IMaylatov.Recommend.Logic.Model.Rate.Rate;
+import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 
-import java.util.Iterator;
+import java.util.Map.Entry;
 
 /**
  * Евклидова метрика
  */
 public class Euclid implements Metric {
     @Override
-    public double compare(HasRates person1, HasRates person2) throws IllegalArgumentException {
+    public double compare(Ratesable person1, Ratesable person2){
         double distance = 0;
         boolean isCommonSongs = false;
 
-        Iterator<Rate> rateIterator = person1.iteratorRates();
-        while(rateIterator.hasNext()){
-            Rate ratePerson1 = rateIterator.next();
-            Rate ratePerson2 = person2.getRate(ratePerson1.getSong());
-            if (ratePerson2 != null) {
-                distance += Math.pow(ratePerson1.getValue() - ratePerson2.getValue(), 2);
+        for(Entry<Song, Integer> rate1 : person1.getRates().entrySet())
+            if (person2.getRates().containsKey(rate1.getKey())) {
+                distance += Math.pow(rate1.getValue() - person2.getRates().get(rate1.getKey()), 2);
                 isCommonSongs = true;
             }
-        }
 
         if (!isCommonSongs)
-            throw new IllegalArgumentException("У пользователей нет общих оценок");
+            return Double.MAX_VALUE;
 
         return Math.sqrt(distance);
     }

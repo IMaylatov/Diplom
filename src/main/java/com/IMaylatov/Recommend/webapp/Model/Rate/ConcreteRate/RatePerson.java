@@ -21,6 +21,10 @@ public class RatePerson extends RateValue {
     //region Constructor
     private RatePerson() {
     }
+
+    public RatePerson(PairKey<Person, Song> id) {
+        this.id = id;
+    }
     //endregion
 
     //region getter setter

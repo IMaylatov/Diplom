@@ -1,4 +1,6 @@
-package com.IMaylatov.Recommend.Business.Metric;
+package com.IMaylatov.Recommend.Logic.Metric;
+
+import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -6,11 +8,9 @@ package com.IMaylatov.Recommend.Business.Metric;
  */
 
 
-import com.IMaylatov.Recommend.Logic.Model.Rate.HasRates;
-
 public interface Metric {
     /**
      * Сравнивает сущности, которые обладают оценками и возвращает расстояние между ними
      */
-    double compare(HasRates person1, HasRates person2) throws IllegalArgumentException;
+    double compare(Ratesable person1, Ratesable person2);
 }

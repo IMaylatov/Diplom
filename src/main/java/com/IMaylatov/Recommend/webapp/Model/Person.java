@@ -1,6 +1,7 @@
 package com.IMaylatov.Recommend.webapp.Model;
 
 import com.IMaylatov.Recommend.webapp.Model.Predicate.PersonPredicate;
+import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
 
 import javax.persistence.*;
 import java.util.HashMap;
@@ -8,7 +9,7 @@ import java.util.Map;
 
 @Entity
 @Table(name="person")
-public class Person{
+public class Person implements Ratesable{
     //region field
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="person_id_seq")
@@ -20,7 +21,7 @@ public class Person{
     @CollectionTable(name = "ratePerson", joinColumns = @JoinColumn(name = "PersonId"))
     @Column(name = "value")
     @MapKeyJoinColumn(name = "SongId")
-    private Map<Song, Long> rates = new HashMap<>();
+    private Map<Song, Integer> rates = new HashMap<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ClusterId")
@@ -43,7 +44,7 @@ public class Person{
         this.id = id;
     }
 
-    public Map<Song, Long> getRates() {
+    public Map<Song, Integer> getRates() {
         return rates;
     }
 

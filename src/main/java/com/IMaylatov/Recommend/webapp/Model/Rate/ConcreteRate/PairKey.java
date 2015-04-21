@@ -8,7 +8,7 @@ import java.io.Serializable;
  * date: 09.04.2015.
  */
 @Embeddable
-public abstract class PairKey<K1, K2> implements Serializable{
+public class PairKey<K1, K2> implements Serializable{
     @ManyToOne(fetch = FetchType.EAGER)
     protected K1 k1;
     @ManyToOne(fetch = FetchType.EAGER)

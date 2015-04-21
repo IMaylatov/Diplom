@@ -1,4 +1,4 @@
-package com.IMaylatov.recommend.webapp.dbUtil;
+package com.IMaylatov.Recommend.webapp.DbUtil;
 
 import java.util.List;
 

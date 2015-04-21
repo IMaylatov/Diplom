@@ -1,61 +1,49 @@
-package com.IMaylatov.Recommend.Business.Metric;
+package com.IMaylatov.Recommend.Logic.Metric;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 04.04.2015.
  */
-import com.IMaylatov.Recommend.Logic.Model.Rate.HasRates;
-import com.IMaylatov.Recommend.Logic.Model.Rate.Rate;
+import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Map.Entry;
 
 /**
  * Корреляция Пирсона
  */
-public class Pearson implements Metric{
+public class Pearson implements Metric {
     @Override
-    public double compare(HasRates person1, HasRates person2) throws IllegalArgumentException {
+    public double compare(Ratesable person1, Ratesable person2){
         double X = 0, Y = 0;
+        int countCommonRate = 0;
 
-        List<Pair> commonRate = new ArrayList<>();
-        Iterator<Rate> ratePersonIterator = person1.iteratorRates();
-        while(ratePersonIterator.hasNext()){
-            Rate ratePerson1 = ratePersonIterator.next();
-            Rate ratePerson2 = person2.getRate(ratePerson1.getSong());
-            if (ratePerson2 != null) {
-                commonRate.add(new Pair(ratePerson1, ratePerson2));
-                X += ratePerson1.getValue();
-                Y += ratePerson2.getValue();
+        for(Entry<Song, Integer> rate1 : person1.getRates().entrySet())
+            if (person2.getRates().containsKey(rate1.getKey())) {
+                X += rate1.getValue();
+                Y += person2.getRates().get(rate1.getKey());
+                countCommonRate++;
             }
-        }
-        if (commonRate.size() < 3)
-            throw new IllegalArgumentException("Количество сравниваемых точек должно быть не меньше 3");
-        X /= commonRate.size();
-        Y /= commonRate.size();
+
+        if (countCommonRate == 0)
+            return Double.MAX_VALUE;
+        X /= countCommonRate;
+        Y /= countCommonRate;
 
         //Числитель, знаменатель для X и Y, промежуточные переменные(необходимы для числителя и знаменателя)
         double numerator = 0, denominatorX = 0, denominatorY = 0, gapX, gapY;
-        for (Pair pair : commonRate){
-            gapX = pair.person1Rate.getValue() - X;
-            gapY = pair.person2Rate.getValue() - Y;
-            numerator += gapX * gapY;
-            denominatorX += gapX * gapX;
-            denominatorY += gapY * gapY;
-        }
+        for(Entry<Song, Integer> rate1 : person1.getRates().entrySet())
+            if (person2.getRates().containsKey(rate1.getKey())) {
+                gapX = rate1.getValue() - X;
+                gapY = person2.getRates().get(rate1.getKey()) - Y;
+                numerator += gapX * gapY;
+                denominatorX += gapX * gapX;
+                denominatorY += gapY * gapY;
+            }
+
         if((denominatorX*denominatorY <= 0) || (numerator < 0))
-            throw new IllegalArgumentException("Отсутствует корреляционная зависимость");
+            return Double.MAX_VALUE;
 
         return numerator / (Math.sqrt(denominatorX*denominatorY));
-    }
-
-    class Pair{
-        public Rate person1Rate;
-        public Rate person2Rate;
-        public Pair(Rate person1Rate, Rate person2Rate) {
-            this.person1Rate = person1Rate;
-            this.person2Rate = person2Rate;
-        }
     }
 }

@@ -1,8 +1,8 @@
-package com.IMaylatov.recommend.Main;
+package com.IMaylatov.Recommend.Main;
 
-import com.IMaylatov.recommend.Business.LoaderData.LoaderData;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.IMaylatov.Recommend.Logic.LoaderData.*;
 
 import java.util.HashMap;
 

@@ -1,8 +1,4 @@
-package com.IMaylatov.recommend.Main;
-
-import com.IMaylatov.recommend.Business.SVD.SVD;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+package com.IMaylatov.Recommend.Main;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -10,8 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SVDMain {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
-        SVD svd = (SVD) context.getBean("SVD");
-        svd.calculatePredicate();
+//        ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
+//        SVD svd = (SVD) context.getBean("SVD");
+//        svd.calculatePredicate();
     }
 }

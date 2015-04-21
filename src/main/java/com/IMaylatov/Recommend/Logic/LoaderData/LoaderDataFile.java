@@ -1,16 +1,16 @@
-package com.IMaylatov.Recommend.Business.LoaderData;
+package com.IMaylatov.Recommend.Logic.LoaderData;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 01.04.2015.
  */
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.PersonDAO;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Song.SongDAO;
-import com.IMaylatov.Recommend.Logic.DbUtil.DbUtil;
-import com.IMaylatov.Recommend.Logic.Model.Person;
-import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
-import com.IMaylatov.Recommend.Logic.Model.Rate.PairKey.PairKey;
-import com.IMaylatov.Recommend.Logic.Model.Song;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
+import com.IMaylatov.Recommend.webapp.DbUtil.DbUtil;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
+import com.IMaylatov.Recommend.webapp.Model.Song;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -33,9 +33,9 @@ public class LoaderDataFile implements LoaderData {
     @Autowired
     private DbUtil dbUtil;
     @Autowired
-    private PersonDAO personDAO;
+    private PersonDao personDAO;
     @Autowired
-    private SongDAO songDAO;
+    private SongDao songDAO;
     //endregion
 
     /**
@@ -102,8 +102,7 @@ public class LoaderDataFile implements LoaderData {
                 String[] rateInfo = scanner.nextLine().split(" ");
                 Person person = personDAO.find(Long.parseLong(rateInfo[0]));
                 Song song = songDAO.find(Long.parseLong(rateInfo[1]));
-                RatePerson ratePerson = new RatePerson(new PairKey<>(person, song), Integer.parseInt(rateInfo[2]));
-                ratePersons.add(ratePerson);
+                person.getRates().put(song, Integer.parseInt(rateInfo[2]));
             }
         }catch (IOException e){
             log.error(e);

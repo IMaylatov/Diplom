@@ -4,12 +4,14 @@ package com.IMaylatov.Recommend.webapp.Model;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 04.04.2015.
  */
+import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
+
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
 @Table(name = "cluster")
-public class Cluster{
+public class Cluster implements Ratesable {
     //region Private field
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="cluster_id_seq")
@@ -21,7 +23,7 @@ public class Cluster{
     @CollectionTable(name = "rateCluster", joinColumns = @JoinColumn(name = "ClusterId"))
     @Column(name = "value")
     @MapKeyJoinColumn(name = "SongId")
-    private Map<Song, Long> rates = new HashMap<>();
+    private Map<Song, Integer> rates = new HashMap<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ClusterID")
@@ -62,7 +64,7 @@ public class Cluster{
         return persons;
     }
 
-    public Map<Song, Long> getRates() {
+    public Map<Song, Integer> getRates() {
         return rates;
     }
     //endregion

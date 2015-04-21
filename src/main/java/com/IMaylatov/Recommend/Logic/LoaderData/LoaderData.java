@@ -1,11 +1,11 @@
-package com.IMaylatov.Recommend.Business.LoaderData;
+package com.IMaylatov.Recommend.Logic.LoaderData;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 31.03.2015.
  */
 
-import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 
 import java.util.List;
 import java.util.Map;

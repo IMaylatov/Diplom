@@ -1,11 +1,11 @@
-package com.IMaylatov.Recommend.Business.KMeans.FormRate;
+package com.IMaylatov.Recommend.Logic.KMeans.FormRate;
+
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 07.04.2015.
  */
-
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
 
 public interface BuilderRatesable {
     /**
