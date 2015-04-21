@@ -26,7 +26,7 @@ public class Person{
     @JoinColumn(name = "ClusterId")
     private Cluster cluster;
 
-    @OneToOne(mappedBy = "person")
+    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
     private PersonPredicate predicate = new PersonPredicate(this);
     //endregion
 
