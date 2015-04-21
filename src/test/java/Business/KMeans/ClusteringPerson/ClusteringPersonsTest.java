@@ -1,4 +1,4 @@
-package Business.KMeans;
+package Business.KMeans.ClusteringPerson;
 
 import com.IMaylatov.Recommend.Business.KMeans.ClusteringPersons;
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRates;

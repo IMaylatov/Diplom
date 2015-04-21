@@ -5,7 +5,7 @@ package com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople;
  * date: 07.04.2015.
  */
 
-import com.IMaylatov.Recommend.Logic.KMeans.FormRate.BuilderRatesable;
+import com.IMaylatov.Recommend.Logic.Metric.Metric;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Person;
 
@@ -25,5 +25,5 @@ public interface SpreadPersonInClusterable {
      * –аспредел€ет пользователей по ближайшим кластерам по заданной метрике
      * @return —писок распределенных пользователей
      */
-    List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric);
+   //List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric);
 }

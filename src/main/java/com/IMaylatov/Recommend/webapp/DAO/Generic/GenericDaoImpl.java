@@ -1,8 +1,11 @@
 package com.IMaylatov.Recommend.webapp.DAO.Generic;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -69,5 +72,11 @@ public abstract class GenericDaoImpl<T, K extends Serializable> implements Gener
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     public List<T> list() {
         return currentSession().createCriteria(typeEntity).list();
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<T> list(Criterion criterion) {
+        return currentSession().createCriteria(typeEntity).add(criterion).list();
     }
 }

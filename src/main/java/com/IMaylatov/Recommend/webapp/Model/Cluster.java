@@ -25,7 +25,7 @@ public class Cluster implements Ratesable {
     @MapKeyJoinColumn(name = "SongId")
     private Map<Song, Integer> rates = new HashMap<>();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "ClusterID")
     private List<Person> persons = new ArrayList<>();
 

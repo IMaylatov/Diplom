@@ -1,5 +1,7 @@
 package com.IMaylatov.Recommend.webapp.DAO.Generic;
 
+import org.hibernate.criterion.Criterion;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -38,4 +40,5 @@ public interface GenericDao<T, K extends Serializable> {
      * Список сущностей
      */
     List<T> list();
+    List<T> list(Criterion criterion);
 }

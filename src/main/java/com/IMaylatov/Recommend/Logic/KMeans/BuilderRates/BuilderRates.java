@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Logic.KMeans.FormRate;
+package com.IMaylatov.Recommend.Logic.KMeans.BuilderRates;
 
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 
@@ -7,7 +7,7 @@ import com.IMaylatov.Recommend.webapp.Model.Cluster;
  * date: 07.04.2015.
  */
 
-public interface BuilderRatesable {
+public interface BuilderRates {
     /**
      * В кластере формирует оценки. Для каждой песни, прослушанной пользователем в кластере, выставляет оценку
      */

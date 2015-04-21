@@ -1,4 +1,4 @@
-package com.IMaylatov.Recommend.Business.KMeans;
+package com.IMaylatov.Recommend.Logic.KMeans.ClusteringPerson;
 
 import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
 import com.IMaylatov.Recommend.Business.KMeans.MoverCluster.MoverCluster;

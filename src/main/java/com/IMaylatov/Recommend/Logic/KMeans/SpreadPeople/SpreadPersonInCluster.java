@@ -1,12 +1,9 @@
 package com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople;
 
-import com.IMaylatov.Recommend.Business.KMeans.FormRate.BuilderRatesable;
-import com.IMaylatov.Recommend.Business.Metric.Metric;
-import com.IMaylatov.Recommend.Logic.Model.Cluster;
-import com.IMaylatov.Recommend.Logic.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -38,41 +35,41 @@ public class SpreadPersonInCluster implements SpreadPersonInClusterable {
         return clusters;
     }
 
-    @Override
-    public List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric) {
-        if ((clusters == null) || (persons == null) || (metric == null))
-            throw new IllegalArgumentException("clusters = " + clusters +
-                                                ";persons = " + persons +
-                                                  ";metric = " + metric);
-        if (persons.size() < clusters.size() || persons.size() < 0)
-            throw new IllegalArgumentException("clusters count = " + clusters.size() +
-                                                ";persons count = " + persons.size());
-
-        for(Person person : persons){
-            Iterator<Cluster> clusterIterator = clusters.iterator();
-            Cluster nearCluster = clusterIterator.next();
-            double minDistance;
-            try{
-                minDistance = metric.compare(person, nearCluster);
-            }catch(IllegalArgumentException e){
-                minDistance = Double.MAX_VALUE;
-            }
-            while(clusterIterator.hasNext()){
-                Cluster k1 = clusterIterator.next();
-                double distance;
-                try{
-                    distance = metric.compare(person, k1);
-                }catch (IllegalArgumentException ex){
-                    distance = Double.MAX_VALUE;
-                }
-                if (minDistance > distance) {
-                    nearCluster = k1;
-                    minDistance = distance;
-                }
-            }
-            person.setCluster(nearCluster);
-        }
-
-        return persons;
-    }
+//    @Override
+//    public List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric) {
+//        if ((clusters == null) || (persons == null) || (metric == null))
+//            throw new IllegalArgumentException("clusters = " + clusters +
+//                                                ";persons = " + persons +
+//                                                  ";metric = " + metric);
+//        if (persons.size() < clusters.size() || persons.size() < 0)
+//            throw new IllegalArgumentException("clusters count = " + clusters.size() +
+//                                                ";persons count = " + persons.size());
+//
+//        for(Person person : persons){
+//            Iterator<Cluster> clusterIterator = clusters.iterator();
+//            Cluster nearCluster = clusterIterator.next();
+//            double minDistance;
+//            try{
+//                minDistance = metric.compare(person, nearCluster);
+//            }catch(IllegalArgumentException e){
+//                minDistance = Double.MAX_VALUE;
+//            }
+//            while(clusterIterator.hasNext()){
+//                Cluster k1 = clusterIterator.next();
+//                double distance;
+//                try{
+//                    distance = metric.compare(person, k1);
+//                }catch (IllegalArgumentException ex){
+//                    distance = Double.MAX_VALUE;
+//                }
+//                if (minDistance > distance) {
+//                    nearCluster = k1;
+//                    minDistance = distance;
+//                }
+//            }
+//            person.setCluster(nearCluster);
+//        }
+//
+//        return persons;
+//    }
 }
