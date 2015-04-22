@@ -40,7 +40,7 @@ public class SVDImpl implements SVD {
         rateClusterDAO.deleteAll();
         clusterDAO.deleteAll();
 
-        int k = personDAO.list().size() / 100;
+        int k = personDAO.list().size() > 100 ? personDAO.list().size() / 100 : 1;
 
         clusteringPersons.clustering(k, new Euclid());
 

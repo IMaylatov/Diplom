@@ -28,7 +28,7 @@ public class SpreadPersonImpl implements SpreadPerson {
 
     @Override
     public List<Cluster> evenlySpread(List<Person> persons, int k){
-        if ((k <= 0) && (persons.size() >= k))
+        if (k <= 0)
             throw new IllegalArgumentException(
                     String.format("Неверно заданы параметры {k=%d; person count = %d}", k, persons.size()));
 
