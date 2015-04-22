@@ -1,4 +1,4 @@
-package Business.KMeans.SpreadPerson;
+package Logic.KMeans.SpreadPerson;
 
 import com.IMaylatov.Recommend.Logic.Metric.Euclid;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;

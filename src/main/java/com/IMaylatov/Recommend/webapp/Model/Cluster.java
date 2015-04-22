@@ -25,7 +25,7 @@ public class Cluster implements Ratesable {
     @MapKeyJoinColumn(name = "SongId")
     private Map<Song, Integer> rates = new HashMap<>();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "ClusterID")
     private List<Person> persons = new ArrayList<>();
 
@@ -60,10 +60,16 @@ public class Cluster implements Ratesable {
         this.summaRate = summaRate;
     }
 
+    public void setPersons(List<Person> persons) {
+        this.persons = persons;
+    }
     public List<Person> getPersons() {
         return persons;
     }
 
+    public void setRates(Map<Song, Integer> rates) {
+        this.rates = rates;
+    }
     public Map<Song, Integer> getRates() {
         return rates;
     }

@@ -16,9 +16,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository("RateClusterDao")
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
 public class RateClusterDaoImpl extends GenericDaoImpl<RateCluster, PairKey<Cluster, Song>> implements RateClusterDao {
-    @Override
-    public int deleteAll() {
-        return currentSession().createQuery("delete from RateCluster").executeUpdate();
-    }
 }
 

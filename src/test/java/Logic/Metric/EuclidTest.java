@@ -1,4 +1,4 @@
-package Business.Metric;
+package Logic.Metric;
 
 import com.IMaylatov.Recommend.Logic.Metric.Euclid;
 import com.IMaylatov.Recommend.Logic.Metric.Metric;

@@ -1,3 +1,5 @@
+package Logic.SVD;
+
 import com.IMaylatov.Recommend.Logic.SVD.SVD;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;

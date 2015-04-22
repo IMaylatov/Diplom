@@ -1,6 +1,6 @@
-package com.IMaylatov.Recommend.Business.SVD.RMSE;
+package com.IMaylatov.Recommend.Logic.SVD.RMSE;
 
-import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface RMSE {
     /**
-     * Расчитать ошибку для тестовых оценок
+     * Расчитать ошибку
      */
     double calculateError(List<RatePerson> ratesTest);
 }

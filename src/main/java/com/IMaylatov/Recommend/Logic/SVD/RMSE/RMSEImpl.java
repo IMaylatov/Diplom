@@ -1,9 +1,8 @@
-package com.IMaylatov.Recommend.Business.SVD.RMSE;
+package com.IMaylatov.Recommend.Logic.SVD.RMSE;
 
-import com.IMaylatov.Recommend.Business.SVD.DealerRate.DealerRate;
-import com.IMaylatov.Recommend.Business.SVD.DealerRate.DealerRateImpl;
-import com.IMaylatov.Recommend.Logic.DAO.Model.Person.RatePerson.RatePersonDAO;
-import com.IMaylatov.Recommend.Logic.Model.Rate.ConcreteRate.RatePerson;
+import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRate;
+import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRateImpl;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  * Author Ivan Maylatov (IMaylatov@gmail.com
  * date: 17.04.2015
  */
-public class RMSEImpl implements RMSE{
+public class RMSEImpl implements RMSE {
     @Override
     public double calculateError(List<RatePerson> ratesTest) {
         float error = 0;

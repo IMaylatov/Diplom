@@ -138,8 +138,8 @@ hs_err_pid*
 /.idea/libraries/Maven__org_springframework_spring_webmvc_4_1_6_RELEASE.xml
 /.idea/libraries/Maven__org_testng_testng_6_8_21.xml
 /.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml
-/src/main/java/com/IMaylatov/Recommend/Business/LoaderData/LoaderData.java
-/src/main/java/com/IMaylatov/Recommend/Business/LoaderData/LoaderDataFile.java
+/src/main/java/com/IMaylatov/Recommend/Logic/LoaderData/LoaderData.java
+/src/main/java/com/IMaylatov/Recommend/Logic/LoaderData/LoaderDataFile.java
 /src/main/java/com/IMaylatov/Recommend/Logic/Controller/TestController.java
 /src/main/java/com/IMaylatov/Recommend/Logic/Service/Generic/GenericService.java
 /src/main/java/com/IMaylatov/Recommend/Logic/Service/Generic/GenericServiceImpl.java

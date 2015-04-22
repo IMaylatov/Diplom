@@ -11,9 +11,5 @@ import com.IMaylatov.Recommend.webapp.Model.Song;
  * date: 21.04.2015
  */
 public interface RateClusterDao extends GenericDao<RateCluster, PairKey<Cluster, Song>> {
-    /**
-     * Очистить таблицу оценок
-     */
-    int deleteAll();
 }
 

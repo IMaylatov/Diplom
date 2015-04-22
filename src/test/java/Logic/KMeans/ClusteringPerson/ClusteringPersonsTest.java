@@ -1,4 +1,4 @@
-package Business.KMeans.ClusteringPerson;
+package Logic.KMeans.ClusteringPerson;
 
 import com.IMaylatov.Recommend.Logic.KMeans.ClusteringPerson.ClusteringPersons;
 import com.IMaylatov.Recommend.Logic.Metric.Euclid;
@@ -6,7 +6,6 @@ import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Person;
 import com.IMaylatov.Recommend.webapp.Model.Song;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -23,6 +23,7 @@ public interface GenericDao<T, K extends Serializable> {
      * @param entity удаляемая сущность
      */
     void delete(T entity);
+    int deleteAll();
 
     /**
      * Найти сущность по id

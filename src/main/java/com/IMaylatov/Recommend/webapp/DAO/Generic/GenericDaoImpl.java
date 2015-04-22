@@ -1,11 +1,8 @@
 package com.IMaylatov.Recommend.webapp.DAO.Generic;
 
-import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,14 +14,8 @@ import java.util.List;
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
 public abstract class GenericDaoImpl<T, K extends Serializable> implements GenericDao<T, K> {
     //region field
-    /**
-     * Фабрика сессий из контейнера Spring
-     */
     @Autowired
-    private SessionFactory sessionFactory;
-    /**
-     * Тип сущности
-     */
+    protected SessionFactory sessionFactory;
     protected Class<T> typeEntity;
     //endregion
 
@@ -53,6 +44,12 @@ public abstract class GenericDaoImpl<T, K extends Serializable> implements Gener
     @Override
     public void delete(T entity) {
         currentSession().delete(entity);
+    }
+
+    @Override
+    public int deleteAll() {
+        String[] typeName = typeEntity.getName().split("[.]");
+        return currentSession().createQuery("delete from " + typeName[typeName.length - 1]).executeUpdate();
     }
 
     @Override

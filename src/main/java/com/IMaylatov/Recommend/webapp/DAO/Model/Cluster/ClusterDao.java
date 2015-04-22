@@ -13,4 +13,6 @@ public interface ClusterDao extends GenericDao<Cluster, Long> {
      * @return Количество затронутых строк - удаленных кластеров
      */
     int deleteAll();
+    Cluster loadPersons(Cluster cluster);
+    Cluster loadRates(Cluster cluster);
 }

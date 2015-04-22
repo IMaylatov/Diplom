@@ -8,4 +8,5 @@ import com.IMaylatov.Recommend.webapp.Model.Person;
  * date: 21.04.2015
  */
 public interface PersonDao extends GenericDao<Person, Long> {
+    Person loadRates(Person person);
 }

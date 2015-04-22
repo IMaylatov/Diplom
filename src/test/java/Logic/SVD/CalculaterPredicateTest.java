@@ -1,6 +1,6 @@
+package Logic.SVD;
+
 import com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate.CalculaterPredicate;
-import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRate;
-import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRateImpl;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
@@ -20,13 +20,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Author Ivan Maylatov (IMaylatov@gmail.com
- * date: 17.04.2015
+ * Author Ivan Maylatov (IMaylatov@gmail.com)
+ * date: 16.04.2015.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:app-context.xml" })
 @TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
-public class DealerRateTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class CalculaterPredicateTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     private PersonDao personDAO;
     @Autowired
@@ -37,7 +37,7 @@ public class DealerRateTest extends AbstractTransactionalJUnit4SpringContextTest
     private CalculaterPredicate calculaterPredicate;
 
     @Test
-    public void getRateTest(){
+    public void calculateTest(){
         List<Song> songs = new ArrayList<>();
         for(int i = 0; i < 5; i++){
             Song song = new Song();
@@ -70,7 +70,6 @@ public class DealerRateTest extends AbstractTransactionalJUnit4SpringContextTest
         for(Person person : persons){
             personDAO.save(person);
             cluster.getPersons().add(person);
-            person.setCluster(cluster);
         }
         cluster.setSummaRate(36);
         cluster.setCountRate(11);
@@ -79,9 +78,16 @@ public class DealerRateTest extends AbstractTransactionalJUnit4SpringContextTest
 
         calculaterPredicate.calculate(cluster);
 
-        DealerRate dealerRate = new DealerRateImpl();
+        Assert.assertEquals(0.0168f, persons.get(0).getPredicate(), 0.01f);
+        Assert.assertEquals(0.1493f, persons.get(1).getPredicate(), 0.01f);
+        Assert.assertEquals(-0.0572f, persons.get(2).getPredicate(), 0.01f);
+        Assert.assertEquals(-0.1065f, persons.get(3).getPredicate(), 0.01f);
 
-        int rate = dealerRate.getRate(persons.get(2), songs.get(2));
-        Assert.assertEquals(rate, 3);
+
+        Assert.assertEquals(-0.0490f, songs.get(0).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(-0.0420f, songs.get(1).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(-0.0490f, songs.get(2).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(0.1632f, songs.get(3).getPredicates().get(cluster), 0.01f);
+        Assert.assertEquals(-0.0318f, songs.get(4).getPredicates().get(cluster), 0.01f);
     }
 }

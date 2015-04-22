@@ -5,6 +5,7 @@ import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Person;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -16,7 +17,7 @@ import java.util.List;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 21.04.2015
  */
-@Repository("ClusterDAO")
+@Repository("ClusterDao")
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false)
 public class ClusterDaoImpl extends GenericDaoImpl<Cluster, Long> implements ClusterDao {
     @Autowired
@@ -37,5 +38,21 @@ public class ClusterDaoImpl extends GenericDaoImpl<Cluster, Long> implements Clu
             personDAO.update(person);
         }
         currentSession().delete(cluster);
+    }
+
+    @Override
+    public Cluster loadPersons(Cluster cluster) {
+        Cluster clusterFind= (Cluster) currentSession().get(typeEntity, cluster.getId());
+        Hibernate.initialize(clusterFind.getPersons());
+        cluster.setPersons(clusterFind.getPersons());
+        return cluster;
+    }
+
+    @Override
+    public Cluster loadRates(Cluster cluster) {
+        Cluster clusterFind= (Cluster) currentSession().get(typeEntity, cluster.getId());
+        Hibernate.initialize(cluster.getRates());
+        cluster.setRates(clusterFind.getRates());
+        return cluster;
     }
 }

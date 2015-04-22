@@ -1,4 +1,4 @@
-package Business.Metric;
+package Logic.Metric;
 
 import com.IMaylatov.Recommend.Logic.Metric.Metric;
 import com.IMaylatov.Recommend.Logic.Metric.Pearson;
@@ -13,8 +13,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-
-import java.util.DoubleSummaryStatistics;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)

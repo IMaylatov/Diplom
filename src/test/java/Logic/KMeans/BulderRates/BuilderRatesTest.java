@@ -1,4 +1,4 @@
-package Business.KMeans.BulderRates;
+package Logic.KMeans.BulderRates;
 
 import com.IMaylatov.Recommend.Logic.KMeans.BuilderRates.BuilderRates;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;

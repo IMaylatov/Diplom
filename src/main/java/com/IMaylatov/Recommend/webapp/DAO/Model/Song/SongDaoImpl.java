@@ -12,7 +12,7 @@ import java.util.List;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 21.04.2015
  */
-@Repository("SongDAO")
+@Repository("SongDao")
 public class SongDaoImpl extends GenericDaoImpl<Song, Long> implements SongDao {
     @Override
     public List<Song> songsInCluster(Cluster cluster) {

@@ -1,4 +1,4 @@
-package Business.KMeans.MoverCluster;
+package Logic.KMeans.MoverCluster;
 
 import com.IMaylatov.Recommend.Logic.KMeans.MoverCluster.MoverCluster;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;

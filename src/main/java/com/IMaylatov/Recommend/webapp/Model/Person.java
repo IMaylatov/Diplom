@@ -47,6 +47,9 @@ public class Person implements Ratesable{
     public Map<Song, Integer> getRates() {
         return rates;
     }
+    public void setRates(Map<Song, Integer> rates) {
+        this.rates = rates;
+    }
 
     public void setCluster(Cluster cluster) {
         this.cluster = cluster;

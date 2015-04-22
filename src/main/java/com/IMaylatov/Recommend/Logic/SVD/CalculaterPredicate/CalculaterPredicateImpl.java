@@ -1,5 +1,6 @@
 package com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate;
 
+import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.RatePerson.RatePersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
@@ -28,6 +29,8 @@ public class CalculaterPredicateImpl implements CalculaterPredicate {
     @Autowired
     private PersonDao personDao;
     @Autowired
+    private ClusterDao clusterDao;
+    @Autowired
     private RatePersonDao ratePersonDao;
     @Autowired
     private DbUtil dbUtil;
@@ -38,11 +41,13 @@ public class CalculaterPredicateImpl implements CalculaterPredicate {
             throw new IllegalArgumentException("Invalid count rate in cluster, count = " + cluster.getCountRate());
         float average = (float) cluster.getSummaRate() / (float) cluster.getCountRate();
 
+        clusterDao.loadPersons(cluster);
         List<Person> personsInCluster = cluster.getPersons();
         List<Song> songInCluster = songDao.songsInCluster(cluster);
 
         for(Person person : personsInCluster){
             float summa = 0;
+            personDao.loadRates(person);
             for(Entry<Song, Integer> rate : person.getRates().entrySet()){
                 summa += rate.getValue() - average;
             }
