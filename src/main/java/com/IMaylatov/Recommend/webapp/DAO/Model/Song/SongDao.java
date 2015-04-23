@@ -12,4 +12,5 @@ import java.util.List;
  */
 public interface SongDao extends GenericDao<Song, Long> {
     List<Song> songsInCluster(Cluster cluster);
+    Song loadPredicates(Song song);
 }

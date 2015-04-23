@@ -59,9 +59,13 @@ public class Person implements Ratesable{
     }
 
     public void setPredicate(float value) {
+        if(predicate == null)
+            predicate = new PersonPredicate(this);
         predicate.setValue(value);
     }
     public float getPredicate() {
+        if(predicate == null)
+            predicate = new PersonPredicate(this);
         return predicate.getValue();
     }
     //endregion

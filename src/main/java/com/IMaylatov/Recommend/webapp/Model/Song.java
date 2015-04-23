@@ -35,6 +35,9 @@ public class Song implements Serializable {
         this.id = id;
     }
 
+    public void setPredicates(Map<Cluster, Float> predicates) {
+        this.predicates = predicates;
+    }
     public Map<Cluster, Float> getPredicates() {
         return predicates;
     }

@@ -42,7 +42,7 @@ public class ClusterDaoImpl extends GenericDaoImpl<Cluster, Long> implements Clu
 
     @Override
     public Cluster loadPersons(Cluster cluster) {
-        Cluster clusterFind= (Cluster) currentSession().get(typeEntity, cluster.getId());
+        Cluster clusterFind = find(cluster.getId());
         Hibernate.initialize(clusterFind.getPersons());
         cluster.setPersons(clusterFind.getPersons());
         return cluster;
@@ -50,8 +50,8 @@ public class ClusterDaoImpl extends GenericDaoImpl<Cluster, Long> implements Clu
 
     @Override
     public Cluster loadRates(Cluster cluster) {
-        Cluster clusterFind= (Cluster) currentSession().get(typeEntity, cluster.getId());
-        Hibernate.initialize(cluster.getRates());
+        Cluster clusterFind = find(cluster.getId());
+        Hibernate.initialize(clusterFind.getRates());
         cluster.setRates(clusterFind.getRates());
         return cluster;
     }

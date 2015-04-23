@@ -3,6 +3,7 @@ package com.IMaylatov.Recommend.webapp.DAO.Model.Song;
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDaoImpl;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Song;
+import org.hibernate.Hibernate;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -25,5 +26,13 @@ public class SongDaoImpl extends GenericDaoImpl<Song, Long> implements SongDao {
                                 " group by Song.Id)"
                         , cluster.getId())
         ));
+    }
+
+    @Override
+    public Song loadPredicates(Song song) {
+        Song songFind = find(song.getId());
+        Hibernate.initialize(songFind.getPredicates());
+        song.setPredicates(songFind.getPredicates());
+        return song;
     }
 }

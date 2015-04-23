@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class PersonDaoImpl extends GenericDaoImpl<Person, Long> implements PersonDao {
     @Override
     public Person loadRates(Person person) {
-        Person personFind = (Person) currentSession().get(typeEntity, person.getId());
+        Person personFind = find(person.getId());
         Hibernate.initialize(personFind.getRates());
         person.setRates(personFind.getRates());
         return personFind;
