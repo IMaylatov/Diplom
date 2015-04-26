@@ -31,12 +31,11 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
     private ClusterDao clusterDao;
 
     @Test
-    public void deletePredicate(){
-        for(int i = 0; i < 5; i++){
-            personDao.save(new Person());
-        }
+    public void saveTest(){
+        Person person = new Person();
+        personDao.save(person);
 
-        Assert.assertEquals(5, personDao.list().size());
-        Assert.assertEquals(5, personPredicateDao.list().size());
+        Person personFind = personDao.find(person.getId());
+        Assert.assertEquals(person.getId(), personFind.getId());
     }
 }

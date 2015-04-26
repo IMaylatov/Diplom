@@ -19,7 +19,7 @@ public class Cluster implements Ratesable {
     @Column(name="id")
     private long id;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "rateCluster", joinColumns = @JoinColumn(name = "ClusterId"))
     @Column(name = "value")
     @MapKeyJoinColumn(name = "SongId")

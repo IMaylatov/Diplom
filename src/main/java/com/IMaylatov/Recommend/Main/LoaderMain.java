@@ -15,7 +15,7 @@ public class LoaderMain {
         ApplicationContext context = new ClassPathXmlApplicationContext("app-context.xml");
         LoaderData loaderData = (LoaderData) context.getBean("LoaderData");
         HashMap<String, String> files = new HashMap<>();
-        files.put("person", "data/person.dat");
+        files.put("personId", "data/person.dat");
         files.put("song", "data/song.dat");
         files.put("rate", "data/ratings.dat");
         loaderData.loadAll(files);

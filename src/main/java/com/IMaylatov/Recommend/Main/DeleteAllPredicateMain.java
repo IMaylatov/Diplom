@@ -28,4 +28,5 @@ public class DeleteAllPredicateMain {
         ClusterDao clusterDao = (ClusterDao) context.getBean("ClusterDao");
         clusterDao.deleteAll();
     }
+
 }

@@ -18,15 +18,4 @@ import java.util.List;
  */
 @Repository("RatePersonDao")
 public class RatePersonDaoImpl extends GenericDaoImpl<RatePerson, PairKey<Person, Song>> implements RatePersonDao {
-    @Override
-    public List<RatePerson> getRateForSongInCluster(Song song, Cluster cluster) {
-        return list(Restrictions.sqlRestriction(
-                String.format(
-                        "SongId = %d and" +
-                        " PersonId in " +
-                        "(Select Id from Person where ClusterId = %d)"
-                        , song.getId()
-                        , cluster.getId())
-        ));
-    }
 }

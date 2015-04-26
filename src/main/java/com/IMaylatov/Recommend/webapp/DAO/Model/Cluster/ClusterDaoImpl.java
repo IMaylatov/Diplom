@@ -39,20 +39,4 @@ public class ClusterDaoImpl extends GenericDaoImpl<Cluster, Long> implements Clu
         }
         currentSession().delete(cluster);
     }
-
-    @Override
-    public Cluster loadPersons(Cluster cluster) {
-        Cluster clusterFind = find(cluster.getId());
-        Hibernate.initialize(clusterFind.getPersons());
-        cluster.setPersons(clusterFind.getPersons());
-        return cluster;
-    }
-
-    @Override
-    public Cluster loadRates(Cluster cluster) {
-        Cluster clusterFind = find(cluster.getId());
-        Hibernate.initialize(clusterFind.getRates());
-        cluster.setRates(clusterFind.getRates());
-        return cluster;
-    }
 }

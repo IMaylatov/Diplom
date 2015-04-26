@@ -83,6 +83,6 @@ public class ClusteringPersonsTest extends AbstractTransactionalJUnit4SpringCont
         for (Person person : persons)
             personDAO.save(person);
 
-        clusteringPersons.clustering(4, new Euclid());
+        clusteringPersons.clustering(persons, 4, new Euclid());
     }
 }

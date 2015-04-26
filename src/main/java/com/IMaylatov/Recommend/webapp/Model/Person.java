@@ -1,14 +1,18 @@
 package com.IMaylatov.Recommend.webapp.Model;
 
 import com.IMaylatov.Recommend.webapp.Model.Predicate.PersonPredicate;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
 
 import javax.persistence.*;
+import javax.persistence.criteria.Fetch;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Entity
-@Table(name="person")
+@Table(name="Person")
 public class Person implements Ratesable{
     //region field
     @Id
@@ -46,6 +50,7 @@ public class Person implements Ratesable{
 
     public Map<Song, Integer> getRates() {
         return rates;
+
     }
     public void setRates(Map<Song, Integer> rates) {
         this.rates = rates;
@@ -72,7 +77,7 @@ public class Person implements Ratesable{
 
     @Override
     public String toString() {
-        return "person{" +
+        return "personId{" +
                 "id=" + id +
                 ", cluster_Id=" + (cluster != null ? cluster.getId() : "") +
                 '}';

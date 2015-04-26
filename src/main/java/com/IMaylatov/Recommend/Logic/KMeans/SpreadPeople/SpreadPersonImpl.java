@@ -1,13 +1,10 @@
 package com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople;
 
 import com.IMaylatov.Recommend.Logic.KMeans.BuilderRates.BuilderRates;
+import com.IMaylatov.Recommend.Logic.KMeans.BuilderRates.BuilderRatesImpl;
 import com.IMaylatov.Recommend.Logic.Metric.Metric;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Person;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,27 +14,16 @@ import java.util.List;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 07.04.2015.
  */
-@Service("SpreadPerson")
 public class SpreadPersonImpl implements SpreadPerson {
-    @Autowired
-    private BuilderRates builderRates;
-    @Autowired
-    private ClusterDao clusterDao;
-    @Autowired
-    private PersonDao personDao;
-
     @Override
     public List<Cluster> evenlySpread(List<Person> persons, int k){
         if (k <= 0)
             throw new IllegalArgumentException(
-                    String.format("Неверно заданы параметры {k=%d; person count = %d}", k, persons.size()));
+                    String.format("Неверно заданы параметры {k=%d; personId count = %d}", k, persons.size()));
 
         List<Cluster> clusters = new ArrayList<>();
-        for(int i = 0; i < k; i++) {
-            Cluster cluster = new Cluster();
-            clusters.add(cluster);
-            clusterDao.save(cluster);
-        }
+        for(int i = 0; i < k; i++)
+            clusters.add(new Cluster());
 
         int indexCurrentCluster = 0;
         for(Person person : persons){
@@ -45,9 +31,7 @@ public class SpreadPersonImpl implements SpreadPerson {
             indexCurrentCluster++;
         }
 
-        clusters.stream().forEach(cluster -> clusterDao.update(cluster));
-        clusterDao.flush();
-
+        BuilderRates builderRates = new BuilderRatesImpl();
         for(Cluster cluster : clusters)
             builderRates.build(cluster);
 
@@ -55,7 +39,7 @@ public class SpreadPersonImpl implements SpreadPerson {
     }
 
     @Override
-    public List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric) {
+    public void distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric) {
         if ((clusters == null) || (persons == null) || (metric == null))
             throw new IllegalArgumentException("clusters = " + clusters +
                                                 ";persons = " + persons +
@@ -68,9 +52,7 @@ public class SpreadPersonImpl implements SpreadPerson {
             Cluster nearcluster = clusters.stream().min(
                     Comparator.comparing(cluster -> metric.compare(person, cluster))).get();
             person.setCluster(nearcluster);
-            personDao.update(person);
+            nearcluster.getPersons().add(person);
         }
-
-        return persons;
     }
 }

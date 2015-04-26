@@ -1,5 +1,7 @@
 package Logic.KMeans.SpreadPerson;
 
+import com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople.SpreadPerson;
+import com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople.SpreadPersonImpl;
 import com.IMaylatov.Recommend.Logic.Metric.Euclid;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
@@ -33,8 +35,6 @@ public class SpreadPersonTest extends AbstractTransactionalJUnit4SpringContextTe
     private ClusterDao clusterDAO;
     @Autowired
     private SongDao songDAO;
-    @Autowired
-    private com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople.SpreadPerson spreadPerson;
 
     @Test
     public void simpleSpreadTest(){
@@ -45,6 +45,7 @@ public class SpreadPersonTest extends AbstractTransactionalJUnit4SpringContextTe
             persons.add(person);
         }
 
+        SpreadPerson spreadPerson = new SpreadPersonImpl();
         List<Cluster> clusters = spreadPerson.evenlySpread(persons, 3);
 
         Assert.assertEquals(persons.get(0).getId(), clusters.get(0).getPersons().get(0).getId());
@@ -148,7 +149,8 @@ public class SpreadPersonTest extends AbstractTransactionalJUnit4SpringContextTe
         for(Cluster cluster : clusters)
             clusterDAO.save(cluster);
 
-        persons = spreadPerson.distanceSpread(clusters, persons, new Euclid());
+        SpreadPerson spreadPerson = new SpreadPersonImpl();
+        spreadPerson.distanceSpread(clusters, persons, new Euclid());
 
         Assert.assertEquals(clusters.get(2), persons.get(0).getCluster());
         Assert.assertEquals(clusters.get(1), persons.get(1).getCluster());

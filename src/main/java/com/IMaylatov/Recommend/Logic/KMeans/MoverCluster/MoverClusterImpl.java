@@ -1,14 +1,13 @@
 package com.IMaylatov.Recommend.Logic.KMeans.MoverCluster;
 
-import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
-import com.IMaylatov.Recommend.webapp.DbUtil.DbUtil;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
 import com.IMaylatov.Recommend.webapp.Model.Song;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -16,13 +15,6 @@ import java.util.List;
  */
 @Service("MoverCluster")
 public class MoverClusterImpl implements MoverCluster {
-    @Autowired
-    private DbUtil dbUtil;
-    @Autowired
-    private SongDao songDao;
-    @Autowired
-    private ClusterDao clusterDao;
-
     /**
      * Двигаем центроид. Для этого пройдемся по каждому пользователю из кластера.
      * Для каждого пользователя пройдемся по оценкам. Посчитам кол-во оценок и сумму оценок для каждой песни.
@@ -30,31 +22,42 @@ public class MoverClusterImpl implements MoverCluster {
      */
     @Override
     public boolean move(Cluster cluster) {
-        List<Object[]> songsInfo = dbUtil.retrieve(String.format(
-                        "Select Song.Id, sum(RatePerson.Value), count(RatePerson.*) from Cluster" +
-                                " inner join Person on Cluster.Id = Person.ClusterId and Cluster.Id = %d" +
-                                " inner join RatePerson on Person.Id = RatePerson.PersonId" +
-                                " inner join Song on Song.Id = RatePerson.SongId" +
-                                " group by Song.Id"
-                        , cluster.getId())
-        );
+        Map<Song, RateInfo> ratesInfoForSong = new HashMap<>();
+        for(Person person : cluster.getPersons()){
+            for(Entry<Song, Integer> rate : person.getRates().entrySet()){
+                Song song = rate.getKey();
+                RateInfo rateInfo = ratesInfoForSong.get(song);
+                if(rateInfo == null)
+                    rateInfo = new RateInfo(1, rate.getValue());
+                else {
+                    rateInfo.countRate++;
+                    rateInfo.summaRate += rate.getValue();
+                }
+                ratesInfoForSong.put(song, rateInfo);
+            }
+        }
 
         boolean isMove = false;
-
-        cluster.setCountRate(0);
-        cluster.setSummaRate(0);
-        for(Object[] songInfo : songsInfo){
-            Song song = songDao.find(Long.parseLong(songInfo[0].toString()));
-            int newValue = Integer.parseInt(songInfo[1].toString()) / Integer.parseInt(songInfo[2].toString());
-            if(cluster.getRates().containsKey(song))
-                if(cluster.getRates().get(song) != newValue)
-                    isMove = true;
-            cluster.getRates().put(song, newValue);
-            cluster.setSummaRate(cluster.getSummaRate() + Integer.parseInt(songInfo[1].toString()));
-            cluster.setCountRate(cluster.getCountRate() + Integer.parseInt(songInfo[2].toString()));
+        Map<Song, Integer> rateForSong = new HashMap<>();
+        for(Entry<Song, RateInfo> rate : ratesInfoForSong.entrySet()){
+            Song song = rate.getKey();
+            int newValue = Math.round((float)rate.getValue().summaRate / (float)rate.getValue().summaRate);
+            if ((cluster.getRates().containsKey(song)) && (cluster.getRates().get(song) == newValue))
+                isMove = true;
+            rateForSong.put(song, newValue);
         }
-        clusterDao.update(cluster);
 
+        cluster.setRates(rateForSong);
         return isMove;
+    }
+
+    private class RateInfo{
+        public int countRate;
+        public int summaRate;
+
+        public RateInfo(int countRate, int summaRate) {
+            this.countRate = countRate;
+            this.summaRate = summaRate;
+        }
     }
 }

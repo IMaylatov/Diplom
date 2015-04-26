@@ -1,8 +1,8 @@
 package com.IMaylatov.Recommend.webapp.DAO.Model.Song;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
-import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Song;
+import org.hibernate.criterion.Criterion;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import java.util.List;
  * date: 21.04.2015
  */
 public interface SongDao extends GenericDao<Song, Long> {
-    List<Song> songsInCluster(Cluster cluster);
-    Song loadPredicates(Song song);
+    List<Song> listWithoutLazy();
+    List<Song> listWithoutLazy(Criterion criterion);
+    Song findWithoutLazy(Long id);
 }

@@ -47,7 +47,7 @@ public class LoaderDataFile implements LoaderData {
     //region Public method
     @Override
     public void loadAll(Map<String, String> files){
-        try(InputStream streamPerson = java.lang.ClassLoader.getSystemResourceAsStream(files.get("person"));
+        try(InputStream streamPerson = java.lang.ClassLoader.getSystemResourceAsStream(files.get("personId"));
             InputStream streamSong = java.lang.ClassLoader.getSystemResourceAsStream(files.get("song"));
             InputStream streamRate = java.lang.ClassLoader.getSystemResourceAsStream(files.get("rate"))){
 

@@ -1,12 +1,8 @@
 package com.IMaylatov.Recommend.Logic.SVD.GradientDown;
 
-import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Person;
 import com.IMaylatov.Recommend.webapp.Model.Song;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map.Entry;
@@ -15,17 +11,11 @@ import java.util.Map.Entry;
  * Author Ivan Maylatov (IMaylatov@gmail.com
  * date: 17.04.2015
  */
-@Service("GradientDown")
 public class GradientDownImpl implements GradientDown{
     //Параметр регулиризации
     private final double L4 = 0.02;
     //Параметр обучаемости
     private final double learningRates = 0.005;
-
-    @Autowired
-    private PersonDao personDAO;
-    @Autowired
-    private SongDao songDAO;
 
     @Override
     public void down(Cluster cluster) {
@@ -42,9 +32,6 @@ public class GradientDownImpl implements GradientDown{
                 song.getPredicates().put(cluster,
                         (float) (song.getPredicates().get(cluster) +
                                 learningRates * (e - L4 * song.getPredicates().get(cluster))));
-
-                personDAO.save(person);
-                songDAO.save(song);
             }
         }
     }

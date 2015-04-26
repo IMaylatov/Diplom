@@ -14,5 +14,4 @@ import java.util.List;
  * date: 21.04.2015
  */
 public interface RatePersonDao extends GenericDao<RatePerson, PairKey<Person, Song>> {
-    List<RatePerson> getRateForSongInCluster(Song song, Cluster cluster);
 }

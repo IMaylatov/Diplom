@@ -12,8 +12,11 @@ import javax.persistence.*;
 @Table(name="PersonPredicate")
 public class PersonPredicate extends PredicateValue{
     @Id
-    @OneToOne
-    @JoinColumn(name = "PersonID")
+    @Column(name = "PersonID")
+    private Long personId;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @PrimaryKeyJoinColumn
     private Person person;
 
     public Person getPerson() {

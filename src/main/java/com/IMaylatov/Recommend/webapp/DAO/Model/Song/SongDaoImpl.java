@@ -1,11 +1,12 @@
 package com.IMaylatov.Recommend.webapp.DAO.Model.Song;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDaoImpl;
-import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Song;
 import org.hibernate.Hibernate;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Criterion;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,23 +17,28 @@ import java.util.List;
 @Repository("SongDao")
 public class SongDaoImpl extends GenericDaoImpl<Song, Long> implements SongDao {
     @Override
-    public List<Song> songsInCluster(Cluster cluster) {
-        return list(Restrictions.sqlRestriction(
-                String.format(
-                        "Id in (Select Song.Id from Cluster" +
-                                " inner join Person on Cluster.Id = Person.ClusterId and Cluster.Id = %d" +
-                                " inner join RatePerson on Person.Id = RatePerson.PersonId" +
-                                " inner join Song on Song.Id = RatePerson.SongId" +
-                                " group by Song.Id)"
-                        , cluster.getId())
-        ));
+    public Song findWithoutLazy(Long id) {
+        Song song = (Song) currentSession().get(typeEntity, id);
+        Hibernate.initialize(song.getPredicates());
+        return song;
     }
 
     @Override
-    public Song loadPredicates(Song song) {
-        Song songFind = find(song.getId());
-        Hibernate.initialize(songFind.getPredicates());
-        song.setPredicates(songFind.getPredicates());
-        return song;
+    @SuppressWarnings("unchecked")
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public List<Song> listWithoutLazy(){
+        List<Song> songs = currentSession().createCriteria(typeEntity).list();
+        for(Song song : songs)
+            Hibernate.initialize(song.getPredicates());
+        return songs;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Song> listWithoutLazy(Criterion criterion) {
+        List<Song> songs = currentSession().createCriteria(typeEntity).add(criterion).list();
+        for(Song song : songs)
+            Hibernate.initialize(song.getPredicates());
+        return songs;
     }
 }

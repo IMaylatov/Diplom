@@ -1,6 +1,10 @@
 package com.IMaylatov.Recommend.Logic.KMeans.ClusteringPerson;
 
 import com.IMaylatov.Recommend.Logic.Metric.Metric;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
+import com.IMaylatov.Recommend.webapp.Model.Person;
+
+import java.util.List;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -11,5 +15,5 @@ public interface ClusteringPersons {
     /**
      * Создать k кластеров и распределить по ним людей в определенной метрике
      */
-    void clustering(int k, Metric metric);
+    List<Cluster> clustering(List<Person> persons, int k, Metric metric);
 }

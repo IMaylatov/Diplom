@@ -20,5 +20,5 @@ public interface SpreadPerson {
     /**
      * –аспредел€ет пользователей по ближайшим кластерам по заданной метрике
      */
-    List<Person> distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric);
+    void distanceSpread(List<Cluster> clusters, List<Person> persons, Metric metric);
 }
