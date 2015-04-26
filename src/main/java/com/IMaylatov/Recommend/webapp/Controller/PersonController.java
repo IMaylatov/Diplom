@@ -1,7 +1,7 @@
 package com.IMaylatov.Recommend.webapp.Controller;
 
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import com.IMaylatov.Recommend.webapp.Service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,10 +23,5 @@ public class PersonController {
     Long getPrioritySong(@RequestParam("userId") long userId){
         Person person = personDao.find(userId);
         return personService.getPrioritySong(person).getId();
-    }
-
-    @RequestMapping("/test")
-    public String test(){
-        return "view";
     }
 }

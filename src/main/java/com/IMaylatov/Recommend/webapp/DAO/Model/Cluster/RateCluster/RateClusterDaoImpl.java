@@ -4,7 +4,7 @@ import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDaoImpl;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RateCluster;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;

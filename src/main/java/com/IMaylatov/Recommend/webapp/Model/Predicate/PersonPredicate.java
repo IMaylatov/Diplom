@@ -1,6 +1,6 @@
 package com.IMaylatov.Recommend.webapp.Model.Predicate;
 
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 
 import javax.persistence.*;
 
@@ -24,7 +24,7 @@ public class PersonPredicate extends PredicateValue{
     }
 
     public Long getId(){
-        return person.getId();
+        return personId;
     }
 
     private PersonPredicate(){}

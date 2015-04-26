@@ -1,10 +1,9 @@
 package com.IMaylatov.Recommend.webapp.DAO.Model.Cluster;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDaoImpl;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

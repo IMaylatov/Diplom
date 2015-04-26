@@ -7,7 +7,7 @@ package com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate;
 
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Rate.RateValue;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 import javax.persistence.*;
 

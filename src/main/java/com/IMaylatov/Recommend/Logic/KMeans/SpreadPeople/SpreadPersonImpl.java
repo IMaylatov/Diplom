@@ -4,7 +4,7 @@ import com.IMaylatov.Recommend.Logic.KMeans.BuilderRates.BuilderRates;
 import com.IMaylatov.Recommend.Logic.KMeans.BuilderRates.BuilderRatesImpl;
 import com.IMaylatov.Recommend.Logic.Metric.Metric;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 
 import java.util.ArrayList;
 import java.util.Comparator;

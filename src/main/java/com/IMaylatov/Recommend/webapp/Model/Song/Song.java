@@ -1,4 +1,6 @@
-package com.IMaylatov.Recommend.webapp.Model;
+package com.IMaylatov.Recommend.webapp.Model.Song;
+
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 
 import javax.persistence.*;
 import java.io.Serializable;

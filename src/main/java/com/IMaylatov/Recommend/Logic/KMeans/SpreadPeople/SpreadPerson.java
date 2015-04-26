@@ -7,7 +7,7 @@ package com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople;
 
 import com.IMaylatov.Recommend.Logic.Metric.Metric;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 
 import java.util.List;
 

@@ -1,9 +1,7 @@
 package com.IMaylatov.Recommend.webapp.DAO.Model.Person;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
-import com.IMaylatov.Recommend.webapp.Model.Person;
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Criterion;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 
 import java.util.List;
 

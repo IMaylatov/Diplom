@@ -5,9 +5,6 @@ package com.IMaylatov.Recommend.Logic.LoaderData;
  * date: 31.03.2015.
  */
 
-import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
-
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,9 +31,4 @@ public interface LoaderData {
      * Загрузить оценки
      */
     void loadRate(String rateFile);
-
-    /**
-     * Вернуть список тестовых оценок
-     */
-    List<RatePerson> loadTestRate(String testRateFile);
 }

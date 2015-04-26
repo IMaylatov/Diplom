@@ -13,8 +13,8 @@ import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Predicate.Person.PersonPredicateDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

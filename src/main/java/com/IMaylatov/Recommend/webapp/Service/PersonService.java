@@ -1,8 +1,8 @@
 package com.IMaylatov.Recommend.webapp.Service;
 
 
-import com.IMaylatov.Recommend.webapp.Model.Person;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)

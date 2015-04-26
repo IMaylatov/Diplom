@@ -6,7 +6,7 @@ package com.IMaylatov.Recommend.Logic.Metric;
  */
 
 import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 import java.util.Map.Entry;
 

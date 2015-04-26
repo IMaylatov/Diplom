@@ -1,16 +1,11 @@
 package com.IMaylatov.Recommend.webapp.DAO.Model.Person.RatePerson;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDaoImpl;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Person.RatePerson.RatePersonDao;
-import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
-import com.IMaylatov.Recommend.webapp.Model.Song;
-import org.hibernate.criterion.Restrictions;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)

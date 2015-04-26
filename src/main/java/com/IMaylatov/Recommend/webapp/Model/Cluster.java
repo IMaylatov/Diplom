@@ -4,7 +4,9 @@ package com.IMaylatov.Recommend.webapp.Model;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 04.04.2015.
  */
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 import javax.persistence.*;
 import java.util.*;

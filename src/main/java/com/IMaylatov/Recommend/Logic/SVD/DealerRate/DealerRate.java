@@ -1,7 +1,7 @@
 package com.IMaylatov.Recommend.Logic.SVD.DealerRate;
 
-import com.IMaylatov.Recommend.webapp.Model.Person;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com

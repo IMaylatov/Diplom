@@ -1,8 +1,8 @@
 package com.IMaylatov.Recommend.Logic.KMeans.MoverCluster;
 
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

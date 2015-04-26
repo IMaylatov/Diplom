@@ -1,8 +1,7 @@
 import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Predicate.Person.PersonPredicateDao;
-import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,9 +10,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)

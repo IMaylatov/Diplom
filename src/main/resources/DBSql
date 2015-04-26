@@ -47,3 +47,65 @@ CREATE TABLE SongPredicate(
     FOREIGN KEY (SongID) REFERENCES Song(ID),
     FOREIGN KEY (ClusterID) REFERENCES Cluster(ID)
 );
+
+CREATE TABLE PersonInfo(
+    PersonId INTEGER UNIQUE NOT NULL ,
+    Name VARCHAR(25) ,
+    PRIMARY KEY (PersonId),
+    FOREIGN KEY (PersonId) REFERENCES Person(ID)
+);
+
+CREATE TABLE SongInfo (
+    SongId INTEGER UNIQUE NOT NULL ,
+    Name VARCHAR(30),
+    PRIMARY KEY (SongId),
+    FOREIGN KEY (SongId) REFERENCES Song(ID)
+);
+
+CREATE OR REPLACE FUNCTION OperationPerson() RETURNS TRIGGER as $$
+BEGIN
+  IF TG_OP = 'INSERT' THEN
+    INSERT INTO PersonInfo(PersonId, Name) VALUES (NEW.ID, 'empty');
+    RETURN NEW;
+  ELSIF TG_OP = 'UPDATE' THEN
+    RETURN NEW;
+  ELSIF TG_OP = 'DELETE' THEN
+    DELETE from PersonInfo where PersonId = OLD.ID;
+    RETURN OLD;
+  END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER InsertPerson
+    AFTER INSERT on Person
+    FOR EACH ROW
+    EXECUTE PROCEDURE OperationPerson();
+
+CREATE TRIGGER DeletePerson
+    BEFORE DELETE on Person
+    FOR EACH ROW
+    EXECUTE PROCEDURE OperationPerson();
+
+CREATE OR REPLACE FUNCTION OperationSong() RETURNS TRIGGER as $$
+BEGIN
+  IF TG_OP = 'INSERT' THEN
+    INSERT INTO SongInfo(SongId, Name) VALUES (NEW.ID, 'empty');
+    RETURN NEW;
+  ELSIF TG_OP = 'UPDATE' THEN
+    RETURN NEW;
+  ELSIF TG_OP = 'DELETE' THEN
+    DELETE from SongInfo where SongId = OLD.ID;
+    RETURN OLD;
+  END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER InsertSong
+    AFTER INSERT on Song
+    FOR EACH ROW
+    EXECUTE PROCEDURE OperationSong();
+
+CREATE TRIGGER DeleteSong
+    BEFORE DELETE on Song
+    FOR EACH ROW
+    EXECUTE PROCEDURE OperationSong();

@@ -1,14 +1,12 @@
-package com.IMaylatov.Recommend.webapp.Model;
+package com.IMaylatov.Recommend.webapp.Model.Person;
 
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Predicate.PersonPredicate;
-import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.webapp.Model.Rate.Ratesable;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 import javax.persistence.*;
-import javax.persistence.criteria.Fetch;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Entity

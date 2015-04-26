@@ -4,7 +4,7 @@ import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
 import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RateCluster;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)

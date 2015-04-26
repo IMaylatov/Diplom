@@ -1,6 +1,6 @@
 package com.IMaylatov.Recommend.webapp.Model.Rate;
 
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 import java.util.Map;
 

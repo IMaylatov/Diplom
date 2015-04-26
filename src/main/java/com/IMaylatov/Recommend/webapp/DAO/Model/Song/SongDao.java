@@ -1,7 +1,7 @@
 package com.IMaylatov.Recommend.webapp.DAO.Model.Song;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import org.hibernate.criterion.Criterion;
 
 import java.util.List;

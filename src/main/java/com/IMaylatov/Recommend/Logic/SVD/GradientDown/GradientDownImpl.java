@@ -1,8 +1,8 @@
 package com.IMaylatov.Recommend.Logic.SVD.GradientDown;
 
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
-import com.IMaylatov.Recommend.webapp.Model.Song;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 
 import java.util.List;
 import java.util.Map.Entry;

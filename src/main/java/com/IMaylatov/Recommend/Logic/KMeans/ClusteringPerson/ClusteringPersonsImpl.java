@@ -6,7 +6,7 @@ import com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople.SpreadPerson;
 import com.IMaylatov.Recommend.Logic.KMeans.SpreadPeople.SpreadPersonImpl;
 import com.IMaylatov.Recommend.Logic.Metric.Metric;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
-import com.IMaylatov.Recommend.webapp.Model.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
