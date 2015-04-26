@@ -39,4 +39,13 @@ public class ClusterDaoImpl extends GenericDaoImpl<Cluster, Long> implements Clu
         }
         currentSession().delete(cluster);
     }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public Cluster findWithoutLazy(Long id) {
+        Cluster cluster = (Cluster) currentSession().get(typeEntity, id);
+        Hibernate.initialize(cluster.getRates());
+        return cluster;
+    }
 }

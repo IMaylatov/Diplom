@@ -83,7 +83,7 @@ public class DealerRateTest extends AbstractTransactionalJUnit4SpringContextTest
 
         DealerRate dealerRate = new DealerRateImpl();
 
-        int rate = dealerRate.getRate(persons.get(2), songs.get(2));
+        int rate = dealerRate.getRateInt(persons.get(2), songs.get(2));
         Assert.assertEquals(rate, 3);
     }
 }

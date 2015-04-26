@@ -8,4 +8,5 @@ import com.IMaylatov.Recommend.webapp.Model.Cluster;
  * date: 21.04.2015
  */
 public interface ClusterDao extends GenericDao<Cluster, Long> {
+    Cluster findWithoutLazy(Long id);
 }

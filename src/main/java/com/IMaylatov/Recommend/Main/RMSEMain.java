@@ -68,7 +68,7 @@ public class RMSEMain {
                 Person person = personMap.get(rate.getKey().personId);
                 Song song = songMap.get(rate.getKey().songId);
 
-                float extendedRate = dealerRate.getRate(person, song);
+                float extendedRate = dealerRate.getRateInt(person, song);
                 error += Math.pow(rate.getValue() - extendedRate, 2);
                 countRate++;
             }

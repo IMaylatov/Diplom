@@ -16,7 +16,7 @@ public class RMSEImpl implements RMSE {
         float error = 0;
         DealerRate dealerRate = new DealerRateImpl();
         for(RatePerson rate : ratesTest){
-            int expectedRate = dealerRate.getRate(rate.getPerson(), rate.getSong());
+            int expectedRate = dealerRate.getRateInt(rate.getPerson(), rate.getSong());
             error += Math.pow(rate.getValue() - expectedRate, 2);
         }
         return Math.sqrt(error / ratesTest.size());

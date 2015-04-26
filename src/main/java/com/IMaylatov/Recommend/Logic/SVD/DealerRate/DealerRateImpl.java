@@ -9,11 +9,20 @@ import com.IMaylatov.Recommend.webapp.Model.Song;
  */
 public class DealerRateImpl implements DealerRate{
     @Override
-    public int getRate(Person person, Song song) {
+    public int getRateInt(Person person, Song song) {
         float average = (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate();
         if(!song.getPredicates().containsKey(person.getCluster()))
             return Math.round(average + person.getPredicate());
         else
             return Math.round(average + person.getPredicate() + song.getPredicates().get(person.getCluster()));
+    }
+
+    @Override
+    public float getRateFloat(Person person, Song song) {
+        float average = (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate();
+        if(!song.getPredicates().containsKey(person.getCluster()))
+            return average + person.getPredicate();
+        else
+            return average + person.getPredicate() + song.getPredicates().get(person.getCluster());
     }
 }

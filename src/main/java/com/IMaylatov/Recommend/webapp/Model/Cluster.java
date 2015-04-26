@@ -83,4 +83,20 @@ public class Cluster implements Ratesable {
                 ", summaRate=" + summaRate +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        Cluster cluster = (Cluster) object;
+
+        return id == cluster.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
 }

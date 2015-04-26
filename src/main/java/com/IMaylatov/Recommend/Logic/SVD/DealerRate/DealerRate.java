@@ -11,5 +11,6 @@ public interface DealerRate {
     /**
      * Выдает предполагаемую оценку пользователя для песни
      */
-    int getRate(Person person, Song song);
+    int getRateInt(Person person, Song song);
+    float getRateFloat(Person person, Song song);
 }
