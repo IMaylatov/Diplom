@@ -4,14 +4,7 @@ package com.IMaylatov.Recommend.Logic.LoaderData;
  * Author Ivan Maylatov (IMaylatov@gmail.com)
  * date: 01.04.2015.
  */
-import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonInfo.PersonInfoDao;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
-import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongInfo.SongInfoDao;
 import com.IMaylatov.Recommend.webapp.DbUtil.DbUtil;
-import com.IMaylatov.Recommend.webapp.Model.Person.Person;
-import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
-import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,8 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 

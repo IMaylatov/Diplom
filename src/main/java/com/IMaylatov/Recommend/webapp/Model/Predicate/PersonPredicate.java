@@ -31,6 +31,7 @@ public class PersonPredicate extends PredicateValue{
 
     public PersonPredicate(Person person) {
         this.person = person;
+        personId = person.getId();
     }
 
     @Override

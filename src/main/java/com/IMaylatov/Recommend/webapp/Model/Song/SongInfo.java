@@ -1,5 +1,7 @@
 package com.IMaylatov.Recommend.webapp.Model.Song;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -15,10 +17,13 @@ public class SongInfo {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
+    @JsonIgnore
     private Song song;
 
     @Column(name = "Name")
     private String name;
+
+    private SongInfo(){}
 
     public SongInfo(Song song, String name) {
         this.song = song;
