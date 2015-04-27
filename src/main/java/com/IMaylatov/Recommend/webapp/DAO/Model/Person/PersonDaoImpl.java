@@ -29,4 +29,11 @@ public class PersonDaoImpl extends GenericDaoImpl<Person, Long> implements Perso
         }
         return persons;
     }
+
+    @Override
+    public Person findWithoutLazy(Long id) {
+        Person person = (Person) currentSession().get(typeEntity, id);
+        Hibernate.initialize(person.getRates());
+        return person;
+    }
 }

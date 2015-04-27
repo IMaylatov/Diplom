@@ -11,4 +11,5 @@ import java.util.List;
  */
 public interface PersonDao extends GenericDao<Person, Long> {
     List<Person> listWithoutLazy();
+    Person findWithoutLazy(Long id);
 }
