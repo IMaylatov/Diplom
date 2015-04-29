@@ -74,14 +74,15 @@
 
 
     <!-- This is simple authentication manager, with a hardcoded user/password
-     combination. We can replace this with a user defined service to get few users
-     credentials from DB -->
+     combination. -->
     <authentication-manager alias="authenticationManager"
                             xmlns="http://www.springframework.org/schema/security">
         <authentication-provider>
-            <user-service>
-                <user name="admin" password="password" authorities="ROLE_USER" />
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query=
+                                       "select username,password, enabled from users where username=?"
+                               authorities-by-username-query=
+                                       "select username, role from user_roles where username =?  " />
         </authentication-provider>
     </authentication-manager>
 
