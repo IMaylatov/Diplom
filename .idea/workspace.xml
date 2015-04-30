@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4be840d1-ffe8-4fb7-84e3-01ced8efc9a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Person/PersonRoles.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/DAO/Model/Person/PersonRoles/PersonRolesDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/DAO/Model/Person/PersonRoles/PersonRolesDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Controller/RegisterController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service/Register/RegisterUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/DBSql" afterPath="$PROJECT_DIR$/src/main/resources/DBSql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Person/Person.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Person/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Person/PersonInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Person/PersonInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/DAO/Model/Person/PersonInfo/PersonInfoDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/DAO/Model/Person/PersonInfo/PersonInfoDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/DAO/Model/Person/PersonInfo/PersonInfoDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/DAO/Model/Person/PersonInfo/PersonInfoDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Predicate/PersonPredicate.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Predicate/PersonPredicate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service/Person/PersonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service/Person/PersonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service/Person/PersonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service/Person/PersonServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/PersonTest.java" afterPath="$PROJECT_DIR$/src/test/java/PersonTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recommend.iml" afterPath="$PROJECT_DIR$/Recommend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet-security.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/public-resource/songs/song.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Recommend.iws" />
@@ -58,11 +44,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBSql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBSql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/DBSql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0496454">
-              <caret line="57" column="2" selection-start-line="57" selection-start-column="2" selection-end-line="57" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45212767">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="song.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/public-resource/songs/song.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -151,7 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Main/DeleteAllPredicateMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/Logic/SVD/SVDImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Rate/ConcreteRate/RatePerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Rate/ConcreteRate/PairKey.java" />
@@ -183,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service/Song/SongServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Controller/PersonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Controller/HelloController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Controller/SongController.java" />
@@ -202,6 +206,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Service/Person/PersonServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Model/Person/PersonInfo.java" />
         <option value="$PROJECT_DIR$/src/main/resources/DBSql" />
+        <option value="$PROJECT_DIR$/src/main/resources/songs/song.txt" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
       </list>
     </option>
   </component>
@@ -398,6 +404,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Diplom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public-resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="songs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1004,11 +1040,11 @@
       <recent name="D:\Diplom\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Diplom\src\main\webapp\public-resource\songs" />
+      <recent name="D:\Diplom\src\main\webapp" />
       <recent name="D:\Diplom\src\test\java" />
       <recent name="D:\Diplom\src\main\java\com\IMaylatov" />
       <recent name="D:\Diplom\src\main\webapp\com.IMaylatov" />
-      <recent name="D:\Diplom\src\main\webapp\resources" />
-      <recent name="D:\Diplom\src\main\webapp" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.IMaylatov.Recommend.webapp.Service" />
@@ -1563,14 +1599,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/DBSql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/IMaylatov/Recommend/webapp/Controller/SongController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1693,14 +1721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14166667">
           <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="86" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1994,8 +2014,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/DBSql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0496454">
-          <caret line="57" column="2" selection-start-line="57" selection-start-column="2" selection-end-line="57" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/public-resource/songs/song.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45212767">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding />
         </state>
       </provider>
