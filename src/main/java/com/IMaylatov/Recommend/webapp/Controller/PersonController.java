@@ -1,7 +1,9 @@
 package com.IMaylatov.Recommend.webapp.Controller;
 
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Model.Song.SongInfo;
 import com.IMaylatov.Recommend.webapp.Service.Person.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +20,14 @@ import java.util.List;
  * date: 20.04.2015
  */
 @Controller
+@RequestMapping("/person")
 public class PersonController {
     @Autowired
     private PersonService personService;
     @Autowired
     private PersonDao personDao;
+    @Autowired
+    private SongDao songDao;
 
     @RequestMapping("/getSongsForUser")
     public @ResponseBody
@@ -38,5 +43,16 @@ public class PersonController {
     List<SongInfo> getStackSongs(@RequestParam("userId") long userId){
         Person person = personDao.find(userId);
         return personService.getStackSongs(person);
+    }
+
+    @RequestMapping("/personAddRate")
+    public @ResponseBody
+    String addRate(@RequestParam("userId") long userId, @RequestParam("songId") long songId,
+                   @RequestParam("rate") int rate){
+        Person person = personDao.findWithoutLazy(userId);
+        Song song = songDao.find(songId);
+
+        personService.addRate(person, song, 3);
+        return "OK";
     }
 }

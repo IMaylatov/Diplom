@@ -98,4 +98,13 @@ public class PersonServiceImpl implements PersonService {
         personInfoDao.update(personInfo);
         personInfoDao.flush();
     }
+
+    @Override
+    public void addRate(Person person, Song song, int rate) {
+        if ((person == null) || (song == null))
+            throw new IllegalArgumentException("Null pointer: person=" + person + "; song=" + song);
+
+        person.getRates().put(song, rate);
+        personDao.update(person);
+    }
 }
