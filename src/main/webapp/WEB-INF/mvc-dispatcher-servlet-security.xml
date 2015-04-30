@@ -82,7 +82,10 @@
                                users-by-username-query=
                                        "select name,password, enabled from personInfo where name=?"
                                authorities-by-username-query=
-                                       "select name, role from PersonRoles where name =?  " />
+                                       "select name, role
+                                       from PersonRoles
+                                        inner join PersonInfo on PersonInfoID = PersonId
+                                        where name =?  " />
         </authentication-provider>
     </authentication-manager>
 

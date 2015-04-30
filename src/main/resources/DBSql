@@ -113,9 +113,8 @@ CREATE TRIGGER DeleteSong
     EXECUTE PROCEDURE OperationSong();
 
 CREATE TABLE PersonRoles (
-  UserRoleID SERIAL PRIMARY KEY NOT NULL ,
-  name VARCHAR(45) NOT NULL,
+  PersonInfoID INTEGER NOT NULL ,
   ROLE VARCHAR(45) NOT NULL,
-  CONSTRAINT doubleKey UNIQUE (name, ROLE) ,
-  FOREIGN KEY (name) REFERENCES personinfo (name)
+  PRIMARY KEY (PersonInfoID, ROLE),
+  FOREIGN KEY (PersonInfoID) REFERENCES personinfo (PersonId)
 );

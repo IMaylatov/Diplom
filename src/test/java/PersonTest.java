@@ -1,6 +1,7 @@
 import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Predicate.Person.PersonPredicateDao;
+import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,8 +29,11 @@ public class PersonTest extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Test
     public void saveTest(){
+        Cluster cluster = clusterDao.list().get(0);
         Person person = new Person();
+        person.setCluster(cluster);
         personDao.save(person);
+        personDao.flush();
 
         Person personFind = personDao.find(person.getId());
         Assert.assertEquals(person.getId(), personFind.getId());

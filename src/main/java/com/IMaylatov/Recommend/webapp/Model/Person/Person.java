@@ -29,7 +29,7 @@ public class Person implements Ratesable{
     @JoinColumn(name = "ClusterId")
     private Cluster cluster;
 
-    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "person", cascade = CascadeType.PERSIST)
     private PersonPredicate predicate = new PersonPredicate(this);
     //endregion
 

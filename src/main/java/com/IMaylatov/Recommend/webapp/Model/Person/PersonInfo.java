@@ -1,6 +1,8 @@
 package com.IMaylatov.Recommend.webapp.Model.Person;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -20,6 +22,16 @@ public class PersonInfo {
     @Column(name = "Name")
     private String name;
 
+    @Column(name = "Password")
+    private String password;
+
+    @Column(name = "Enabled")
+    private boolean enabled;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "PersonInfoID", insertable = false, updatable = false)
+    private List<PersonRoles> personRoles = new ArrayList<>();
+
     private PersonInfo(){}
 
     public PersonInfo(Person person) {
@@ -29,6 +41,12 @@ public class PersonInfo {
     public PersonInfo(Person person, String name) {
         this.person = person;
         this.name = name;
+    }
+
+    public PersonInfo(String name, String password, boolean enabled) {
+        this.name = name;
+        this.password = password;
+        this.enabled = enabled;
     }
 
     public Person getPerson() {
@@ -41,6 +59,30 @@ public class PersonInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<PersonRoles> getPersonRoles() {
+        return personRoles;
+    }
+
+    public void setPersonRoles(List<PersonRoles> personRoles) {
+        this.personRoles = personRoles;
     }
 
     @Override

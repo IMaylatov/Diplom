@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface PersonService {
     List<SongInfo> getStackSongs(Person person);
+    void savePerson(String name, String password);
 }

@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Table(name="PersonPredicate")
 public class PersonPredicate extends PredicateValue{
     @Id
-    @Column(name = "PersonID")
+    @Column(name = "PersonID", updatable = false)
     private Long personId;
 
     @OneToOne(fetch = FetchType.EAGER)
