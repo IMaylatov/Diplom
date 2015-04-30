@@ -50,7 +50,9 @@ CREATE TABLE SongPredicate(
 
 CREATE TABLE PersonInfo(
     PersonId INTEGER UNIQUE NOT NULL ,
-    Name VARCHAR(25) ,
+    Name VARCHAR(45) UNIQUE,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    Password VARCHAR(45),
     PRIMARY KEY (PersonId),
     FOREIGN KEY (PersonId) REFERENCES Person(ID)
 );
@@ -65,7 +67,7 @@ CREATE TABLE SongInfo (
 CREATE OR REPLACE FUNCTION OperationPerson() RETURNS TRIGGER as $$
 BEGIN
   IF TG_OP = 'INSERT' THEN
-    INSERT INTO PersonInfo(PersonId, Name) VALUES (NEW.ID, 'empty');
+    INSERT INTO PersonInfo(PersonId, Name) VALUES (NEW.ID, null);
     RETURN NEW;
   ELSIF TG_OP = 'UPDATE' THEN
     RETURN NEW;
@@ -110,16 +112,10 @@ CREATE TRIGGER DeleteSong
     FOR EACH ROW
     EXECUTE PROCEDURE OperationSong();
 
-CREATE  TABLE users (
-  username VARCHAR(45) PRIMARY KEY NOT NULL ,
-  password VARCHAR(45) NOT NULL ,
-  enabled BOOLEAN NOT NULL DEFAULT TRUE
-);
-
-CREATE TABLE User_Roles (
+CREATE TABLE PersonRoles (
   UserRoleID SERIAL PRIMARY KEY NOT NULL ,
-  username VARCHAR(45) NOT NULL,
+  name VARCHAR(45) NOT NULL,
   ROLE VARCHAR(45) NOT NULL,
-  CONSTRAINT doubleKey UNIQUE (username, ROLE) ,
-  FOREIGN KEY (username) REFERENCES users (username)
+  CONSTRAINT doubleKey UNIQUE (name, ROLE) ,
+  FOREIGN KEY (name) REFERENCES personinfo (name)
 );
