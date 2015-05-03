@@ -10,6 +10,7 @@
 	http://www.springframework.org/schema/security/oauth2
 	http://www.springframework.org/schema/security/spring-security-oauth2-1.0.xsd">
 
+
     <!-- This is default url to get a token from OAuth -->
     <http pattern="/oauth/token" create-session="stateless"
           authentication-manager-ref="clientAuthenticationManager"
@@ -87,6 +88,7 @@
                                         inner join PersonInfo on PersonInfoID = PersonId
                                         where name =?  " />
         </authentication-provider>
+
     </authentication-manager>
 
     <bean id="clientDetailsUserService"
@@ -131,15 +133,15 @@
     <oauth:client-details-service id="clientDetails">
         <!-- client -->
         <oauth:client client-id="the_client"
-                      authorized-grant-types="password,authorization_code,refresh_token, client_credentials"
+                      authorized-grant-types="authorization_code,client_credentials"
                       authorities="ROLE_USER"
                       scope="read,write,trust"
-                      secret="secret" />
+                      secret="secret"/>
 
-        <oauth:client client-id="my-trusted-client-with-secret"
+        <oauth:client client-id="the_client"
                       authorized-grant-types="password,authorization_code,refresh_token,implicit"
-                      secret="somesecret"
-                      authorities="ROLE_USER" />
+                      secret="secret"
+                      authorities="ROLE_USER"/>
 
     </oauth:client-details-service>
 
@@ -152,4 +154,4 @@
 
     <oauth:expression-handler id="oauthExpressionHandler" />
     <oauth:web-expression-handler id="oauthWebExpressionHandler" />
-</beans>  
+</beans>
