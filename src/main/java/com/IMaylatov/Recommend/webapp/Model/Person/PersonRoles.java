@@ -48,6 +48,8 @@ public class PersonRoles{
         @Column(name = "Role")
         private String role;
 
+        private PairKey(){}
+
         public PairKey(PersonInfo personInfo, String role) {
             this.personInfo = personInfo;
             this.role = role;

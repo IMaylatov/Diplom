@@ -1,6 +1,6 @@
 package com.IMaylatov.Recommend.webapp.Model.Song;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
 

@@ -3,6 +3,7 @@ package com.IMaylatov.Recommend.webapp.Controller;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.PersonInfo;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Model.Song.SongInfo;
 import com.IMaylatov.Recommend.webapp.Service.Person.PersonService;
@@ -54,5 +55,14 @@ public class PersonController {
 
         personService.addRate(person, song, 3);
         return "OK";
+    }
+
+    @RequestMapping("/getId")
+    public @ResponseBody
+    String getId(@RequestParam("username") String username){
+        PersonInfo person = personService.getPersonByName(username);
+        if(person != null)
+            return String.format("{personId: %d}", person.getPerson().getId());
+        return "{personId: 0}";
     }
 }

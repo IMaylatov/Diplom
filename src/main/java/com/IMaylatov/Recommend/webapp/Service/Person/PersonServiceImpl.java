@@ -107,4 +107,13 @@ public class PersonServiceImpl implements PersonService {
         person.getRates().put(song, rate);
         personDao.update(person);
     }
+
+    @Override
+    public PersonInfo getPersonByName(String name) {
+        List<PersonInfo> persons = personInfoDao.listWithoutLazy(Restrictions.sqlRestriction(
+                String.format("name like '%s'", name)));
+        if(persons.size() == 1)
+            return persons.get(0);
+        return null;
+    }
 }

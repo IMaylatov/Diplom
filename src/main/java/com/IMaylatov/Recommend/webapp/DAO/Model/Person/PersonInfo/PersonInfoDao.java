@@ -2,6 +2,7 @@ package com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonInfo;
 
 import com.IMaylatov.Recommend.webapp.DAO.Generic.GenericDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.PersonInfo;
+import org.hibernate.criterion.Criterion;
 
 import java.util.List;
 
@@ -10,5 +11,5 @@ import java.util.List;
  * date: 26.04.2015.
  */
 public interface PersonInfoDao extends GenericDao<PersonInfo, Long> {
-    List<PersonInfo> getPersonsByName(String name);
+    List<PersonInfo> listWithoutLazy(Criterion criterion);
 }
