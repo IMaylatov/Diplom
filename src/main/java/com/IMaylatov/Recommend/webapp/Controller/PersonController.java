@@ -5,14 +5,19 @@ import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import com.IMaylatov.Recommend.webapp.Model.Person.PersonInfo;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
-import com.IMaylatov.Recommend.webapp.Model.Song.SongInfo;
 import com.IMaylatov.Recommend.webapp.Service.Person.PersonService;
+import com.IMaylatov.Recommend.webapp.Service.Person.SongUrl;
+import com.google.gson.JsonObject;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +46,14 @@ public class PersonController {
 
     @RequestMapping("/getStackSongsForUser")
     public @ResponseBody
-    List<SongInfo> getStackSongs(@RequestParam("userId") long userId){
+    List<SongUrl> getStackSongs(@RequestParam("userId") long userId) throws IOException {
         Person person = personDao.find(userId);
-        return personService.getStackSongs(person);
+        List<SongUrl> songsUrl = personService.getStackSongs(person);
+
+        List<SongUrl> result = new ArrayList<>();
+        for(SongUrl songUrl : songsUrl)
+            result.add(new SongUrl(songUrl.getUrl() + ".mp3"));
+        return result;
     }
 
     @RequestMapping("/personAddRate")

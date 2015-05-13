@@ -23,6 +23,10 @@ public class SongInfo {
     @Column(name = "Name")
     private String name;
 
+    public String getUrl(){
+        return name.replace(' ','_');
+    }
+
     private SongInfo(){}
 
     public SongInfo(Song song, String name) {

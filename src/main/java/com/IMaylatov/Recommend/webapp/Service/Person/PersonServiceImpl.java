@@ -20,9 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Author Ivan Maylatov (IMaylatov@gmail.com)
@@ -44,7 +42,7 @@ public class PersonServiceImpl implements PersonService {
     private PersonRolesDao personRolesDao;
 
     @Override
-    public List<SongInfo> getStackSongs(Person person) {
+    public List<SongUrl> getStackSongs(Person person) {
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
@@ -52,12 +50,9 @@ public class PersonServiceImpl implements PersonService {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
-                String.format("Id in " +
-                                "(Select distinct SongId from RateCluster" +
-                                " where ClusterId = %d and SongId not in" +
+                String.format("Id not in" +
                                 " (Select distinct SongId from PersonHistory" +
-                                " where Date > '%s'))",
-                        person.getCluster().getId(),
+                                " where Date > '%s')",
                         dateFormat.format(calendar.getTime()))));
 
         DealerRate dealerRate = new DealerRateImpl();
@@ -65,7 +60,19 @@ public class PersonServiceImpl implements PersonService {
                 dealerRate.getRateFloat(person, t2),
                 dealerRate.getRateFloat(person, t1)));
 
-        List<Song> topSongs = songs.subList(0, 7);
+        Random random = new Random();
+        double average = random.nextGaussian() * 10;
+        final double gauss;
+        if(average > 5)
+            gauss = 10 - average;
+        else
+            gauss = average;
+        songs.sort((t1, t2) -> Float.compare(
+                Math.abs(dealerRate.getRateFloat(person, t2) - (float) gauss),
+                Math.abs(dealerRate.getRateFloat(person, t1) - (float) gauss)));
+
+        List<Song> topSongs = songs.size() > 5 ? songs.subList(0, 5) : songs;
+
         StringBuilder songsId = new StringBuilder("(");
         for(Song song : topSongs) {
             String s = song.getId() + ",";
@@ -76,7 +83,13 @@ public class PersonServiceImpl implements PersonService {
 
         List<SongInfo> songsInfo = songInfoDao.list(Restrictions.sqlRestriction(
                 String.format("SongId in %s", songsId)));
-        return songsInfo;
+
+        List<SongUrl> songsUrl = new ArrayList<>();
+        for(SongInfo songInfo : songsInfo){
+            songsUrl.add(new SongUrl(songInfo.getUrl()));
+        }
+
+        return songsUrl;
     }
 
     @Override
