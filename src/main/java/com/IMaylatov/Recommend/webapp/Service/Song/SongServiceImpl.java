@@ -129,4 +129,23 @@ public class SongServiceImpl implements SongService{
 
         return songsUrl;
     }
+
+    @Override
+    public Song getSongByUrl(String songUrl) {
+        String[] songInfo = songUrl.split("/");
+        String songName = songInfo[songInfo.length - 1];
+        String songAuthorName = songInfo[songInfo.length - 2];
+
+        List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
+            String.format("id in (select songId from SongInfo" +
+                    " where name like replace('%s','_',' ')" +
+                    " and authorSongId in (select id from AuthorSong" +
+                    " where name like replace('%s','_',' ')))",
+                    songName,
+                    songAuthorName)));
+
+        if(songs.size() > 0)
+            return songs.get(0);
+        return null;
+    }
 }

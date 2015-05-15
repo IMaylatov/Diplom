@@ -1,12 +1,15 @@
 package com.IMaylatov.Recommend.webapp.Controller;
 
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonHistory.PersonHistoryDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Person.PersonHistory;
 import com.IMaylatov.Recommend.webapp.Model.Person.PersonInfo;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Service.Person.PersonService;
 import com.IMaylatov.Recommend.webapp.Service.Person.SongUrl;
+import com.IMaylatov.Recommend.webapp.Service.Song.SongService;
 import com.google.gson.JsonObject;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.annotate.JsonAutoDetect;
@@ -18,7 +21,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,6 +41,10 @@ public class PersonController {
     private PersonDao personDao;
     @Autowired
     private SongDao songDao;
+    @Autowired
+    private SongService songService;
+    @Autowired
+    private PersonHistoryDao personHistoryDao;
 
     @RequestMapping("/getSongsForUser")
     public @ResponseBody
@@ -74,5 +85,17 @@ public class PersonController {
         if(person != null)
             return String.format("{personId: %d}", person.getPerson().getId());
         return "{personId: 0}";
+    }
+
+    @RequestMapping("/saveSongInHistory")
+    public
+    void saveSongInHistory(@RequestParam("userId") long userId, @RequestParam("songUrl") String songUrl){
+        Person person = personDao.find(userId);
+        Song song = songService.getSongByUrl(songUrl);
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        PersonHistory personHistory = new PersonHistory(person.getId(), song.getId(), date);
+        personHistoryDao.save(personHistory);
     }
 }

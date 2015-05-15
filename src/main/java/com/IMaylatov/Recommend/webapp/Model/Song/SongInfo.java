@@ -1,5 +1,6 @@
 package com.IMaylatov.Recommend.webapp.Model.Song;
 
+import com.IMaylatov.Recommend.webapp.Model.AuthorSongGenre.AuthorSong;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
@@ -23,8 +24,16 @@ public class SongInfo {
     @Column(name = "Name")
     private String name;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "AuthorSongId")
+    private AuthorSong authorSong;
+
     public String getUrl(){
-        return name.replace(' ','_');
+        return String.format("%s/%s", authorSong.getName(), name).replace(' ','_');
+    }
+
+    public AuthorSong getAuthorSong() {
+        return authorSong;
     }
 
     private SongInfo(){}

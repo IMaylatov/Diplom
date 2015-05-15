@@ -46,7 +46,7 @@ public class PersonServiceImpl implements PersonService {
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.add(Calendar.HOUR, -1);
+        calendar.add(Calendar.HOUR, -5);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
