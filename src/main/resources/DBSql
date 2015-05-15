@@ -60,8 +60,10 @@ CREATE TABLE PersonInfo(
 CREATE TABLE SongInfo (
     SongId INTEGER UNIQUE NOT NULL ,
     Name VARCHAR(30),
+    AuthorSongId INTEGER,
     PRIMARY KEY (SongId),
-    FOREIGN KEY (SongId) REFERENCES Song(ID)
+    FOREIGN KEY (SongId) REFERENCES Song(ID),
+    FOREIGN KEY (AuthorSongId) REFERENCES AuthorSong(id)
 );
 
 CREATE OR REPLACE FUNCTION OperationPerson() RETURNS TRIGGER as $$
@@ -117,4 +119,31 @@ CREATE TABLE PersonRoles (
   ROLE VARCHAR(45) NOT NULL,
   PRIMARY KEY (PersonInfoID, ROLE),
   FOREIGN KEY (PersonInfoID) REFERENCES personinfo (PersonId)
+);
+
+CREATE TABLE PersonHistory(
+  Id SERIAL PRIMARY KEY NOT NULL ,
+  PersonId INTEGER NOT NULL,
+  SongId INTEGER NOT NULL ,
+  Date TIMESTAMP NOT NULL ,
+  FOREIGN KEY (PersonId) REFERENCES Person(Id),
+  FOREIGN KEY (SongId) REFERENCES Song(Id)
+);
+
+CREATE TABLE AuthorSong(
+  Id SERIAL PRIMARY KEY NOT NULL ,
+  Name VARCHAR(100) not NULL DEFAULT 'empty'
+);
+
+CREATE TABLE Genre(
+  Id SERIAL PRIMARY KEY NOT NULL ,
+  NAME VARCHAR(100) NOT NULL DEFAULT 'empty'
+);
+
+CREATE TABLE AuthorSongGenre(
+  GenreId INTEGER NOT NULL ,
+  AuthorSongId INTEGER NOT NULL ,
+  PRIMARY KEY (GenreId, AuthorSongId),
+  FOREIGN KEY (GenreId) REFERENCES Genre(id),
+  FOREIGN KEY (AuthorSongId) REFERENCES AuthorSong(Id)
 );

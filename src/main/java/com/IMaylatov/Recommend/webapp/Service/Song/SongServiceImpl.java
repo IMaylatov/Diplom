@@ -51,7 +51,7 @@ public class SongServiceImpl implements SongService{
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
                 String.format("Id in (Select SongId from SongInfo where" +
                         " AuthorSongId in (Select id from AuthorSong" +
-                        " where name like '%s'))", filter.getAuthorName())));
+                        " where name like replace('%s', '_',' ')))", filter.getAuthorName())));
         DealerRate dealerRate = new DealerRateImpl();
         songs.sort((t1, t2) -> Float.compare(
                 dealerRate.getRateFloat(person, t2),
