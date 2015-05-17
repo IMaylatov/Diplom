@@ -22,6 +22,9 @@ public class Song implements Serializable {
     @Column(name = "value")
     @MapKeyJoinColumn(name = "ClusterId")
     private Map<Cluster, Float> predicates = new HashMap<>();
+
+    @OneToOne(mappedBy = "song")
+    private SongInfo songInfo;
     //endregion
 
     //region Constructor
@@ -30,6 +33,13 @@ public class Song implements Serializable {
     //endregion
 
     //region Getter Setter
+    public SongInfo getSongInfo() {
+        return songInfo;
+    }
+    public void setSongInfo(SongInfo songInfo) {
+        this.songInfo = songInfo;
+    }
+
     public long getId() {
         return id;
     }

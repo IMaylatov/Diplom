@@ -12,11 +12,8 @@ import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Service.Person.PersonService;
 import com.IMaylatov.Recommend.webapp.Service.Person.SongUrl;
+import com.IMaylatov.Recommend.webapp.Service.Person.SongUrlRate;
 import com.IMaylatov.Recommend.webapp.Service.Song.SongService;
-import com.google.gson.JsonObject;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.annotate.JsonAutoDetect;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -113,5 +108,11 @@ public class PersonController {
         if(ratePerson != null)
             return "{rate:" + ratePerson.getValue() + "}";
         return "{rate:0}";
+    }
+
+    @RequestMapping("/getSongsByPerson")
+    public @ResponseBody
+    List<SongUrlRate> getSongsByPerson(@RequestParam("userId") long userId, @RequestParam("rate") int rate){
+        return personService.getSongsUserMoreRate(userId, rate);
     }
 }

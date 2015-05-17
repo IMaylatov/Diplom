@@ -16,4 +16,5 @@ public interface PersonService {
     void savePerson(String name, String password);
     void addRate(Person person, Song song, int rate);
     PersonInfo getPersonByName(String name);
+    List<SongUrlRate> getSongsUserMoreRate(long userId, int rate);
 }

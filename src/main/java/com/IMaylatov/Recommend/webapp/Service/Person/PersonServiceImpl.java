@@ -6,12 +6,14 @@ import com.IMaylatov.Recommend.webapp.DAO.Model.Cluster.ClusterDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonInfo.PersonInfoDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonRoles.PersonRolesDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.RatePerson.RatePersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongInfo.SongInfoDao;
 import com.IMaylatov.Recommend.webapp.Model.Cluster;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import com.IMaylatov.Recommend.webapp.Model.Person.PersonInfo;
 import com.IMaylatov.Recommend.webapp.Model.Person.PersonRoles;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Model.Song.SongInfo;
 import org.hibernate.criterion.Restrictions;
@@ -40,6 +42,8 @@ public class PersonServiceImpl implements PersonService {
     private PersonInfoDao personInfoDao;
     @Autowired
     private PersonRolesDao personRolesDao;
+    @Autowired
+    private RatePersonDao ratePersonDao;
 
     @Override
     public List<SongUrl> getStackSongs(Person person) {
@@ -133,5 +137,22 @@ public class PersonServiceImpl implements PersonService {
         if(persons.size() == 1)
             return persons.get(0);
         return null;
+    }
+
+    @Override
+    public List<SongUrlRate> getSongsUserMoreRate(long userId, int rate) {
+        List<RatePerson> ratePersons = ratePersonDao.listWithoutLazy(Restrictions.sqlRestriction(
+                String.format("PersonId = %d and value >= %d",
+                        userId,
+                        rate)));
+
+        List<SongUrlRate> songUrlRates = new ArrayList<>();
+        for(RatePerson ratePerson : ratePersons)
+                songUrlRates.add(new SongUrlRate(
+                                ratePerson.getSong().getSongInfo().getName() + "",
+                                ratePerson.getSong().getSongInfo().getUrl() + ".mp3",
+                                ratePerson.getValue()));
+
+        return songUrlRates;
     }
 }
