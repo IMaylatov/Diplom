@@ -1,8 +1,11 @@
 package com.IMaylatov.Recommend.webapp.Controller;
 
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.RatePerson.RatePersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.BlackList.BlackListDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.webapp.Model.Song.BlackList;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Model.Song.SongInfo;
@@ -10,6 +13,7 @@ import com.IMaylatov.Recommend.webapp.Service.Person.SongUrl;
 import com.IMaylatov.Recommend.webapp.Service.Song.SongFilter;
 import com.IMaylatov.Recommend.webapp.Service.Song.SongNameUrl;
 import com.IMaylatov.Recommend.webapp.Service.Song.SongService;
+import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +35,8 @@ public class SongController {
     private PersonDao personDao;
     @Autowired
     private BlackListDao blackListDao;
+    @Autowired
+    private RatePersonDao ratePersonDao;
 
 
     @RequestMapping("/getSongsByName")
@@ -74,6 +80,26 @@ public class SongController {
         if(blackListDao.find(key) == null) {
             BlackList blackList = new BlackList(key);
             blackListDao.save(blackList);
+        }
+    }
+
+    @RequestMapping("/addRate")
+    public @ResponseBody
+    void addRate(@RequestParam("userId") long userId,
+                 @RequestParam("songUrl") String songUrl,
+                 @RequestParam("rate") int rate) {
+        Song song = songService.getSongByUrl(songUrl);
+        Person person = personDao.find(userId);
+
+        PairKey<Person, Song> key = new PairKey<>(person, song);
+        RatePerson ratePerson = ratePersonDao.find(key);
+        if(ratePerson == null){
+            ratePerson = new RatePerson(key);
+            ratePerson.setValue(rate);
+            ratePersonDao.save(ratePerson);
+        }else{
+            ratePerson.setValue(rate);
+            ratePersonDao.update(ratePerson);
         }
     }
 }

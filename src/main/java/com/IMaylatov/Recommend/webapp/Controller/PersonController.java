@@ -2,10 +2,13 @@ package com.IMaylatov.Recommend.webapp.Controller;
 
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonHistory.PersonHistoryDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Person.RatePerson.RatePersonDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
 import com.IMaylatov.Recommend.webapp.Model.Person.PersonHistory;
 import com.IMaylatov.Recommend.webapp.Model.Person.PersonInfo;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.PairKey;
+import com.IMaylatov.Recommend.webapp.Model.Rate.ConcreteRate.RatePerson;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Service.Person.PersonService;
 import com.IMaylatov.Recommend.webapp.Service.Person.SongUrl;
@@ -45,6 +48,8 @@ public class PersonController {
     private SongService songService;
     @Autowired
     private PersonHistoryDao personHistoryDao;
+    @Autowired
+    private RatePersonDao ratePersonDao;
 
     @RequestMapping("/getSongsForUser")
     public @ResponseBody
@@ -97,5 +102,16 @@ public class PersonController {
         calendar.setTime(date);
         PersonHistory personHistory = new PersonHistory(person.getId(), song.getId(), date);
         personHistoryDao.save(personHistory);
+    }
+
+    @RequestMapping("/getRateForSong")
+    public @ResponseBody
+    String getRateForSong(@RequestParam("userId") long userId, @RequestParam("songUrl") String songUrl){
+        Person person = personDao.find(userId);
+        Song song = songService.getSongByUrl(songUrl);
+        RatePerson ratePerson = ratePersonDao.find(new PairKey<>(person,song));
+        if(ratePerson != null)
+            return "{rate:" + ratePerson.getValue() + "}";
+        return "{rate:0}";
     }
 }
