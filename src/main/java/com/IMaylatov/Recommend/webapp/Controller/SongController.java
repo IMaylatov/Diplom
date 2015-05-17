@@ -1,7 +1,10 @@
 package com.IMaylatov.Recommend.webapp.Controller;
 
 import com.IMaylatov.Recommend.webapp.DAO.Model.Person.PersonDao;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.BlackList.BlackListDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.BlackList;
+import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Model.Song.SongInfo;
 import com.IMaylatov.Recommend.webapp.Service.Person.SongUrl;
 import com.IMaylatov.Recommend.webapp.Service.Song.SongFilter;
@@ -26,6 +29,8 @@ public class SongController {
     private SongService songService;
     @Autowired
     private PersonDao personDao;
+    @Autowired
+    private BlackListDao blackListDao;
 
 
     @RequestMapping("/getSongsByName")
@@ -57,5 +62,18 @@ public class SongController {
         SongFilter filter = new SongFilter.Builder().setGenreName(nameGenre).build();
         Person person = personDao.find(userId);
         return songService.getSongsByGenre(person, filter);
+    }
+
+
+    @RequestMapping("/addToBlackList")
+    public @ResponseBody
+    void addToBlackList(@RequestParam("userId") long userId, @RequestParam("songUrl") String songUrl) {
+        Song song = songService.getSongByUrl(songUrl);
+        Person person = personDao.find(userId);
+        BlackList.PairKey key = new BlackList.PairKey(person, song);
+        if(blackListDao.find(key) == null) {
+            BlackList blackList = new BlackList(key);
+            blackListDao.save(blackList);
+        }
     }
 }

@@ -46,14 +46,19 @@ public class PersonServiceImpl implements PersonService {
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.add(Calendar.HOUR, -5);
+        calendar.add(Calendar.HOUR, -2);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
                 String.format("Id not in" +
                                 " (Select distinct SongId from PersonHistory" +
-                                " where Date > '%s')",
-                        dateFormat.format(calendar.getTime()))));
+                                " where Date > '%s')" +
+                                " and Id not in" +
+                                " (select SongId from BlackList where PersonId = %d)",
+                        dateFormat.format(calendar.getTime()),
+                        person.getId())));
+        if(songs.size() == 0)
+            songs = songDao.listWithoutLazy();
 
         DealerRate dealerRate = new DealerRateImpl();
         songs.sort((t1, t2) -> Float.compare(

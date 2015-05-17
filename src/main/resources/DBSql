@@ -147,3 +147,11 @@ CREATE TABLE AuthorSongGenre(
   FOREIGN KEY (GenreId) REFERENCES Genre(id),
   FOREIGN KEY (AuthorSongId) REFERENCES AuthorSong(Id)
 );
+
+CREATE TABLE BlackList(
+    PersonId INTEGER NOT NULL ,
+    SongID INTEGER NOT NULL ,
+    PRIMARY KEY (PersonId, SongID),
+    FOREIGN KEY (PersonId) REFERENCES Person(ID),
+    FOREIGN KEY (SongID) REFERENCES Song(ID)
+);

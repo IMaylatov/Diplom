@@ -2,9 +2,11 @@ package com.IMaylatov.Recommend.webapp.Service.Song;
 
 import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRate;
 import com.IMaylatov.Recommend.Logic.SVD.DealerRate.DealerRateImpl;
+import com.IMaylatov.Recommend.webapp.DAO.Model.Song.BlackList.BlackListDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongDao;
 import com.IMaylatov.Recommend.webapp.DAO.Model.Song.SongInfo.SongInfoDao;
 import com.IMaylatov.Recommend.webapp.Model.Person.Person;
+import com.IMaylatov.Recommend.webapp.Model.Song.BlackList;
 import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 import com.IMaylatov.Recommend.webapp.Model.Song.SongInfo;
 import com.IMaylatov.Recommend.webapp.Service.Person.SongUrl;
@@ -26,6 +28,8 @@ public class SongServiceImpl implements SongService{
     private SongInfoDao songInfoDao;
     @Autowired
     private SongDao songDao;
+    @Autowired
+    private BlackListDao blackListDao;
 
     @Override
     public List<SongInfo> getSongByName(String name) {
@@ -51,7 +55,10 @@ public class SongServiceImpl implements SongService{
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
                 String.format("Id in (Select SongId from SongInfo where" +
                         " AuthorSongId in (Select id from AuthorSong" +
-                        " where name like replace('%s', '_',' ')))", filter.getAuthorName())));
+                        " where name like replace('%s', '_',' ')))" +
+                        " and Id not in (Select SongId from BlackList where PersonId = %d)",
+                        filter.getAuthorName(),
+                        person.getId())));
         DealerRate dealerRate = new DealerRateImpl();
         songs.sort((t1, t2) -> Float.compare(
                 dealerRate.getRateFloat(person, t2),
@@ -89,9 +96,19 @@ public class SongServiceImpl implements SongService{
                         " AuthorSongId in (Select distinct AuthorSongID from AuthorSongGenre" +
                         " where GenreId in (Select Id from Genre where name like '%s')))" +
                         " and Id not in (Select distinct SongId from PersonHistory" +
-                        " where Date > '%s')",
+                        " where Date > '%s')" +
+                        " and Id not in(Select SongID from BlackList where personId = %d)",
                         filter.getGenreName(),
-                        dateFormat.format(calendar.getTime()))));
+                        dateFormat.format(calendar.getTime()),
+                        person.getId())));
+        if(songs.size() == 0)
+            songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
+                    String.format("Id in (Select SongId from SongInfo where" +
+                                    " AuthorSongId in (Select distinct AuthorSongID from AuthorSongGenre" +
+                                    " where GenreId in (Select Id from Genre where name like '%s')))" +
+                                    " and id not in (Select SongID from BlackList where PersonId = %d)",
+                            filter.getGenreName(),
+                            person.getId())));
 
         DealerRate dealerRate = new DealerRateImpl();
         songs.sort((t1, t2) -> Float.compare(
