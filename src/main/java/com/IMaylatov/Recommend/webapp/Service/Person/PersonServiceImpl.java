@@ -54,11 +54,11 @@ public class PersonServiceImpl implements PersonService {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
-                String.format("Id not in" +
+                String.format("this_.Id not in" +
                                 " (Select distinct SongId from PersonHistory" +
-                                " where Date > '%s')" +
-                                " and Id not in" +
-                                " (select SongId from BlackList where PersonId = %d)",
+                                " where Date > '%s'" +
+                                " union" +
+                                " select SongId from BlackList where PersonId = %d)",
                         dateFormat.format(calendar.getTime()),
                         person.getId())));
         if(songs.size() == 0)
@@ -91,7 +91,7 @@ public class PersonServiceImpl implements PersonService {
         songsId.append(")");
 
         List<SongInfo> songsInfo = songInfoDao.list(Restrictions.sqlRestriction(
-                String.format("SongId in %s", songsId)));
+                String.format("this_.SongId in %s", songsId)));
 
         List<SongUrl> songsUrl = new ArrayList<>();
         for(SongInfo songInfo : songsInfo){
@@ -133,7 +133,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public PersonInfo getPersonByName(String name) {
         List<PersonInfo> persons = personInfoDao.listWithoutLazy(Restrictions.sqlRestriction(
-                String.format("name like '%s'", name)));
+                String.format("this_.name like '%s'", name)));
         if(persons.size() == 1)
             return persons.get(0);
         return null;
@@ -142,7 +142,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<SongUrlRate> getSongsUserMoreRate(long userId, int rate) {
         List<RatePerson> ratePersons = ratePersonDao.listWithoutLazy(Restrictions.sqlRestriction(
-                String.format("PersonId = %d and value >= %d",
+                String.format("this_.PersonId = %d and this_.value >= %d",
                         userId,
                         rate)));
 
@@ -151,7 +151,8 @@ public class PersonServiceImpl implements PersonService {
                 songUrlRates.add(new SongUrlRate(
                                 ratePerson.getSong().getSongInfo().getName() + "",
                                 ratePerson.getSong().getSongInfo().getUrl() + ".mp3",
-                                ratePerson.getValue()));
+                                ratePerson.getValue(),
+                                ratePerson.getSong().getSongInfo().getAuthorSong().getName()));
 
         return songUrlRates;
     }

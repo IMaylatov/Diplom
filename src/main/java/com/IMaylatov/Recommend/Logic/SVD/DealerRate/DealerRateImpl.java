@@ -10,7 +10,8 @@ import com.IMaylatov.Recommend.webapp.Model.Song.Song;
 public class DealerRateImpl implements DealerRate{
     @Override
     public int getRateInt(Person person, Song song) {
-        float average = (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate();
+        float average = person.getCluster() != null ?
+                (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate() : 0;
         if(!song.getPredicates().containsKey(person.getCluster()))
             return Math.round(average + person.getPredicate());
         else
@@ -19,7 +20,8 @@ public class DealerRateImpl implements DealerRate{
 
     @Override
     public float getRateFloat(Person person, Song song) {
-        float average = (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate();
+        float average = person.getCluster() != null ?
+                (float) person.getCluster().getSummaRate() / (float) person.getCluster().getCountRate() : 0;
         if(!song.getPredicates().containsKey(person.getCluster()))
             return average + person.getPredicate();
         else

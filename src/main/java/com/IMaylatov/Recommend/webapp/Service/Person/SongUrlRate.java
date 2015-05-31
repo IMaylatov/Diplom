@@ -9,12 +9,14 @@ import org.codehaus.jackson.annotate.JsonAutoDetect;
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class SongUrlRate {
     private String name;
+    private String author;
     private String url;
     private int rate;
 
-    public SongUrlRate(String name, String url, int rate) {
+    public SongUrlRate(String name, String url, int rate, String author) {
         this.name = name;
         this.url = url;
         this.rate = rate;
+        this.author = author;
     }
 }

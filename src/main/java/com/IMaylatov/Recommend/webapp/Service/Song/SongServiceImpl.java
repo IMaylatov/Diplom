@@ -34,18 +34,18 @@ public class SongServiceImpl implements SongService{
     @Override
     public List<SongInfo> getSongByName(String name) {
         return songInfoDao.list(Restrictions.sqlRestriction(
-                String.format("Name like '%%%s%%'", name)));
+                String.format("this_.Name like '%%%s%%'", name)));
     }
 
     @Override
     public List<SongNameUrl> getSongs(SongFilter filter) {
         List<SongInfo> songsInfo = songInfoDao.list(Restrictions.sqlRestriction(
-                String.format("Name like '%s%%'", filter.getName())));
+                String.format("this_.Name like '%s%%'", filter.getName())));
 
         List<SongNameUrl> songNameUrls = new ArrayList<>();
 
         for(SongInfo info : songsInfo)
-            songNameUrls.add(new SongNameUrl(info.getName(), info.getUrl()));
+            songNameUrls.add(new SongNameUrl(info.getName(), info.getAuthorSong().getName(), info.getUrl()));
 
         return songNameUrls;
     }
@@ -53,12 +53,10 @@ public class SongServiceImpl implements SongService{
     @Override
     public List<SongNameUrl> getSongsByAuthor(Person person, SongFilter filter) {
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
-                String.format("Id in (Select SongId from SongInfo where" +
+                String.format("this_.Id in (Select SongId from SongInfo where" +
                         " AuthorSongId in (Select id from AuthorSong" +
-                        " where name like replace('%s', '_',' ')))" +
-                        " and Id not in (Select SongId from BlackList where PersonId = %d)",
-                        filter.getAuthorName(),
-                        person.getId())));
+                        " where name like replace('%s', '_',' ')))",
+                        filter.getAuthorName())));
         DealerRate dealerRate = new DealerRateImpl();
         songs.sort((t1, t2) -> Float.compare(
                 dealerRate.getRateFloat(person, t2),
@@ -73,12 +71,12 @@ public class SongServiceImpl implements SongService{
         songsId.append(")");
 
         List<SongInfo> songsInfo = songInfoDao.list(Restrictions.sqlRestriction(
-                String.format("SongId in %s", songsId)));
+                String.format("this_.SongId in %s", songsId)));
 
         List<SongNameUrl> songNameUrls = new ArrayList<>();
 
         for(SongInfo info : songsInfo)
-            songNameUrls.add(new SongNameUrl(info.getName(), info.getUrl()));
+            songNameUrls.add(new SongNameUrl(info.getName(), info.getAuthorSong().getName(), info.getUrl()));
 
         return songNameUrls;
     }
@@ -92,21 +90,21 @@ public class SongServiceImpl implements SongService{
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
-                String.format("Id in (Select SongId from SongInfo where" +
+                String.format("this_.Id in (Select SongId from SongInfo where" +
                         " AuthorSongId in (Select distinct AuthorSongID from AuthorSongGenre" +
                         " where GenreId in (Select Id from Genre where name like '%s')))" +
                         " and Id not in (Select distinct SongId from PersonHistory" +
                         " where Date > '%s')" +
-                        " and Id not in(Select SongID from BlackList where personId = %d)",
+                        " and this_.Id not in(Select SongID from BlackList where personId = %d)",
                         filter.getGenreName(),
                         dateFormat.format(calendar.getTime()),
                         person.getId())));
         if(songs.size() == 0)
             songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
-                    String.format("Id in (Select SongId from SongInfo where" +
+                    String.format("this_.Id in (Select SongId from SongInfo where" +
                                     " AuthorSongId in (Select distinct AuthorSongID from AuthorSongGenre" +
                                     " where GenreId in (Select Id from Genre where name like '%s')))" +
-                                    " and id not in (Select SongID from BlackList where PersonId = %d)",
+                                    " and this_.id not in (Select SongID from BlackList where PersonId = %d)",
                             filter.getGenreName(),
                             person.getId())));
 
@@ -137,7 +135,7 @@ public class SongServiceImpl implements SongService{
         songsId.append(")");
 
         List<SongInfo> songsInfo = songInfoDao.list(Restrictions.sqlRestriction(
-                String.format("SongId in %s", songsId)));
+                String.format("this_.SongId in %s", songsId)));
 
         List<SongUrl> songsUrl = new ArrayList<>();
         for(SongInfo songInfo : songsInfo){
@@ -154,7 +152,7 @@ public class SongServiceImpl implements SongService{
         String songAuthorName = songInfo[songInfo.length - 2];
 
         List<Song> songs = songDao.listWithoutLazy(Restrictions.sqlRestriction(
-            String.format("id in (select songId from SongInfo" +
+            String.format("this_.id in (select songId from SongInfo" +
                     " where name like replace('%s','_',' ')" +
                     " and authorSongId in (select id from AuthorSong" +
                     " where name like replace('%s','_',' ')))",
