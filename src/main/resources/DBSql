@@ -155,3 +155,95 @@ CREATE TABLE BlackList(
     FOREIGN KEY (PersonId) REFERENCES Person(ID),
     FOREIGN KEY (SongID) REFERENCES Song(ID)
 );
+
+
+
+
+insert into person(id) values(1);
+insert into person(id) values(2);
+
+update PersonInfo
+set name = 'alisa'
+where PersonId = 1;
+update PersonInfo
+set Password = '123'
+where PersonId = 1;
+
+update PersonInfo
+set name = 'bob'
+where PersonId = 2;
+update PersonInfo
+set Password = '123'
+where PersonId = 2;
+
+
+insert into personRoles(personinfoid, role) values(1, 'ROLE_USER');
+insert into personRoles(personinfoid, role) values(2, 'ROLE_ADMIN');
+insert into personRoles(personinfoid, role) values(1, 'ROLE_ADMIN');
+
+INSERT into AuthorSong(id, Name) VALUES (1, 'Lenka');
+INSERT INTO AuthorSong (Id, Name) VALUES (2, 'Apocalyptica');
+INSERT INTO AuthorSong (Id, Name) VALUES (3, 'Breaking Benjamin');
+INSERT INTO AuthorSong (Id, Name) VALUES (4, 'ACDC');
+INSERT INTO AuthorSong (Id, Name) VALUES (5, 'Evanesence');
+INSERT INTO AuthorSong (Id, Name) VALUES (6, 'Within Temptation');
+INSERT INTO AuthorSong (Id, Name) VALUES (7, 'Amy McDonald');
+
+insert into song(id) VALUES (1);
+insert into song(id) VALUES (2);
+insert into song(id) VALUES (3);
+insert into song(id) VALUES (4);
+insert into song(id) VALUES (5);
+insert into song(id) VALUES (6);
+insert into song(id) VALUES (7);
+insert into song(id) VALUES (8);
+insert into song(id) VALUES (9);
+insert into song(id) VALUES (10);
+insert into song(id) VALUES (11);
+insert into song(id) VALUES (12);
+insert into song(id) VALUES (13);
+
+update SongInfo set Name = 'The Show', AuthorSongId = 1 where songid = 1;
+update SongInfo set Name = 'Broken Pieces', AuthorSongId = 2 where songid = 2;
+update SongInfo set Name = 'Dance With The Devil', AuthorSongId = 3 where songid = 3;
+update SongInfo set Name = 'Diary of Jane', AuthorSongId = 3 where songid = 4;
+update SongInfo set Name = 'Hi way to hell', AuthorSongId = 4 where songid = 5;
+update SongInfo set Name = 'Hope', AuthorSongId = 2 where songid = 6;
+update SongInfo set Name = 'My Immortal', AuthorSongId = 5 where songid = 7;
+update SongInfo set Name = 'Not Strong Enough', AuthorSongId = 2 where songid = 8;
+update SongInfo set Name = 'Our Solemn Hour', AuthorSongId = 6 where songid = 9;
+update SongInfo set Name = 'Path', AuthorSongId = 2 where songid = 10;
+update SongInfo set Name = 'The Unforgiven', AuthorSongId = 2 where songid = 11;
+update SongInfo set Name = 'This is the Life', AuthorSongId = 7 where songid = 12;
+update SongInfo set Name = 'Back in back', AuthorSongId = 4 where songid = 13;
+
+INSERT into Genre(id, name) VALUES (1, 'Rock');
+INSERT into Genre(id, name) VALUES (2, 'Alternative');
+
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (1, 1);
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (1, 2);
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (1, 3);
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (1, 4);
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (1, 5);
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (1, 6);
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (1, 7);
+
+INSERT INTO AuthorSongGenre(GenreId, AuthorSongId) VALUES (2, 3);
+
+
+
+
+
+
+
+
+
+insert into Person(Id) values(1);
+update PersonInfo
+set name = 'alisa@gmail.com'
+where PersonId = 1;
+update PersonInfo
+set password = 123
+where PersonId = 1;
+
+insert into PersonRoles(PersonInfoID, ROLE) VALUES (1, 'ROLE_USER');

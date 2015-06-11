@@ -49,7 +49,7 @@ public class RMSEMain {
                 stringJoiner.add(songId.toString());
             String songIdString = "(" + stringJoiner.toString() + ")";
             List<Song> songList = songDao.listWithoutLazy(Restrictions.sqlRestriction(
-                    "Id in " + songIdString));
+                    "this_.Id in " + songIdString));
             Map<Long, Song> songMap = new HashMap<>();
             for(Song song : songList)
                 songMap.put(song.getId(), song);

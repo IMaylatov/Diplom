@@ -44,6 +44,6 @@ public class Pearson implements Metric {
         if((denominatorX*denominatorY <= 0) || (numerator < 0))
             return Double.MAX_VALUE;
 
-        return numerator / (Math.sqrt(denominatorX*denominatorY));
+        return Math.abs(1 - numerator / (Math.sqrt(denominatorX*denominatorY)));
     }
 }

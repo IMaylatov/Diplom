@@ -3,6 +3,7 @@ package com.IMaylatov.Recommend.Logic.SVD;
 import com.IMaylatov.Recommend.Logic.KMeans.ClusteringPerson.ClusteringPersons;
 import com.IMaylatov.Recommend.Logic.KMeans.ClusteringPerson.ClusteringPersonsImpl;
 import com.IMaylatov.Recommend.Logic.Metric.Euclid;
+import com.IMaylatov.Recommend.Logic.Metric.Pearson;
 import com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate.CalculaterPredicate;
 import com.IMaylatov.Recommend.Logic.SVD.CalculaterPredicate.CalculaterPredicateImpl;
 import com.IMaylatov.Recommend.Logic.SVD.GradientDown.GradientDown;
@@ -55,7 +56,7 @@ public class SVDImpl implements SVD {
         int k = persons.size() > 100 ? persons.size() / 100 : 1;
 
         ClusteringPersons clusteringPersons = new ClusteringPersonsImpl();
-        List<Cluster> clusters = clusteringPersons.clustering(persons, k, new Euclid());
+        List<Cluster> clusters = clusteringPersons.clustering(persons, k, new Pearson());
 
         CalculaterPredicate calculaterPredicate = new CalculaterPredicateImpl();
         calculaterPredicate.calculate(clusters);
